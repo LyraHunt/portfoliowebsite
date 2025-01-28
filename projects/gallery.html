@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="flex-column">
+        <h1>GALLERY</h1>
+        <h2>(Major Projects)</h2>
+
+        <div class="flex-column">
+            <input id="traditionalFilterBox" type="checkbox" onclick="updateFilter()">
+            <label for="traditionalFilterBox">Includes Traditional Art</label><br>
+            <input id="simulationFilterBox" type="checkbox" onclick="updateFilter()">
+            <label for="simulationFilterBox">Includes Coding</label><br>
+        </div>
+
+        <div id="galleryContainer" class="flex-column"></div>
+
+        <p><a href="/projects/verlet/verlettest.html">Verlet Test</a></p>
+        <p><a href="/pages/index.html">Back to Home</a></p>
+    </div>
+    
+    <script src="/projects/projects.js"></script>
+    <script src="/projects/gallery.js"></script>
+</body>
+</html>

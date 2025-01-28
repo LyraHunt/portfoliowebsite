@@ -1,0 +1,95 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.name-title {
+    margin: 0px 20px;
+}
+
+.page-title {
+    margin: 0px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.clickable {
+    cursor: pointer;
+    transition-duration: 50ms;
+    scale: 1;
+}
+
+.clickable:hover {
+    scale: 1.075;
+}
+
+#header {
+    width: 100%;
+    height: 120px;
+    background-color: lightgray;
+}
+
+#footer {
+    width: 100%;
+    height: 120px;
+    background-color: lightgray;
+}
+
+#logo {
+    width: 90px;
+}
+
+/* Gallery scaling depending on screen size */
+@media only screen and (min-width: 750px) and (max-width: 1000px) {
+    #galleryContainer {
+        transform: scale(0.75);
+        transform-origin: top center;  
+    }
+}
+
+@media only screen and (min-width: 562px) and (max-width: 750px) {
+    #galleryContainer {
+        transform: scale(0.562);
+        transform-origin: top center;  
+    }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 562px) {
+    #galleryContainer {
+        transform: scale(0.421);
+        transform-origin: top center;  
+    }
+}
+
+@media only screen and (max-width: 421px) {
+    #galleryContainer {
+        transform: scale(0.316);
+        transform-origin: top center;
+    }
+}
