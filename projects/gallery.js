@@ -46,7 +46,7 @@ function generateGalleryRows() {
         newGalleryRow.classList.add("flex-row");
     
         var newGalleryLeft = document.createElement("div");
-        newGalleryLeft.style = "width: 250px; height: 450px; background-image: url('/images/gallery-edge-left.png')";
+        newGalleryLeft.style = "width: 250px; height: 450px; background-image: url('images/gallery-edge-left.png')";
         newGalleryRow.appendChild(newGalleryLeft);
     
         //generate specific window (in current row)
@@ -54,7 +54,7 @@ function generateGalleryRows() {
             var currentCreationIndex = Math.min((i*galleryColumnAmount + j), filteredCreations.length - 1);
 
             var newGalleryWindow = document.createElement("div");
-            newGalleryWindow.style = "width: 400px; height: 450px; background-image: url('/images/gallery-window.png')";
+            newGalleryWindow.style = "width: 400px; height: 450px; background-image: url('images/gallery-window.png')";
 
             var newGalleryWindowThumbnail = document.createElement("div");
             newGalleryWindowThumbnail.style = "position: relative; left: 50px; top: 50px; width: 300px; height: 300px; background-size: 100% 100%; background-image: url('" + filteredCreations[currentCreationIndex].thumbnailUrl + "')";
@@ -79,7 +79,7 @@ function generateGalleryRows() {
         }
     
         var newGalleryRight = document.createElement("div");
-        newGalleryRight.style = "width: 250px; height: 450px; background-image: url('/images/gallery-edge-right.png')";
+        newGalleryRight.style = "width: 250px; height: 450px; background-image: url('images/gallery-edge-right.png')";
         newGalleryRow.appendChild(newGalleryRight);
     
         newGalleryRows.push(newGalleryRow);
