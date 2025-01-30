@@ -19,17 +19,16 @@ function generateGalleryRows() {
     var filteredCreations = [];
 
     for (let i = 0; i < creations.length; i++) {
-        var creationPassesFilters = false;
+        var creationPassesFilters = true;
         
         for (let j = 0; j < allFilterTags.length; j++) {
             var currentFilter = allFilterTags[j];
             if (currentFilter in creationFilters) {
-                if (creationFilters[currentFilter] === creations[i].typeTags[currentFilter]) {
-                    creationPassesFilters = true;
+                if (creationFilters[currentFilter] !== creations[i].typeTags[currentFilter]) {
+                    creationPassesFilters = false;
                 }
             }
         }
-        console.log(creationFilters);
 
         if (creationPassesFilters || Object.keys(creationFilters).length === 0) {
             filteredCreations.push(creations[i]);
@@ -51,17 +50,28 @@ function generateGalleryRows() {
     
         //generate specific window (in current row)
         for (let j = 0; j < galleryColumnAmount; j++) {
-            var currentCreationIndex = Math.min((i*galleryColumnAmount + j), filteredCreations.length - 1);
+            var currentCreationIndex = (i * galleryColumnAmount) + j;
+            var currentCreationData = {};
+            if (currentCreationIndex < filteredCreations.length) {
+                currentCreationData = filteredCreations[currentCreationIndex];
+            }
+            else {
+                //load first creation as placeholder
+                currentCreationData = structuredClone(creations[0]);
+                currentCreationData.thumbnailUrl = "images/blank.png";
+                currentCreationData.name = "";
+                currentCreationData.year = "";
+            }
 
             var newGalleryWindow = document.createElement("div");
             newGalleryWindow.style = "width: 400px; height: 450px; background-image: url('images/gallery-window.png')";
 
             var newGalleryWindowThumbnail = document.createElement("div");
-            newGalleryWindowThumbnail.style = "position: relative; left: 50px; top: 50px; width: 300px; height: 300px; background-size: 100% 100%; background-image: url('" + filteredCreations[currentCreationIndex].thumbnailUrl + "')";
+            newGalleryWindowThumbnail.style = "position: relative; left: 50px; top: 50px; width: 300px; height: 300px; background-size: 100% 100%; background-image: url('" + currentCreationData.thumbnailUrl + "')";
             newGalleryWindow.appendChild(newGalleryWindowThumbnail);
 
             var newGalleryWindowTitleLink = document.createElement("a");
-            newGalleryWindowTitleLink.href = filteredCreations[currentCreationIndex].url;
+            newGalleryWindowTitleLink.href = currentCreationData.url;
             newGalleryWindow.appendChild(newGalleryWindowTitleLink);
 
             var newGalleryWindowTitleDiv = document.createElement("div");
@@ -71,7 +81,7 @@ function generateGalleryRows() {
 
             var newGalleryWindowTitle = document.createElement("h2");
 
-            newGalleryWindowTitle.innerText = filteredCreations[currentCreationIndex].name + " (" + filteredCreations[currentCreationIndex].year + ")";
+            newGalleryWindowTitle.innerText = currentCreationData.name + " (" + currentCreationData.year + ")";
             newGalleryWindowTitle.style = "text-align: center"
             newGalleryWindowTitleDiv.appendChild(newGalleryWindowTitle);
 
@@ -99,12 +109,18 @@ function updateFilter() {
     var ifAnyFilters = traditionalFilterBox.checked || simulationFilterBox.checked;
 
     //load new filter data
-    if (!ifAnyFilters) {
-        creationFilters = {}
+    if (traditionalFilterBox.checked) {
+        creationFilters.traditional = traditionalFilterBox.checked;
     }
     else {
-        creationFilters.traditional = traditionalFilterBox.checked;
+        delete creationFilters.traditional;
+    }
+
+    if (simulationFilterBox.checked) {
         creationFilters.simulation = simulationFilterBox.checked;
+    }
+    else {
+        delete creationFilters.simulation;
     }
 
     //reload visible creation tiles
@@ -112,8 +128,6 @@ function updateFilter() {
 }
 
 function reportWindowSize() {
-    console.log("RESIZE");
-
     let previousFrameColumnAmount = galleryColumnAmount;
     var edgeMargin = (galleryEdgeWidth + minGalleryMargin) * 2;
     galleryColumnAmount = Math.floor((window.innerWidth-edgeMargin)/galleryWindowWidth);

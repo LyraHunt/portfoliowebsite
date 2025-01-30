@@ -20,7 +20,7 @@ creations.push(new Creation);
 creations[0].name = "Verlet";
 creations[0].year = 2022;
 creations[0].url = "verlettest.html";
-creations[0].thumbnailUrl = "images/image.png";
+creations[0].thumbnailUrl = "images/verlettest.png";
 creations[0].typeTags = {
     traditional: false,
 
@@ -32,7 +32,7 @@ creations[0].typeTags = {
 creations.push(new Creation);
 creations[1].name = "Growth Out of Darkness";
 creations[1].year = 2021;
-creations[1].url = "verlettest.html";
+creations[1].url = "growthoutofdarkness.html";
 creations[1].thumbnailUrl = "images/Growth-Out-Of-Darkness-Horizontal-Square.png";
 creations[1].typeTags = {
     traditional: true,
@@ -46,7 +46,7 @@ creations.push(new Creation);
 creations[2].name = "Senior Capstone";
 creations[2].year = 2024;
 creations[2].url = "verlettest.html";
-creations[2].thumbnailUrl = "images/capstone-game-icon-circle.png";
+creations[2].thumbnailUrl = "images/capstone-game-icon-circle-black.png";
 creations[2].typeTags = {
     traditional: true,
 
