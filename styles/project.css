@@ -1,0 +1,25 @@
+#projectHeader {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    height: 48px;
+    align-items: center;
+    flex-direction: row;
+
+    color: white;
+    background-color: #222222;
+    border-bottom: #333333 solid 5px;
+
+    position: fixed;
+    top: 0px;
+}
+
+#projectHeader, p {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#projectHeader, a {
+    color: white;
+}

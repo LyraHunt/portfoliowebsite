@@ -58,8 +58,8 @@ creations[2].typeTags = {
 creations.push(new Creation);
 creations[3].name = "Tiling Art Column";
 creations[3].year = 2022;
-creations[3].url = "tilingartcolumn.html";
-creations[3].thumbnailUrl = "images/tilingartcolumn/Art-Tiles-3-AAC-Finished.png";
+creations[3].url = "tilingartcolumndesc.html";
+creations[3].thumbnailUrl = "projects/tilingartcolumn/images/Art-Tiles-3-AAC-Finished.png";
 creations[3].typeTags = {
     traditional: true,
 
