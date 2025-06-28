@@ -19,12 +19,11 @@ var creations = [];
 creations.push(new Creation);
 creations[0].name = "Verlet";
 creations[0].year = 2022;
-creations[0].url = "verlettest.html";
+creations[0].url = "verletenginedesc.html";
 creations[0].thumbnailUrl = "images/verlettest.png";
 creations[0].typeTags = {
     traditional: false,
-
-    interactive: false,
+    mobileFriendly: true,
     simulation: true
 }
 
@@ -36,8 +35,7 @@ creations[1].url = "growthoutofdarkness.html";
 creations[1].thumbnailUrl = "images/Growth-Out-Of-Darkness-Horizontal-Square.png";
 creations[1].typeTags = {
     traditional: true,
-
-    interactive: false,
+    mobileFriendly: true,
     simulation: false
 }
 
@@ -45,24 +43,22 @@ creations[1].typeTags = {
 creations.push(new Creation);
 creations[2].name = "Senior Capstone";
 creations[2].year = 2024;
-creations[2].url = "verlettest.html";
+creations[2].url = "newgrowth.html";
 creations[2].thumbnailUrl = "images/capstone-game-icon-circle-black.png";
 creations[2].typeTags = {
     traditional: true,
-
-    interactive: true,
+    mobileFriendly: false,
     simulation: true
 }
 
 //capstone (creation)
 creations.push(new Creation);
-creations[3].name = "Tiling Art Column";
+creations[3].name = "Through The Grapevine";
 creations[3].year = 2022;
-creations[3].url = "tilingartcolumndesc.html";
-creations[3].thumbnailUrl = "projects/tilingartcolumn/images/Art-Tiles-3-AAC-Finished.png";
+creations[3].url = "throughthegrapevinedesc.html";
+creations[3].thumbnailUrl = "projects/throughthegrapevine/images/Art-Tiles-3-AAC-Finished.png";
 creations[3].typeTags = {
     traditional: true,
-
-    interactive: false,
-    simulation: false
+    mobileFriendly: true,
+    simulation: true
 }

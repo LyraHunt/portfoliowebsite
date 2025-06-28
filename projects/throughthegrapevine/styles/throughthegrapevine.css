@@ -4,13 +4,11 @@ body {
 
 img {
     display: block;
-    /*position: absolute;
-    top: 0px;
-    left: 0px;*/
     width: 100%;
 }
 
 #imageContainer {
+    margin-top: 48px;
     max-width: 1200px;
     position: relative;
     z-index: -2;

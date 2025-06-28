@@ -12,12 +12,27 @@
     <div class="flex-column">
         <h1>GALLERY</h1>
         <h2>(Major Projects)</h2>
+        <br>
 
-        <div class="flex-column">
-            <input id="traditionalFilterBox" type="checkbox" onclick="updateFilter()">
-            <label for="traditionalFilterBox">Includes Traditional Art</label><br>
-            <input id="simulationFilterBox" type="checkbox" onclick="updateFilter()">
-            <label for="simulationFilterBox">Includes Coding</label><br>
+        <div class="flex-row">
+            <div class="flex-column" style="width: 160px;">
+                <label for="traditionalFilterBox">Includes Traditional Art</label>
+                <input id="traditionalFilterBox" type="checkbox" onclick="updateFilter()">
+            </div>
+
+            <span style="margin: 20px"></span>
+
+            <div class="flex-column" style="width: 160px;">
+                <label for="simulationFilterBox">Includes Programming</label>
+                <input id="simulationFilterBox" type="checkbox" onclick="updateFilter()">
+            </div>
+
+            <span style="margin: 20px"></span>
+
+            <div class="flex-column" style="width: 160px;">
+                <label for="mobileFriendlyFilterBox">Mobile-Friendly</label>
+                <input id="mobileFriendlyFilterBox" type="checkbox" onclick="updateFilter()">
+            </div>
         </div>
 
         <div id="galleryContainer" class="flex-column"></div>

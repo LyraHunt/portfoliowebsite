@@ -7,42 +7,42 @@ var tileData = {
     tile0: {
         connectFrom: "START",
         connectTo: "AAA",
-        url: "projects/tilingartcolumn/images/Art-Tiles-1-AAA-Finished.png",
+        url: "projects/throughthegrapevine/images/Art-Tiles-1-AAA-Finished.png",
         amount: 0
     },
 
     tile1: {
         connectFrom: "AAA",
         connectTo: "AAB",
-        url: "projects/tilingartcolumn/images/Art-Tiles-2-AAB-Finished.png",
+        url: "projects/throughthegrapevine/images/Art-Tiles-2-AAB-Finished.png",
         amount: 0
     },
 
     tile2: {
         connectFrom: "AAB",
         connectTo: "AAC",
-        url: "projects/tilingartcolumn/images/Art-Tiles-3-AAC-Finished.png",
+        url: "projects/throughthegrapevine/images/Art-Tiles-3-AAC-Finished.png",
         amount: 0
     },
 
     tile3: {
         connectFrom: "AAC",
         connectTo: "AAA",
-        url: "projects/tilingartcolumn/images/Art-Tiles-4-AAA-Finished.png",
+        url: "projects/throughthegrapevine/images/Art-Tiles-4-AAA-Finished.png",
         amount: 0
     },
 
     tile4: {
         connectFrom: "AAC",
         connectTo: "AAD",
-        url: "projects/tilingartcolumn/images/Art-Tiles-5-AAD-Finished.png",
+        url: "projects/throughthegrapevine/images/Art-Tiles-5-AAD-Finished.png",
         amount: 0
     },
 
     tile5: {
         connectFrom: "AAD",
         connectTo: "AAA",
-        url: "projects/tilingartcolumn/images/Art-Tiles-6-AAA-Finished.png",
+        url: "projects/throughthegrapevine/images/Art-Tiles-6-AAA-Finished.png",
         amount: 0
     }
 }
@@ -51,8 +51,7 @@ var imageContainer = document.getElementById("imageContainer");
 var imageContainerWidth = 0;
 
 function reportWindowSize() {
-    imageContainerWidth = window.innerWidth;
-    console.log("WIDTH: " + imageContainerWidth)
+    imageContainerWidth = Math.min(window.innerWidth,1200);
 }
 
 //when window is resized
@@ -66,16 +65,17 @@ if ('scrollRestoration' in history) {
 var nextConnection = "START";
 var tileDataLength = Object.keys(tileData).length;
 var tileAmount = 0;
+var loadAheadAmount = 4;
 
 function addTile() {
     var newTile = document.createElement("img");
     var potentialPicks = [];
-    var lowestCountYet = -1;
+    var lowestCountYet;
 
     for (let i = 0; i < tileDataLength; i++) {
         if (nextConnection === tileData["tile" + i].connectFrom) {
             //set lowest count yet if applicable
-            if (lowestCountYet === -1) {
+            if (lowestCountYet === undefined) {
                 lowestCountYet = tileData["tile" + i].amount;
             }
             else {
@@ -109,14 +109,14 @@ reportWindowSize();
 
 function mainLoop () {
     //console.log(window.scrollY + window.innerHeight + ", " + tileAmount * imageContainerWidth)
-    if (window.scrollY + window.innerHeight > (tileAmount - 2) * imageContainerWidth) {
+    if (window.scrollY + window.innerHeight > (tileAmount - loadAheadAmount) * imageContainerWidth) {
         addTile();
     }
 }
 
 setInterval(mainLoop,1000/60);
 
-window.addEventListener('mousewheel', function(e){
+/*window.addEventListener('mousewheel', function(e){
     wDelta = e.wheelDelta < 0 ? 'down' : 'up';
     //console.log(e.wheelDelta);
-});
+});*/

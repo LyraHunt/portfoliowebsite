@@ -3,7 +3,7 @@ var creationsContainer = document.getElementById("creationsContainer");
 
 var galleryContainer = document.getElementById("galleryContainer");
 
-var allFilterTags = ["traditional", "interactive", "simulation"];
+var allFilterTags = ["traditional", "mobileFriendly", "simulation"];
 
 var creationFilters = {};
 var galleryColumnAmount = 0;
@@ -52,7 +52,8 @@ function generateGalleryRows() {
         for (let j = 0; j < galleryColumnAmount; j++) {
             var currentCreationIndex = (i * galleryColumnAmount) + j;
             var currentCreationData = {};
-            if (currentCreationIndex < filteredCreations.length) {
+            var hasDataForWindow = currentCreationIndex < filteredCreations.length;
+            if (hasDataForWindow) {
                 currentCreationData = filteredCreations[currentCreationIndex];
             }
             else {
@@ -63,25 +64,34 @@ function generateGalleryRows() {
                 currentCreationData.year = "";
             }
 
+            //actual window container
             var newGalleryWindow = document.createElement("div");
-            newGalleryWindow.style = "width: 400px; height: 450px; background-image: url('images/gallery-window.png')";
+            newGalleryWindow.style = "position: relative; width: 400px; height: 450px";
 
-            var newGalleryWindowThumbnail = document.createElement("div");
-            newGalleryWindowThumbnail.style = "position: relative; left: 50px; top: 50px; width: 300px; height: 300px; background-size: 100% 100%; background-image: url('" + currentCreationData.thumbnailUrl + "')";
+            //decoration on frame/background
+            var newGalleryWindowFrame = document.createElement("img");
+            newGalleryWindowFrame.style = "position: absolute; width: 400px; height: 450px; z-index: 1; pointer-events: none";
+            newGalleryWindowFrame.src = "images/gallery-window.png";
+            newGalleryWindow.appendChild(newGalleryWindowFrame);
+
+            var newGalleryWindowThumbnail = document.createElement("img");
+            newGalleryWindowThumbnail.style = "position: absolute; left: 50px; top: 50px; width: 300px; height: 300px";
+            newGalleryWindowThumbnail.src = currentCreationData.thumbnailUrl;
             newGalleryWindow.appendChild(newGalleryWindowThumbnail);
 
             var newGalleryWindowTitleLink = document.createElement("a");
-            newGalleryWindowTitleLink.href = currentCreationData.url;
+            if (hasDataForWindow) newGalleryWindowTitleLink.href = currentCreationData.url;
             newGalleryWindow.appendChild(newGalleryWindowTitleLink);
 
             var newGalleryWindowTitleDiv = document.createElement("div");
-            newGalleryWindowTitleDiv.classList.add("clickable");
-            newGalleryWindowTitleDiv.style = "text-decoration: underline; display: flex; align-items: center; justify-content: center; position: relative; left: 100px; top: 75px; width: 200px; height: 50px; background-color: gray";
+            if (hasDataForWindow) newGalleryWindowTitleDiv.classList.add("clickable");
+            newGalleryWindowTitleDiv.style = "text-decoration: underline; display: flex; align-items: center; justify-content: center; position: absolute; left: 100px; top: 375px; width: 200px; height: 50px; background-color: gray";
             newGalleryWindowTitleLink.appendChild(newGalleryWindowTitleDiv);
 
             var newGalleryWindowTitle = document.createElement("h2");
 
-            newGalleryWindowTitle.innerText = currentCreationData.name + " (" + currentCreationData.year + ")";
+            if (hasDataForWindow) newGalleryWindowTitle.innerText = currentCreationData.name + " (" + currentCreationData.year + ")";
+            else newGalleryWindowTitle.innerText = "";
             newGalleryWindowTitle.style = "text-align: center"
             newGalleryWindowTitleDiv.appendChild(newGalleryWindowTitle);
 
@@ -102,25 +112,43 @@ function generateGalleryRows() {
 //filters have been updated; load new filters and then reload visible creation tiles
 function updateFilter() {
     //all filter category boxes
-    var traditionalFilterBox = document.getElementById("traditionalFilterBox");
-    var simulationFilterBox = document.getElementById("simulationFilterBox");
+    var filterBoxArr = [];
+    for (let i = 0; i < allFilterTags.length; i++) {
+        filterBoxArr.push(document.getElementById(allFilterTags[i] + "FilterBox"));
+    }
 
     //if no filters checked, load all
-    var ifAnyFilters = traditionalFilterBox.checked || simulationFilterBox.checked;
+    var anyFiltersApplied = false;
+
+    for (let i = 0; i < allFilterTags.length; i++) {
+        if (filterBoxArr[i].checked) {
+            anyFiltersApplied = true;
+        }
+    }
+
+    for (let i = 0; i < allFilterTags.length; i++) {
+        if (filterBoxArr[i].checked) {
+            creationFilters[allFilterTags[i]] = filterBoxArr[i].checked;
+        }
+
+        else {
+            delete creationFilters[allFilterTags[i]];
+        }
+    }
 
     //load new filter data
     if (traditionalFilterBox.checked) {
-        creationFilters.traditional = traditionalFilterBox.checked;
+        //creationFilters.traditional = traditionalFilterBox.checked;
     }
     else {
-        delete creationFilters.traditional;
+        //delete creationFilters.traditional;
     }
 
     if (simulationFilterBox.checked) {
-        creationFilters.simulation = simulationFilterBox.checked;
+        //creationFilters.simulation = simulationFilterBox.checked;
     }
     else {
-        delete creationFilters.simulation;
+        //delete creationFilters.simulation;
     }
 
     //reload visible creation tiles

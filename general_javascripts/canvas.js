@@ -32,7 +32,7 @@ var CanvasJS = {
 
     fillCanvas(color, canvas, ctx) {
         ctx.fillStyle = color;
-        ctx.fillRect(0 - (canvas.width / 2)/screenScale, 0 - (canvas.height / 2)/screenScale, canvas.width/screenScale, canvas.height/screenScale);
+        ctx.fillRect(0 - (canvas.width / 2), 0 - (canvas.height / 2), canvas.width, canvas.height);
     },
 
     drawSquare(x1, y1, size, ctx) {
@@ -61,7 +61,12 @@ var CanvasJS = {
         canvas.id = id;
         canvas.width = width;
         canvas.height = height;
+
+        let aspectRatio = width/height;
+        canvas.style = "aspect-ratio: " + aspectRatio + "; width: min(100%, calc(100vh - 48px) * " + aspectRatio + ")";
+
         document.getElementById(divId).appendChild(canvas);
+        return canvas;
     }
 }
 
