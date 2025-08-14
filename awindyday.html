@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Windy Day</title>
+
+    <link rel="stylesheet" type="text/css" href="projects/awindyday/styles/awindyday.css">
+    <link href="projects/awindyday/fonts/summer-pixel-22-font/SummerPixel22Regular-jE0W7.ttf" rel="stylesheet">
+</head>
+<body>
+  <div id="imageContainer" style="display: none">
+    <canvas id="groundCanvas"></canvas>
+    <img id="title" src="projects/awindyday/images/title.png">
+
+    <img id="ground1" src="projects/awindyday/images/ground1.png">
+    <img id="ground2" src="projects/awindyday/images/ground2.png">
+    <img id="ground3" src="projects/awindyday/images/ground3.png">
+    <img id="ground4" src="projects/awindyday/images/ground4.png">
+
+    <img id="1x1block1" src="projects/awindyday/images/1x1block1.png">
+  </div>
+
+  <div id="sprites" style="display: none">
+    <img id="player" src="projects/awindyday/images/player.png">
+    <img id="frank-idle-1" src="projects/awindyday/images/player.png">
+  </div>
+
+  <div id="spriteGen" style="display: none"></div>
+
+<div id="gamePage">
+  <div id="startMenu" width="512px" height="288px">
+    <div class="spacingBlock"></div>
+    <img width="256px" height="64px" src="projects/awindyday/images/title.png" style="margin: 0px 0px 8px 0px">
+    <div id="platformDisplay" onclick="togglePlatform()" class="textToggle" style="width: 160px">Platform: Computer/PC</div>
+    <div id="playerNumDisplay" onclick="togglePlayerNum()" class="textToggle" style="width: 160px">Number of Players: 1</div>
+    <div id="gameModeDisplay" onclick="toggleGameMode()" class="textToggle" style="margin: 4px; width: 160px;">Game Mode: Versus</div>
+    <div id="mainMenuSpacer"></div>
+    <div onclick="switchMenu('player')" class="textToggle" style="text-decoration: underline;">Start</div>
+    <div id="mobileNote" class="footnote">*On mobile there is a maximum of two players</div>
+  </div>
+
+  <div id="playerMenu" width="512px" height="288px">
+    <div class="spacingBlock"></div>
+    <div class="spacingBlock"></div>
+    <div class="row" style="width: 400px">
+      <div id="player1Select" class="playerSelect">
+        <div>Player 1</div>
+        <div class="playerBtn" onclick="togglePlayerControls(1)" id="player1Controls">Controls: Arrow Keys</div>
+        <img width="32px" height="32px" src="projects/awindyday/images/player.png">
+        <div class="playerBtn">Character: Frank</div>
+        <div class="playerBtn" onclick="togglePlayerColor(1)" id="player1Color">Color: White</div>
+      </div>
+
+      <div id="player2Select" class="playerSelect">
+        <div>Player 2</div>
+        <div class="playerBtn" onclick="togglePlayerControls(2)" id="player2Controls">Controls: WASD</div>
+        <img width="32px" height="32px" src="projects/awindyday/images/player.png">
+        <div class="playerBtn">Character: Frank</div>
+        <div class="playerBtn" onclick="togglePlayerColor(2)" id="player2Color">Color: White</div>
+      </div>
+    </div>
+    <div class="spacingBlock"></div>
+    <div class="spacingBlock"></div>
+    <div class="row" style="width: 400px;">
+      <div id="player3Select" class="playerSelect">
+        <div>Player 3</div>
+        <div class="playerBtn" onclick="togglePlayerControls(3)" id="player3Controls">Controls: IJKL</div>
+        <img width="32px" height="32px" src="projects/awindyday/images/player.png">
+        <div class="playerBtn">Character: Frank</div>
+        <div class="playerBtn" onclick="togglePlayerColor(3)" id="player3Color">Color: White</div>
+      </div>
+
+      <div id="player4Select" class="playerSelect">
+        <div>Player 4</div>
+        <div class="playerBtn" onclick="togglePlayerControls(4)" id="player4Controls">Controls: Controller?</div>
+        <img width="32px" height="32px" src="projects/awindyday/images/player.png">
+        <div class="playerBtn">Character: Frank</div>
+        <div class="playerBtn" onclick="togglePlayerColor(4)" id="player4Color">Color: White</div>
+      </div>
+    </div>
+    <div class="row">
+      <div onclick="switchMenu('start')" class="textToggle" style="text-decoration: underline;">Back</div>
+      <div class="spacingBlock"></div>
+      <div onclick="startGame()" class="textToggle" style="text-decoration: underline;" id="playerMenuStartBtn">Start</div>
+    </div>
+    <div id="mobileNote2" class="footnote">*On mobile there is a maximum of two players</div>
+  </div>
+
+  <canvas id="effects"></canvas>
+
+  <canvas id="myCanvas"></canvas>
+</div>
+
+
+
+  <script type="text/javascript" src="projects/awindyday/javascript/canvas.js"></script>
+  <script type="text/javascript" src="general_javascripts/vector.js"></script>
+  <script type="text/javascript" src="projects/awindyday/javascript/control.js"></script>
+  <script type="text/javascript" src="projects/awindyday/javascript/player.js"></script>
+  <script type="text/javascript" src="projects/awindyday/javascript/pages.js"></script>
+  <script type="text/javascript" src="projects/awindyday/javascript/ground.js"></script>
+  <script type="text/javascript" src="projects/awindyday/javascript/solid.js"></script>
+  <script type="text/javascript" src="projects/awindyday/javascript/particles.js"></script>
+
+  <script type="text/javascript" src="projects/awindyday/javascript/game.js"></script>
+</body>
+</html>

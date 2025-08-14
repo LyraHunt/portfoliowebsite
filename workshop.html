@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/workshop.css">
+</head>
+<body>
+    <div class="flex-column">
+        <h1>WORKSHOP</h1>
+        <h2>(Coding Projects)</h2>
+        <br>
+
+        <div class="flex-row">
+            <div class="flex-column" style="width: 160px;">
+                <label for="mobileFriendlyFilterBox">Mobile-Friendly</label>
+                <input id="mobileFriendlyFilterBox" type="checkbox" onclick="updateFilter()">
+            </div>
+        </div>
+
+        <div id="galleryContainer" class="flex-column"></div>
+
+        <p><a href="index.html" class="page-title">Back to Home</a></p>
+    </div>
+    
+    <script src="projects/projects.js"></script>
+    <script src="projects/workshop.js"></script>
+</body>
+</html>

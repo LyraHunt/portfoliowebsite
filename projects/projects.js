@@ -4,61 +4,90 @@ class Creation {
     url = "";
     thumbnailUrl = "";
 
-    typeTags = {
-        traditional: false,
-
-        interactive: false,
-        simulation: false
-    }
+    typeTags = {}
 }
 
 //array of all creations
 var creations = [];
+var current_index = 0;
 
 //verlet (creation)
 creations.push(new Creation);
-creations[0].name = "Verlet";
-creations[0].year = 2022;
-creations[0].url = "verletenginedesc.html";
-creations[0].thumbnailUrl = "images/verlettest.png";
-creations[0].typeTags = {
-    traditional: false,
-    mobileFriendly: true,
-    simulation: true
+current_index = creations.length - 1;
+creations[current_index].name = "Verlet";
+creations[current_index].year = 2022;
+creations[current_index].url = "verletenginedesc.html";
+creations[current_index].thumbnailUrl = "images/verlettest.png";
+creations[current_index].typeTags = {
+    mobileFriendly: true
 }
 
 //growth out of darkness (creation)
 creations.push(new Creation);
-creations[1].name = "Growth Out of Darkness";
-creations[1].year = 2021;
-creations[1].url = "growthoutofdarkness.html";
-creations[1].thumbnailUrl = "images/Growth-Out-Of-Darkness-Horizontal-Square.png";
-creations[1].typeTags = {
-    traditional: true,
-    mobileFriendly: true,
-    simulation: false
+current_index = creations.length - 1;
+creations[current_index].name = "AlchemiKitty";
+creations[current_index].year = 2024;
+creations[current_index].url = "alchemikitty.html";
+creations[current_index].thumbnailUrl = "images/alchemikitty.png";
+creations[current_index].typeTags = {
+    mobileFriendly: false
 }
 
 //capstone (creation)
 creations.push(new Creation);
-creations[2].name = "Senior Capstone";
-creations[2].year = 2024;
-creations[2].url = "newgrowth.html";
-creations[2].thumbnailUrl = "images/capstone-game-icon-circle-black.png";
-creations[2].typeTags = {
-    traditional: true,
-    mobileFriendly: false,
-    simulation: true
+current_index = creations.length - 1;
+creations[current_index].name = "Senior Capstone";
+creations[current_index].year = 2024;
+creations[current_index].url = "capstonegame.html";
+creations[current_index].thumbnailUrl = "images/capstone-game-icon-circle-black.png";
+creations[current_index].typeTags = {
+    mobileFriendly: false
 }
 
-//capstone (creation)
+//through the grapevine (creation)
 creations.push(new Creation);
-creations[3].name = "Through The Grapevine";
-creations[3].year = 2022;
-creations[3].url = "throughthegrapevinedesc.html";
-creations[3].thumbnailUrl = "projects/throughthegrapevine/images/Art-Tiles-3-AAC-Finished.png";
-creations[3].typeTags = {
-    traditional: true,
-    mobileFriendly: true,
-    simulation: true
+current_index = creations.length - 1;
+creations[current_index].name = "Through The Grapevine";
+creations[current_index].year = 2022;
+creations[current_index].url = "throughthegrapevinedesc.html";
+creations[current_index].thumbnailUrl = "projects/throughthegrapevine/images/Art-Tiles-3-AAC-Finished.png";
+creations[current_index].typeTags = {
+    mobileFriendly: true
 }
+
+//through the grapevine (creation)
+creations.push(new Creation);
+current_index = creations.length - 1;
+creations[current_index].name = "This Website";
+creations[current_index].year = 2025;
+creations[current_index].url = "thiswebsitedesc.html";
+creations[current_index].thumbnailUrl = "images/blank.png";
+creations[current_index].typeTags = {
+    mobileFriendly: true
+}
+
+//through the grapevine (creation)
+creations.push(new Creation);
+current_index = creations.length - 1;
+creations[current_index].name = "A Windy Day";
+creations[current_index].year = 2023;
+creations[current_index].url = "awindydaydesc.html";
+creations[current_index].thumbnailUrl = "images/awindyday.png";
+creations[current_index].typeTags = {
+    mobileFriendly: false
+}
+
+function sortCreations(a, b) {
+  //first, sort by year
+    if (a.year < b.year){
+        return 1;
+    }
+    if (a.year > b.year){
+        return -1;
+    }
+
+    //if year is the same, sort by name
+    return a.name.localeCompare(b.name);
+}
+
+creations.sort(sortCreations);

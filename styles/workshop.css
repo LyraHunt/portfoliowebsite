@@ -1,0 +1,13 @@
+.galleryWindow {
+    position: relative; 
+    width: 400px; 
+    height: 450px
+}
+
+.galleryWindowFrame {
+    position: absolute; 
+    width: 400px; 
+    height: 450px; 
+    z-index: 1; 
+    pointer-events: none;
+}
