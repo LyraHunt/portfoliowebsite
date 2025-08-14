@@ -3,18 +3,17 @@ div {
 }
 
 #drawingsContainer {
-    width: 100%;
+    width: calc(100%);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
     grid-gap: 10px;
     grid-auto-rows: minmax(150px, 150px);
     grid-auto-flow: dense;
-    padding: 10px;
     justify-content: center;
 }
 
 .drawing {
-    padding: 1rem;
+    padding: 10px;
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
@@ -31,4 +30,11 @@ div {
     max-height: 100%;
     border: 5px solid black;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.drawing img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px 5px #000;
 }
