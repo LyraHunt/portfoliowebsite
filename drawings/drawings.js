@@ -1,5 +1,11 @@
 var drawingsContainer = document.getElementById("drawingsContainer");
 
+var lightbox = document.getElementById("lightbox");
+var lightboxImg = document.getElementById("lightboxImg");
+var lightboxImgContainer = document.getElementById("lightboxImgContainer");
+
+var drawingsFolderPath = "drawings/images/";
+
 function generateDrawings() {
     for (let i = 0; i < drawings.length; i++) {
         var currentDrawingData = drawings[i]
@@ -10,7 +16,10 @@ function generateDrawings() {
         drawingsContainer.appendChild(newDrawing);
 
         var newDrawingImg = document.createElement("img");
-        newDrawingImg.src = "drawings/images/" + drawings[i].filename + ".png";
+        newDrawingImg.src = drawingsFolderPath + drawings[i].filename + ".png";
+        newDrawingImg.onclick = function() {
+            displayLightbox(drawingsFolderPath + drawings[i].filename + ".png", i);
+        }
         newDrawing.appendChild(newDrawingImg);
     }
 }
@@ -38,13 +47,12 @@ function reloadDrawingScales() {
 }
 
 function removeGaps() {
-    var drawingElements = drawingsContainer.children
+    var drawingElements = drawingsContainer.children;
     var startingLength = drawingElements.length;
     for (let i = 0; i < startingLength; i++) {
         var currentDrawingElement = drawingElements[startingLength - i - 1];
         if (currentDrawingElement.classList.contains("blankDrawing")) {
-            console.log("remove")
-            currentDrawingElement.remove()
+            currentDrawingElement.remove();
         }
     }
 }
@@ -55,7 +63,6 @@ function fillInGaps() {
         var previousHeight = drawingsContainer.offsetHeight
         if (!isFilled) {
             var newDrawing = document.createElement("div");
-            newDrawing.classList.add("drawing");
             newDrawing.classList.add("blankDrawing");
             drawingsContainer.appendChild(newDrawing);
 
@@ -83,7 +90,7 @@ mobileWindow.addEventListener("change", function() {
     reloadDrawingScales();
 });
 
-var lastDrawingContainerHeight = 0
+var lastDrawingContainerHeight = 0;
 
 new ResizeObserver(function() {
     console.log("heen");
@@ -93,3 +100,27 @@ new ResizeObserver(function() {
     }
     lastDrawingContainerHeight = drawingsContainer.offsetHeight;
 }).observe(drawingsContainer);
+
+var currentLightboxID = 0;
+
+function displayLightbox(imageSrc, imageID) {
+    lightbox.style.display = "flex";
+    lightboxImg.src = imageSrc;
+    currentLightboxID = imageID;
+}
+
+function closeLightbox() {
+    lightbox.style.display = "none";
+}
+
+function changeLightboxImg(changeAmount) {
+    currentLightboxID += changeAmount;
+    currentLightboxID = posmod(currentLightboxID, drawings.length);
+    console.log(currentLightboxID)
+    lightboxImg.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
+}
+
+lightboxImgContainer.click(function(e) {
+   console.log("ya")
+    e.stopPropagation();
+});

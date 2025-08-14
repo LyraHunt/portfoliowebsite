@@ -19,7 +19,21 @@
 
         <p><a href="index.html" class="page-title">Back to Home</a></p>
     </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <div id="lightboxImgContainer">
+            <span class="lightboxNav" onclick="changeLightboxImg(-1); event.stopPropagation()">&lt;</span>
+            <div style="height: 100%; width: calc(100% - 20vw); align-items: center; justify-content: center; display: flex;">
+                <div style="height: 100%; width: 100%; align-items: center; justify-content: center; display: flex;">
+                    <img src="drawings/images/MOW-white-background.png" id="lightboxImg" onclick="event.stopPropagation()">
+                </div>
+            </div>
+            <span class="lightboxNav" onclick="changeLightboxImg(1); event.stopPropagation()">&gt;</span>
+        </div>
+        <span id="lightboxClose" onclick="closeLightbox(); event.stopPropagation()">&times;</span>
+    </div>
     
+    <script src="general_javascripts/math.js"></script>
     <script src="drawings/drawings_data.js"></script>
     <script src="drawings/drawings.js"></script>
 </body>
