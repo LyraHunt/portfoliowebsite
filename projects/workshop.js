@@ -1,20 +1,23 @@
 var tempCreationsContainer = document.getElementById("tempCreationsContainer");
 var creationsContainer = document.getElementById("creationsContainer");
 
-var galleryContainer = document.getElementById("galleryContainer");
+var workshopGridLeft = document.getElementById("workshop-grid-left");
+var workshopGrid = document.getElementById("workshop-grid");
+var workshopGridRight = document.getElementById("workshop-grid-right");
 
 var allFilterTags = ["mobileFriendly"];
 
 var creationFilters = {};
-var galleryColumnAmount = 0;
-var galleryRowAmount = 0;
+var workshopColumnAmount = 0;
 
-var galleryWindowWidth = 400;
-var galleryEdgeWidth = 205;
-var minGalleryMargin = 50;
+var workshopWindowWidth = 400;
+var workshopEdgeWidth = 205;
+var minWorkshopMargin = 50;
 
-function generateGalleryRows() {
+function generateWorkshop() {
     var filteredCreations = [];
+    workshopGridLeft.replaceChildren([]);
+    workshopGridRight.replaceChildren([]);
 
     for (let i = 0; i < creations.length; i++) {
         var creationPassesFilters = true;
@@ -33,79 +36,90 @@ function generateGalleryRows() {
         }
     }
 
-    var newGalleryRows = []
-    galleryRowAmount = Math.ceil(filteredCreations.length / galleryColumnAmount);
+    var newWorkshopGrid = []
 
-    //generate specific row
-    for (let i = 0; i < galleryRowAmount; i++) {
-        var newGalleryRow = document.createElement("div");
-        newGalleryRow.id = "galleryRow" + i;
-        newGalleryRow.classList.add("flex-row");
-    
-        var newGalleryLeft = document.createElement("div");
-        newGalleryLeft.style = "width: 250px; height: 450px; background-image: url('images/gallery-edge-left.png')";
-        newGalleryRow.appendChild(newGalleryLeft);
-    
-        //generate specific window (in current row)
-        for (let j = 0; j < galleryColumnAmount; j++) {
-            var currentCreationIndex = (i * galleryColumnAmount) + j;
-            var currentCreationData = {};
-            var hasDataForWindow = currentCreationIndex < filteredCreations.length;
-            if (hasDataForWindow) {
-                currentCreationData = filteredCreations[currentCreationIndex];
-            }
-            else {
-                //load first creation as placeholder
-                currentCreationData = structuredClone(creations[0]);
-                currentCreationData.thumbnailUrl = "images/blank.png";
-                currentCreationData.name = "";
-                currentCreationData.year = "";
-            }
+    //generate specific item
+    for (let i = 0; i < filteredCreations.length; i++) {
+        currentCreationData = filteredCreations[i];
+        /*else {
+            //load first creation as placeholder
+            currentCreationData = structuredClone(creations[0]);
+            currentCreationData.thumbnailUrl = "images/blank.png";
+            currentCreationData.name = "";
+            currentCreationData.year = "";
+        }*/
 
-            //actual window container
-            var newGalleryWindow = document.createElement("div");
-            newGalleryWindow.classList.add("galleryWindow");
+        //actual window container
+        var newWorkshopWindow = document.createElement("div");
+        newWorkshopWindow.classList.add("workshop-window");
 
-            //decoration on frame/background
-            var newGalleryWindowFrame = document.createElement("img");
-            newGalleryWindowFrame.classList.add("galleryWindowFrame");
-            newGalleryWindowFrame.src = "images/gallery-window.png";
-            newGalleryWindow.appendChild(newGalleryWindowFrame);
+        //decoration on frame/background
+        var newWorkshopWindowFrame = document.createElement("img");
+        newWorkshopWindowFrame.classList.add("workshop-window-frame");
+        newWorkshopWindowFrame.src = "images/workshop-window.png";
+        newWorkshopWindow.appendChild(newWorkshopWindowFrame);
 
-            var newGalleryWindowThumbnail = document.createElement("img");
-            newGalleryWindowThumbnail.style = "position: absolute; left: 50px; top: 50px; width: 300px; height: 300px";
-            newGalleryWindowThumbnail.src = currentCreationData.thumbnailUrl;
-            newGalleryWindow.appendChild(newGalleryWindowThumbnail);
+        var newWorkshopWindowThumbnail = document.createElement("img");
+        newWorkshopWindowThumbnail.style = "position: absolute; left: calc(100% * (50 / 400)); top: calc(100% * (50 / 450)); width: calc(100% * (300 / 400)); height: calc(100% * (300 / 450));";
+        newWorkshopWindowThumbnail.src = currentCreationData.thumbnailUrl;
+        newWorkshopWindow.appendChild(newWorkshopWindowThumbnail);
 
-            var newGalleryWindowTitleLink = document.createElement("a");
-            if (hasDataForWindow) newGalleryWindowTitleLink.href = currentCreationData.url;
-            newGalleryWindow.appendChild(newGalleryWindowTitleLink);
+        var newWorkshopWindowTitleLink = document.createElement("a");
+        newWorkshopWindowTitleLink.href = currentCreationData.url;
+        newWorkshopWindow.appendChild(newWorkshopWindowTitleLink);
 
-            var newGalleryWindowTitleDiv = document.createElement("div");
-            if (hasDataForWindow) newGalleryWindowTitleDiv.classList.add("clickable");
-            newGalleryWindowTitleDiv.style = "text-decoration: underline; display: flex; align-items: center; justify-content: center; position: absolute; left: 100px; top: 375px; width: 200px; height: 50px; background-color: gray";
-            newGalleryWindowTitleLink.appendChild(newGalleryWindowTitleDiv);
+        var newWorkshopWindowTitleDiv = document.createElement("div");
+        newWorkshopWindowTitleDiv.classList.add("workshop-window-title-container");
+        newWorkshopWindowTitleDiv.classList.add("clickable");
+        //newWorkshopWindowTitleDiv.style = "";
+        newWorkshopWindowTitleLink.appendChild(newWorkshopWindowTitleDiv);
 
-            var newGalleryWindowTitle = document.createElement("h2");
+        var newWorkshopWindowTitle = document.createElement("h2");
 
-            if (hasDataForWindow) newGalleryWindowTitle.innerText = currentCreationData.name + " (" + currentCreationData.year + ")";
-            else newGalleryWindowTitle.innerText = "";
-            newGalleryWindowTitle.style = "text-align: center"
-            newGalleryWindowTitleDiv.appendChild(newGalleryWindowTitle);
+        newWorkshopWindowTitle.innerText = currentCreationData.name + " (" + currentCreationData.year + ")";
+        newWorkshopWindowTitleDiv.appendChild(newWorkshopWindowTitle);
 
-            newGalleryRow.appendChild(newGalleryWindow);
-        }
-    
-        var newGalleryRight = document.createElement("div");
-        newGalleryRight.style = "width: 250px; height: 450px; background-image: url('images/gallery-edge-right.png')";
-        newGalleryRow.appendChild(newGalleryRight);
-    
-        newGalleryRows.push(newGalleryRow);
+        newWorkshopGrid.push(newWorkshopWindow);
+
+        /*var newWorkshopLeft = document.createElement("div");
+        newWorkshopLeft.classList.add("workshop-edge");
+        newWorkshopLeft.style = "background-image: url('images/workshop-edge-left.png')";
+        workshopGridLeft.appendChild(newWorkshopLeft);
+
+        var newWorkshopRight = document.createElement("div");
+        newWorkshopRight.classList.add("workshop-edge");
+        newWorkshopRight.style = "background-image: url('images/workshop-edge-right.png')";
+        newWorkshopRow.appendChild(newWorkshopRight);
+        */
     }
 
-    //update HTML
-    galleryContainer.replaceChildren(...newGalleryRows);
+    workshopGrid.replaceChildren(...newWorkshopGrid);
+    lastWorkshopGridHeight = workshopGrid.offsetHeight;
+    generateWorkshopSides();
 }
+
+function generateWorkshopSides() {
+    console.log("sides")
+    var workshopGridRowCount = getComputedStyle(workshopGrid).getPropertyValue("grid-template-rows").split("px").length - 1;
+    var newWorkshopGridLeft = [];
+    var newWorkshopGridRight = [];
+    
+    for (let i = 0; i < workshopGridRowCount; i++) {
+        var newWorkshopLeft = document.createElement("div");
+        newWorkshopLeft.classList.add("workshop-edge");
+        newWorkshopLeft.style = "background-image: url('images/workshop-edge-left.png')";
+        newWorkshopGridLeft.push(newWorkshopLeft);
+
+        var newWorkshopRight = document.createElement("div");
+        newWorkshopRight.classList.add("workshop-edge");
+        newWorkshopRight.style = "background-image: url('images/workshop-edge-right.png')";
+        newWorkshopGridRight.push(newWorkshopRight);
+    }
+
+    workshopGridLeft.replaceChildren(...newWorkshopGridLeft);
+    workshopGridRight.replaceChildren(...newWorkshopGridRight);
+}
+
 
 //filters have been updated; load new filters and then reload visible creation tiles
 function updateFilter() {
@@ -135,18 +149,7 @@ function updateFilter() {
     }
 
     //reload visible creation tiles
-    generateGalleryRows();
-}
-
-function reportWindowSize() {
-    let previousFrameColumnAmount = galleryColumnAmount;
-    var edgeMargin = (galleryEdgeWidth + minGalleryMargin) * 2;
-    galleryColumnAmount = Math.floor((window.innerWidth-edgeMargin)/galleryWindowWidth);
-    galleryColumnAmount = Math.max(galleryColumnAmount, 1);
-    
-    if (previousFrameColumnAmount !== galleryColumnAmount) {
-        generateGalleryRows();
-    }
+    generateWorkshop();
 }
 
 function tryMobileFilter() {
@@ -158,10 +161,27 @@ function tryMobileFilter() {
     }
 }
 
-//when window is resized, check gallery changes
-window.onresize = reportWindowSize;
+//when window is resized, check workshop changes
+//window.onresize = reportWindowSize;
 
-//update window onload (generate gallery)
-reportWindowSize();
+//update window onload (generate workshop)
+//reportWindowSize();
 
 tryMobileFilter();
+
+var lastWorkshopGridHeight = 0;
+
+new ResizeObserver(function() {
+    console.log("matching");
+    console.log(lastWorkshopGridHeight + ", " + workshopGrid.offsetHeight);
+    //workshopGridLeft.replaceChildren([]);
+    //workshopGridRight.replaceChildren([]);
+    generateWorkshopSides();
+    if (lastWorkshopGridHeight !== workshopGrid.offsetHeight) {
+        console.log("heightChanged");   
+        //generateWorkshopSides();
+    }
+    lastWorkshopGridHeight = workshopGrid.offsetHeight;
+}).observe(workshopGrid);
+
+generateWorkshop();

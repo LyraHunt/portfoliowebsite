@@ -78,9 +78,9 @@ function fillInGaps() {
 }
 
 generateDrawings();
-generateDrawings();
-generateDrawings();
-generateDrawings();
+//generateDrawings();
+//generateDrawings();
+//generateDrawings();
 reloadDrawingScales();
 fillInGaps();
 
@@ -93,7 +93,6 @@ mobileWindow.addEventListener("change", function() {
 var lastDrawingContainerHeight = 0;
 
 new ResizeObserver(function() {
-    console.log("heen");
     if (lastDrawingContainerHeight !== drawingsContainer.offsetHeight) {
         removeGaps();
         fillInGaps();

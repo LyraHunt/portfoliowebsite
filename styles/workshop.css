@@ -1,13 +1,92 @@
-.galleryWindow {
-    position: relative; 
-    width: 400px; 
-    height: 450px
+#workshop-grid {
+    max-width: calc(100% - min(500px, (27.77% * 2)));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0px, 400px));
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
 }
 
-.galleryWindowFrame {
+.workshop-grid-edges {
+    /*width: min(250px, 25vw);*/
+    width: 27.77%;
+    max-width: 250px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
+}
+
+.workshop-window {
+    position: relative;
+    max-width: 400px;
+    max-height: 450px;
+    aspect-ratio: calc(400 / 450);
+}
+
+.workshop-edge {
+    max-width: 250px;
+    max-height: 450px;
+    background-size: cover;
+    aspect-ratio: calc(250 / 450);
+}
+
+.workshop-window-frame {
     position: absolute; 
-    width: 400px; 
-    height: 450px; 
+    width: 100%; 
+    height: 100%; 
     z-index: 1; 
     pointer-events: none;
+    background-size: cover;
 }
+
+.workshop-window-title-container {
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(100% * (100 / 400));
+    top: calc(100% * (375 / 450));
+    width: calc(100% * (200 / 400));
+    height: calc(100% * (50 / 450));
+    background-color: gray;
+}
+
+.workshop-window-title-container h2 {
+    font-size: min(1.5vw, 20px);
+    text-align: center;
+}
+
+/* Gallery scaling depending on screen size */
+/*
+@media only screen and (min-width: 750px) and (max-width: 1000px) {
+    #galleryContainer {
+        transform: scale(0.75);
+        transform-origin: top center;
+    }
+}
+
+@media only screen and (min-width: 562px) and (max-width: 750px) {
+    #galleryContainer {
+        transform: scale(0.562);
+        transform-origin: top center;  
+    }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 562px) {
+    #galleryContainer {
+        transform: scale(0.421);
+        transform-origin: top center;  
+    }
+}
+
+@media only screen and (max-width: 421px) {
+    #galleryContainer {
+        transform: scale(0.316);
+        transform-origin: top center;
+    }
+}*/

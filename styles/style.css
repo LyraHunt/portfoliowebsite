@@ -1,4 +1,4 @@
-body {
+html, body {
     margin: 0px;
     padding: 0px;
 }
@@ -65,33 +65,4 @@ h2 {
 
 #logo {
     width: 90px;
-}
-
-/* Gallery scaling depending on screen size */
-@media only screen and (min-width: 750px) and (max-width: 1000px) {
-    #galleryContainer {
-        transform: scale(0.75);
-        transform-origin: top center;  
-    }
-}
-
-@media only screen and (min-width: 562px) and (max-width: 750px) {
-    #galleryContainer {
-        transform: scale(0.562);
-        transform-origin: top center;  
-    }
-}
-
-@media only screen and (min-width: 421px) and (max-width: 562px) {
-    #galleryContainer {
-        transform: scale(0.421);
-        transform-origin: top center;  
-    }
-}
-
-@media only screen and (max-width: 421px) {
-    #galleryContainer {
-        transform: scale(0.316);
-        transform-origin: top center;
-    }
 }
