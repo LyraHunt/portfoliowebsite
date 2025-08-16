@@ -41,13 +41,6 @@ function generateWorkshop() {
     //generate specific item
     for (let i = 0; i < filteredCreations.length; i++) {
         currentCreationData = filteredCreations[i];
-        /*else {
-            //load first creation as placeholder
-            currentCreationData = structuredClone(creations[0]);
-            currentCreationData.thumbnailUrl = "images/blank.png";
-            currentCreationData.name = "";
-            currentCreationData.year = "";
-        }*/
 
         //actual window container
         var newWorkshopWindow = document.createElement("div");
@@ -62,6 +55,7 @@ function generateWorkshop() {
         var newWorkshopWindowThumbnail = document.createElement("img");
         newWorkshopWindowThumbnail.style = "position: absolute; left: calc(100% * (50 / 400)); top: calc(100% * (50 / 450)); width: calc(100% * (300 / 400)); height: calc(100% * (300 / 450));";
         newWorkshopWindowThumbnail.src = currentCreationData.thumbnailUrl;
+        newWorkshopWindowThumbnail.loading = "lazy";
         newWorkshopWindow.appendChild(newWorkshopWindowThumbnail);
 
         var newWorkshopWindowTitleLink = document.createElement("a");
@@ -71,7 +65,7 @@ function generateWorkshop() {
         var newWorkshopWindowTitleDiv = document.createElement("div");
         newWorkshopWindowTitleDiv.classList.add("workshop-window-title-container");
         newWorkshopWindowTitleDiv.classList.add("clickable");
-        //newWorkshopWindowTitleDiv.style = "";
+        
         newWorkshopWindowTitleLink.appendChild(newWorkshopWindowTitleDiv);
 
         var newWorkshopWindowTitle = document.createElement("h2");
@@ -80,17 +74,6 @@ function generateWorkshop() {
         newWorkshopWindowTitleDiv.appendChild(newWorkshopWindowTitle);
 
         newWorkshopGrid.push(newWorkshopWindow);
-
-        /*var newWorkshopLeft = document.createElement("div");
-        newWorkshopLeft.classList.add("workshop-edge");
-        newWorkshopLeft.style = "background-image: url('images/workshop-edge-left.png')";
-        workshopGridLeft.appendChild(newWorkshopLeft);
-
-        var newWorkshopRight = document.createElement("div");
-        newWorkshopRight.classList.add("workshop-edge");
-        newWorkshopRight.style = "background-image: url('images/workshop-edge-right.png')";
-        newWorkshopRow.appendChild(newWorkshopRight);
-        */
     }
 
     workshopGrid.replaceChildren(...newWorkshopGrid);

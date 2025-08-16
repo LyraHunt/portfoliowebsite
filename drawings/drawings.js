@@ -16,6 +16,7 @@ function generateDrawings() {
         drawingsContainer.appendChild(newDrawing);
 
         var newDrawingImg = document.createElement("img");
+        newDrawingImg.loading = "lazy";
         newDrawingImg.src = drawingsFolderPath + drawings[i].filename + ".png";
         newDrawingImg.onclick = function() {
             displayLightbox(drawingsFolderPath + drawings[i].filename + ".png", i);
@@ -60,7 +61,7 @@ function removeGaps() {
 function fillInGaps() {
     var isFilled = false
     for (let i = 0; i < 100; i++) {
-        var previousHeight = drawingsContainer.offsetHeight
+        var previousHeight = drawingsContainer.offsetHeight;
         if (!isFilled) {
             var newDrawing = document.createElement("div");
             newDrawing.classList.add("blankDrawing");
@@ -69,10 +70,11 @@ function fillInGaps() {
             var newDrawingImg = document.createElement("img");
             newDrawingImg.src = "images/blank.png";
             newDrawing.appendChild(newDrawingImg);
+            newDrawingImg.style.display = "none";
         }
         if (drawingsContainer.offsetHeight > previousHeight) {
             isFilled = true;
-            newDrawing.remove()
+            newDrawing.remove();
         }
     }
 }
@@ -117,9 +119,31 @@ function changeLightboxImg(changeAmount) {
     currentLightboxID = posmod(currentLightboxID, drawings.length);
     console.log(currentLightboxID)
     lightboxImg.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
+    drawingsContainer.children[currentLightboxID].scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 lightboxImgContainer.click(function(e) {
-   console.log("ya")
     e.stopPropagation();
 });
+
+InputJS.subscribe("keyInput", function (keyPressed) {
+    if (keyPressed == "ArrowRight") {
+        if (lightbox.style.display !== "none") {
+            changeLightboxImg(1);
+        }
+    }
+
+    else if (keyPressed == "ArrowLeft") {
+        if (lightbox.style.display !== "none") {
+            changeLightboxImg(-1);
+        }
+    }
+
+    else if (keyPressed == "Escape") {
+        closeLightbox();
+    }
+
+    else {
+        console.log("pressed: " + keyPressed);
+    }
+})
