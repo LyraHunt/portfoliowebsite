@@ -1,3 +1,7 @@
+body {
+    background-color: white;
+}
+
 #workshop-grid {
     max-width: calc(100% - min(500px, (27.77% * 2)));
     display: grid;
@@ -49,9 +53,9 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: calc(100% * (100 / 400));
-    top: calc(100% * (375 / 450));
-    width: calc(100% * (200 / 400));
+    left: calc(100% * (50 / 400));
+    top: calc(100% * (350 / 450));
+    width: calc(100% * (300 / 400));
     height: calc(100% * (50 / 450));
     background-color: gray;
 }

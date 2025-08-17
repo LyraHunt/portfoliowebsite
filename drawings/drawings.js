@@ -114,12 +114,23 @@ function closeLightbox() {
     lightbox.style.display = "none";
 }
 
+function scrollIntoViewIfNotVisible(target, options) { 
+    if (target.getBoundingClientRect().bottom > window.innerHeight) {
+        target.scrollIntoView(options);
+    }
+    
+    if (target.getBoundingClientRect().top < 0) {
+        target.scrollIntoView(options);
+    } 
+}
+
 function changeLightboxImg(changeAmount) {
     currentLightboxID += changeAmount;
     currentLightboxID = posmod(currentLightboxID, drawings.length);
     console.log(currentLightboxID)
     lightboxImg.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
-    drawingsContainer.children[currentLightboxID].scrollIntoView({ behavior: "smooth", block: "center" });
+    //drawingsContainer.children[currentLightboxID].scrollIntoView({ behavior: "smooth", block: "center" });
+    scrollIntoViewIfNotVisible(drawingsContainer.children[currentLightboxID], { behavior: "smooth", block: "center" });
 }
 
 lightboxImgContainer.click(function(e) {

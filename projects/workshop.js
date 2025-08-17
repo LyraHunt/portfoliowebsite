@@ -49,11 +49,11 @@ function generateWorkshop() {
         //decoration on frame/background
         var newWorkshopWindowFrame = document.createElement("img");
         newWorkshopWindowFrame.classList.add("workshop-window-frame");
-        newWorkshopWindowFrame.src = "images/workshop-window.png";
+        newWorkshopWindowFrame.src = "images/workshop-window-2.png";
         newWorkshopWindow.appendChild(newWorkshopWindowFrame);
 
         var newWorkshopWindowThumbnail = document.createElement("img");
-        newWorkshopWindowThumbnail.style = "position: absolute; left: calc(100% * (50 / 400)); top: calc(100% * (50 / 450)); width: calc(100% * (300 / 400)); height: calc(100% * (300 / 450));";
+        newWorkshopWindowThumbnail.style = "position: absolute; left: calc(100% * (75 / 400)); top: calc(100% * (50 / 450)); width: calc(100% * (250 / 400)); height: calc(100% * (250 / 450));";
         newWorkshopWindowThumbnail.src = currentCreationData.thumbnailUrl;
         newWorkshopWindowThumbnail.loading = "lazy";
         newWorkshopWindow.appendChild(newWorkshopWindowThumbnail);
