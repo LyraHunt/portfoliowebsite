@@ -52,11 +52,15 @@ function generateWorkshop() {
         newWorkshopWindowFrame.src = "images/workshop-window-2.png";
         newWorkshopWindow.appendChild(newWorkshopWindowFrame);
 
+        var newWorkshopWindowThumbnailLink = document.createElement("a");
+        newWorkshopWindowThumbnailLink.href = currentCreationData.url;
+        newWorkshopWindow.appendChild(newWorkshopWindowThumbnailLink);
+
         var newWorkshopWindowThumbnail = document.createElement("img");
-        newWorkshopWindowThumbnail.style = "position: absolute; left: calc(100% * (75 / 400)); top: calc(100% * (50 / 450)); width: calc(100% * (250 / 400)); height: calc(100% * (250 / 450));";
         newWorkshopWindowThumbnail.src = currentCreationData.thumbnailUrl;
         newWorkshopWindowThumbnail.loading = "lazy";
-        newWorkshopWindow.appendChild(newWorkshopWindowThumbnail);
+        newWorkshopWindowThumbnail.classList.add("clickable", "workshop-window-thumbnail");
+        newWorkshopWindowThumbnailLink.appendChild(newWorkshopWindowThumbnail);
 
         var newWorkshopWindowTitleLink = document.createElement("a");
         newWorkshopWindowTitleLink.href = currentCreationData.url;

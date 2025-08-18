@@ -1,9 +1,10 @@
 body {
-    background-color: white;
+    background-color: #000000;
+    color: #CCCCCC
 }
 
 #workshop-grid {
-    max-width: calc(100% - min(500px, (27.77% * 2)));
+    max-width: calc(100% - min(400px, (25% * 2)));
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(0px, 400px));
     grid-gap: 0px;
@@ -14,8 +15,8 @@ body {
 
 .workshop-grid-edges {
     /*width: min(250px, 25vw);*/
-    width: 27.77%;
-    max-width: 250px;
+    width: 25%;
+    max-width: 200px;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 0px;
@@ -32,10 +33,10 @@ body {
 }
 
 .workshop-edge {
-    max-width: 250px;
+    max-width: 200px;
     max-height: 450px;
     background-size: cover;
-    aspect-ratio: calc(250 / 450);
+    aspect-ratio: calc(200 / 450);
 }
 
 .workshop-window-frame {
@@ -47,6 +48,14 @@ body {
     background-size: cover;
 }
 
+.workshop-window-thumbnail {
+    position: absolute; 
+    left: calc(100% * (75 / 400)); 
+    top: calc(100% * (75 / 450)); 
+    width: calc(100% * (250 / 400)); 
+    height: calc(100% * (250 / 450));
+}
+
 .workshop-window-title-container {
     text-decoration: underline;
     display: flex;
@@ -54,15 +63,16 @@ body {
     justify-content: center;
     position: absolute;
     left: calc(100% * (50 / 400));
-    top: calc(100% * (350 / 450));
+    top: calc(100% * (375 / 450));
     width: calc(100% * (300 / 400));
     height: calc(100% * (50 / 450));
-    background-color: gray;
+    background-color: #040404;
 }
 
 .workshop-window-title-container h2 {
-    font-size: min(1.5vw, 20px);
+    font-size: min(2vw, 20px);
     text-align: center;
+    color: #CCCCFF
 }
 
 /* Gallery scaling depending on screen size */
