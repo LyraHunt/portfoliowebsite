@@ -28,43 +28,53 @@ function checkForCurrentLink(targetElement) {
 function generateHeader(targetElement) {
     var newHeader = [];
 
+    var titleContainer = document.createElement("div");
+    titleContainer.classList.add("flex-row", "title-container");
+
     var logo = document.createElement("img");
     logo.classList.add("site-logo");
     logo.src = "images/capstone-game-icon-circle.png";
-    newHeader.push(logo);
+    titleContainer.appendChild(logo);
 
     var siteTitle = document.createElement("h1");
     siteTitle.classList.add("site-title");
     siteTitle.innerText = "Wilde Hunt Games";
-    newHeader.push(siteTitle);
+    titleContainer.appendChild(siteTitle);
+
+    newHeader.push(titleContainer);
+
+    var linksContainer = document.createElement("div");
+    linksContainer.classList.add("flex-row", "links-container");
 
     var homeLink = document.createElement("a");
     homeLink.classList.add("page-link");
     homeLink.innerText = "Home";
     homeLink.href = "index.html";
     checkForCurrentLink(homeLink);
-    newHeader.push(homeLink);
+    linksContainer.appendChild(homeLink);
     
     var workshopLink = document.createElement("a");
     workshopLink.classList.add("page-link");
     workshopLink.innerText = "Workshop";
     workshopLink.href = "workshop.html";
     checkForCurrentLink(workshopLink);
-    newHeader.push(workshopLink);
+    linksContainer.appendChild(workshopLink);
 
     var drawingsLink = document.createElement("a");
     drawingsLink.classList.add("page-link");
     drawingsLink.innerText = "Drawings";
     drawingsLink.href = "drawings.html";
     checkForCurrentLink(drawingsLink);
-    newHeader.push(drawingsLink);
+    linksContainer.appendChild(drawingsLink);
 
     var aboutLink = document.createElement("a");
     aboutLink.classList.add("page-link");
     aboutLink.innerText = "About Me";
     aboutLink.href = "aboutme.html";
     checkForCurrentLink(aboutLink);
-    newHeader.push(aboutLink);
+    linksContainer.appendChild(aboutLink);
+
+    newHeader.push(linksContainer);
 
     targetElement.replaceChildren(...newHeader);
 }
