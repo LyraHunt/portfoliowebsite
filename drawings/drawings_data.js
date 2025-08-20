@@ -132,6 +132,15 @@ drawings[current_index].sizes = [
 
 drawings.push(new Drawing);
 current_index = drawings.length - 1;
+drawings[current_index].year = 2025;
+drawings[current_index].filename = "repeating-eight-fold-final-wheel-small";
+drawings[current_index].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 2, minWidth: mobileThreshold}
+]
+
+drawings.push(new Drawing);
+current_index = drawings.length - 1;
 drawings[current_index].year = 2023;
 drawings[current_index].filename = "MOW-white-background";
 drawings[current_index].sizes = [
