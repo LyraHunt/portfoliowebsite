@@ -1,6 +1,16 @@
+html[theme=theme-dark] {
+    --workshop-background: #000;
+    --workshop-text: #CCC;
+}
+
+html[theme=theme-light] {
+    --workshop-background: #FFF;
+    --workshop-text: #000;
+}
+
 body {
-    background-color: #000000;
-    color: #CCCCCC
+    background-color: var(--workshop-background);
+    color: var(--workshop-text);
 }
 
 #workshop-grid {

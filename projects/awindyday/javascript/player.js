@@ -191,7 +191,6 @@ class Player {
         let velX = Math.round(this.remainder.x);
         let velY = Math.round(this.remainder.y);
         if (velX !== 0 || velY !== 0) {
-            //console.log("movement: " + velX + ", " + velY);
             //check x velocity pixel-by-pixel
             if (velX !== 0) {
                 //if heading to the right

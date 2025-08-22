@@ -144,7 +144,6 @@ function togglePlayerColor(playerID) {
     if (nextColor >= colorNum) {
         nextColor = 0;
     }
-    console.log(nextColor)
     document.getElementById('player' + (playerID) + 'Color').innerHTML = "Color: " + colorArr[nextColor].name;
 }
 

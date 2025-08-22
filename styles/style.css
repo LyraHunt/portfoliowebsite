@@ -1,6 +1,35 @@
+html[theme=theme-dark] {
+    --body-background: #000;
+    --default-text: #CCC;
+
+    --dark-background-1: #333;
+    --dark-background-2: #555;
+
+    --nav-link: #CAD;
+    --current-link: #FCC;
+}
+
+html[theme=theme-light] {
+    --body-background: #FFF;
+    --default-text: #000;
+
+    --dark-background-1: #CCC;
+    --dark-background-2: #AAA;
+
+    --nav-link: #939;
+    --current-link: #117;
+}
+
 html, body {
     margin: 0px;
     padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--body-background);
+    color: var(--default-text);
 }
 
 h1 {
@@ -30,24 +59,30 @@ h2 {
     flex-direction: row;
 }
 
+.main-column {
+    min-height: 100%;
+    justify-content: start;
+}
+
 .name-title {
     margin: 0px 20px;
 }
 
 .site-logo {
-    width: clamp(40px, 8vw, 90px);
+    width: clamp(42px, 8vw, 90px);
 }
 
 .site-title {
-    margin: 0px 0px 0px clamp(0px, 3vw - 10px, 30px);
+    margin: 0px 0px 0px clamp(0px, 5vw - 28px, 30px);
     font-size: clamp(18px, 3.8vw, 26px);
     width: clamp(80px, 30vw, 220px);
     font-weight: bold;
     display: block;
+    text-align: center;
 }
 
 .title-container {
-    width: 40%;
+    width: 38%;
     max-width: 340px;
     flex-wrap: wrap;
     row-gap: 6px;
@@ -67,11 +102,15 @@ h2 {
     min-height: 60px;
     flex-wrap: wrap;
     row-gap: 2px;
-    background-color: #BBBBBB;
+    background-color: var(--dark-background-2);
 }
 
-.current-page {
-    color: red;
+a:link, a:visited {
+    color: var(--nav-link);
+}
+
+a:link.current-page, a:visited.current-page {
+    color: var(--current-link);
 }
 
 .clickable {
@@ -84,24 +123,28 @@ h2 {
     scale: 1.075;
 }
 
-.headerContainer {
+.header-container {
     width: 100%;
     box-sizing: border-box;
     height: 120px;
-    background-color: #DDDDDD;
-    color: black;
+    background-color: var(--dark-background-1);
     justify-content: space-evenly;
     padding: 0px min(3vw, 20px) 0px 0px;
     margin-bottom: min(8vw, 60px);
 }
 
-.footerContainer {
+.footer-container {
     width: 100%;
     box-sizing: border-box;
     height: 120px;
-    background-color: #DDDDDD;
-    color: black;
+    background-color: var(--dark-background-1);
     justify-content: space-evenly;
     padding: 0px min(3vw, 20px) 0px 0px;
     margin-top: min(8vw, 60px);
+    align-self: flex-end;
+}
+
+.main-content {
+    flex-grow: 1;
+    width: 100%;
 }

@@ -86,7 +86,6 @@ function generateWorkshop() {
 }
 
 function generateWorkshopSides() {
-    console.log("sides")
     var workshopGridRowCount = getComputedStyle(workshopGrid).getPropertyValue("grid-template-rows").split("px").length - 1;
     var newWorkshopGridLeft = [];
     var newWorkshopGridRight = [];
@@ -159,15 +158,7 @@ tryMobileFilter();
 var lastWorkshopGridHeight = 0;
 
 new ResizeObserver(function() {
-    console.log("matching");
-    console.log(lastWorkshopGridHeight + ", " + workshopGrid.offsetHeight);
-    //workshopGridLeft.replaceChildren([]);
-    //workshopGridRight.replaceChildren([]);
     generateWorkshopSides();
-    if (lastWorkshopGridHeight !== workshopGrid.offsetHeight) {
-        console.log("heightChanged");   
-        //generateWorkshopSides();
-    }
     lastWorkshopGridHeight = workshopGrid.offsetHeight;
 }).observe(workshopGrid);
 

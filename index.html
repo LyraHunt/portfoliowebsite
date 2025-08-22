@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="flex-column">
+    <div class="flex-column main-column">
         <div id="headerContainer"></div>
-        
-        <div class="flex-row">
-            <div style="border: 2px black solid; width: 40px; height: 40px">1</div>
-            <div style="border: 2px black solid; width: 40px; height: 40px">2</div>
-            <div style="border: 2px black solid; width: 40px; height: 40px">3</div>
-            <div style="border: 2px black solid; width: 40px; height: 40px">4</div>
+
+        <div class="main-content">
+            <div class="flex-row">
+            <div style="border: 2px var(--default-text) solid; width: 40px; height: 40px">1</div>
+            <div style="border: 2px var(--default-text) solid; width: 40px; height: 40px">2</div>
+            <div style="border: 2px var(--default-text) solid; width: 40px; height: 40px">3</div>
+            <div style="border: 2px var(--default-text) solid; width: 40px; height: 40px">4</div>
+        </div>
         </div>
 
         <div id="footerContainer"></div>
     </div>
 
+    <script src="general_javascripts/event_bus.js"></script>
+    <script src="general_javascripts/theme.js"></script>
     <script src="general_javascripts/header_n_footer.js"></script>
 </body>
 </html>

@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="styles/drawings.css">
 </head>
 <body>
-    <div class="flex-column">
+    <div class="flex-column  main-column">
         <div id="headerContainer"></div>
 
-        <h1>DRAWINGS</h1>
-        <h2>(Traditional and Digital)</h2>
-        <br>
+        <div class="main-content">
+            <h1>DRAWINGS</h1>
+            <h2>(Traditional and Digital)</h2>
+            <br>
 
-        <div id="drawingsContainer"></div>
+            <div id="drawingsContainer"></div>
+        </div>
 
         <div id="footerContainer"></div>
     </div>
@@ -25,8 +27,8 @@
     <div id="lightbox" onclick="closeLightbox()">
         <div id="lightboxImgContainer">
             <span class="lightboxNav" onclick="changeLightboxImg(-1); event.stopPropagation()">&lt;</span>
-            <div style="height: 100%; width: calc(100% - 20vw); align-items: center; justify-content: center; display: flex;">
-                <div style="height: 100%; width: 100%; align-items: center; justify-content: center; display: flex;">
+            <div style="width: calc(100% - 20vw); height: 100%; align-items: center; justify-content: center; display: flex;">
+                <div id="lightboxImgContainerInner" style="max-height: 100%; aspect-ratio: 0.7; align-items: center; justify-content: center; display: flex;">
                     <img src="drawings/images/MOW-white-background.png" id="lightboxImg" onclick="event.stopPropagation()">
                 </div>
             </div>
@@ -35,11 +37,14 @@
         <span id="lightboxClose" onclick="closeLightbox(); event.stopPropagation()">&times;</span>
     </div>
     
+    <script src="general_javascripts/event_bus.js"></script>
+    <script src="general_javascripts/theme.js"></script>
+    <script src="general_javascripts/header_n_footer.js"></script>
+
     <script src="general_javascripts/math.js"></script>
     <script src="general_javascripts/input.js"></script>
+
     <script src="drawings/drawings_data.js"></script>
     <script src="drawings/drawings.js"></script>
-
-    <script src="general_javascripts/header_n_footer.js"></script>
 </body>
 </html>

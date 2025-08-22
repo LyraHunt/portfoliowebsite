@@ -27,7 +27,7 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "AlchemiKitty";
 creations[current_index].year = 2024;
-creations[current_index].url = "alchemikitty.html";
+creations[current_index].url = "alchemikittydesc.html";
 creations[current_index].thumbnailUrl = "images/alchemikitty.png";
 creations[current_index].typeTags = {
     mobileFriendly: false
@@ -38,7 +38,7 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "Senior Capstone";
 creations[current_index].year = 2024;
-creations[current_index].url = "capstonegame.html";
+creations[current_index].url = "capstonegamedesc.html";
 creations[current_index].thumbnailUrl = "images/capstone-game-icon-circle-black.png";
 creations[current_index].typeTags = {
     mobileFriendly: false

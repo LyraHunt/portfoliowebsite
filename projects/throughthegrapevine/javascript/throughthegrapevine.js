@@ -108,7 +108,6 @@ var relativeScroll = 0;
 reportWindowSize();
 
 function mainLoop () {
-    //console.log(window.scrollY + window.innerHeight + ", " + tileAmount * imageContainerWidth)
     if (window.scrollY + window.innerHeight > (tileAmount - loadAheadAmount) * imageContainerWidth) {
         addTile();
     }
@@ -118,5 +117,4 @@ setInterval(mainLoop,1000/60);
 
 /*window.addEventListener('mousewheel', function(e){
     wDelta = e.wheelDelta < 0 ? 'down' : 'up';
-    //console.log(e.wheelDelta);
 });*/

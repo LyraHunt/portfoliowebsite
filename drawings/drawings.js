@@ -3,6 +3,7 @@ var drawingsContainer = document.getElementById("drawingsContainer");
 var lightbox = document.getElementById("lightbox");
 var lightboxImg = document.getElementById("lightboxImg");
 var lightboxImgContainer = document.getElementById("lightboxImgContainer");
+var lightboxImgContainerInner =  document.getElementById("lightboxImgContainerInner");
 
 var drawingsFolderPath = "drawings/images/";
 
@@ -26,15 +27,15 @@ function generateDrawings() {
 }
 
 function reloadDrawingScales() {
-    var drawingElements = drawingsContainer.children
-    var currentWindowWidth = window.innerWidth
+    var drawingElements = drawingsContainer.children;
+    var currentWindowWidth = window.innerWidth;
 
     removeGaps();
 
     for (let i = 0; i < drawingElements.length; i++) {
-        var currentDrawingElement = drawingElements[i]
-        var currentDrawingData = drawings[Number(currentDrawingElement.id)]
-        var currentDrawingSize = {x: 1, y: 1, minWidth: -1}
+        var currentDrawingElement = drawingElements[i];
+        var currentDrawingData = drawings[Number(currentDrawingElement.id)];
+        var currentDrawingSize = {x: 1, y: 1, minWidth: -1};
         for (let j = 0; j < currentDrawingData.sizes.length; j++) {
             if (currentWindowWidth > currentDrawingData.sizes[j].minWidth && currentDrawingData.sizes[j].minWidth > currentDrawingSize.minWidth) {
                 currentDrawingSize = currentDrawingData.sizes[j]
@@ -108,6 +109,11 @@ function displayLightbox(imageSrc, imageID) {
     lightbox.style.display = "flex";
     lightboxImg.src = imageSrc;
     currentLightboxID = imageID;
+
+    // use aspect ratio math to keep lightbox image contained
+    var currentImage = new Image();
+    currentImage.src = imageSrc;
+    lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
 }
 
 function closeLightbox() {
@@ -127,9 +133,13 @@ function scrollIntoViewIfNotVisible(target, options) {
 function changeLightboxImg(changeAmount) {
     currentLightboxID += changeAmount;
     currentLightboxID = posmod(currentLightboxID, drawings.length);
-    console.log(currentLightboxID)
     lightboxImg.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
-    //drawingsContainer.children[currentLightboxID].scrollIntoView({ behavior: "smooth", block: "center" });
+
+    // use aspect ratio math to keep lightbox image contained
+    var currentImage = new Image();
+    currentImage.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
+    lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+
     scrollIntoViewIfNotVisible(drawingsContainer.children[currentLightboxID], { behavior: "smooth", block: "center" });
 }
 
@@ -137,7 +147,7 @@ lightboxImgContainer.click(function(e) {
     e.stopPropagation();
 });
 
-InputJS.subscribe("keyInput", function (keyPressed) {
+InputJS.inputEventBus.subscribe("keyInput", keyPressed => {
     if (keyPressed == "ArrowRight") {
         if (lightbox.style.display !== "none") {
             changeLightboxImg(1);
@@ -152,9 +162,5 @@ InputJS.subscribe("keyInput", function (keyPressed) {
 
     else if (keyPressed == "Escape") {
         closeLightbox();
-    }
-
-    else {
-        console.log("pressed: " + keyPressed);
     }
 })

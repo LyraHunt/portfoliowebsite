@@ -43,7 +43,7 @@ var InputJS = {
         InputJS.inputMap[e.key] = (e.type === 'keydown');
 
         if (e.type == 'keydown') {
-            InputJS.publish("keyInput", e.key);
+            InputJS.inputEventBus.publish("keyInput", e.key);
         }
     },
 
@@ -52,36 +52,11 @@ var InputJS = {
         
         // send subscription events
         if (e.type == 'keydown') {
-            this.publish("keyInput", e.key);
+            this.inputEventBus.publish("keyInput", e.key);
         }
     },
 
-    subscriptions: {}, // stores event names as keys and arrays of callback functions as values
-
-    // method to subscribe to an event
-    subscribe(eventName, callback) {
-        if (!this.subscriptions[eventName]) {
-            this.subscriptions[eventName] = [];
-        }
-        this.subscriptions[eventName].push(callback);
-    },
-
-    // Method to unsubscribe from an event
-    unsubscribe(eventName, callback) {
-        if (this.subscriptions[eventName]) {
-            this.subscriptions[eventName] = this.subscriptions[eventName].filter(
-                (subscriber) => subscriber !== callback
-            );
-        }
-    },
-
-    // method to publish an event
-    publish(eventName, data) {
-        if (!InputJS.subscriptions[eventName]) {
-            this.subscriptions[eventName] = [];
-        }
-        this.subscriptions[eventName].forEach((callback) => callback(data));
-    }
+    inputEventBus: new EventBus
 }
 
 //direct keyboard input
