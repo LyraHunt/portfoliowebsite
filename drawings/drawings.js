@@ -38,7 +38,7 @@ function reloadDrawingScales() {
         var currentDrawingSize = {x: 1, y: 1, minWidth: -1};
         for (let j = 0; j < currentDrawingData.sizes.length; j++) {
             if (currentWindowWidth > currentDrawingData.sizes[j].minWidth && currentDrawingData.sizes[j].minWidth > currentDrawingSize.minWidth) {
-                currentDrawingSize = currentDrawingData.sizes[j]
+                currentDrawingSize = currentDrawingData.sizes[j];
             }
         }
         currentDrawingElement.style.gridColumnEnd = "span " + currentDrawingSize.x
@@ -106,14 +106,18 @@ new ResizeObserver(function() {
 var currentLightboxID = 0;
 
 function displayLightbox(imageSrc, imageID) {
-    lightbox.style.display = "flex";
-    lightboxImg.src = imageSrc;
     currentLightboxID = imageID;
 
     // use aspect ratio math to keep lightbox image contained
     var currentImage = new Image();
     currentImage.src = imageSrc;
-    lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+    currentImage.onload = () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = imageSrc;
+        lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+    }
+
+    scrollIntoViewIfNotVisible(drawingsContainer.children[currentLightboxID], { behavior: "smooth", block: "center" });
 }
 
 function closeLightbox() {
@@ -133,12 +137,14 @@ function scrollIntoViewIfNotVisible(target, options) {
 function changeLightboxImg(changeAmount) {
     currentLightboxID += changeAmount;
     currentLightboxID = posmod(currentLightboxID, drawings.length);
-    lightboxImg.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
 
     // use aspect ratio math to keep lightbox image contained
     var currentImage = new Image();
     currentImage.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
-    lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+    currentImage.onload = () => {
+        lightboxImg.src = drawingsFolderPath + drawings[currentLightboxID].filename + ".png";
+        lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+    }
 
     scrollIntoViewIfNotVisible(drawingsContainer.children[currentLightboxID], { behavior: "smooth", block: "center" });
 }

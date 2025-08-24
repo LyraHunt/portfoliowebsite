@@ -61,7 +61,7 @@ current_index = creations.length - 1;
 creations[current_index].name = "This Website";
 creations[current_index].year = 2025;
 creations[current_index].url = "thiswebsitedesc.html";
-creations[current_index].thumbnailUrl = "images/blank.png";
+creations[current_index].thumbnailUrl = "images/thiswebsite.png";
 creations[current_index].typeTags = {
     mobileFriendly: true
 }

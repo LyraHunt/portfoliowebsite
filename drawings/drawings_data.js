@@ -130,13 +130,22 @@ drawings[current_index].sizes = [
     {x: 2, y: 2, minWidth: mobileThreshold}
 ]
 
-drawings.push(new Drawing);
+/*drawings.push(new Drawing);
 current_index = drawings.length - 1;
 drawings[current_index].year = 2025;
 drawings[current_index].filename = "repeating-eight-fold-final-wheel-small";
 drawings[current_index].sizes = [
     {x: 1, y: 1, minWidth: 0},
     {x: 2, y: 2, minWidth: mobileThreshold}
+]*/
+
+drawings.push(new Drawing);
+current_index = drawings.length - 1;
+drawings[current_index].year = 2021;
+drawings[current_index].filename = "growth-out-of-darkness";
+drawings[current_index].sizes = [
+    {x: 2, y: 2, minWidth: 0},
+    {x: 3, y: 2, minWidth: mobileThreshold}
 ]
 
 drawings.push(new Drawing);

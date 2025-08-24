@@ -9,8 +9,8 @@ html[theme=theme-light] {
 }
 
 body {
-    background-color: var(--workshop-background);
-    color: var(--workshop-text);
+    /*background-color: var(--workshop-background);*/
+    /*color: var(--workshop-text);*/
 }
 
 #workshop-grid {
@@ -23,8 +23,28 @@ body {
     justify-content: center;
 }
 
-.workshop-grid-edges {
-    /*width: min(250px, 25vw);*/
+.workshop-grid-edge {
+    width: 25%;
+    max-width: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
+}
+
+#workshop-grid-bottom {
+    max-width: calc(100% - min(400px, (25% * 2)));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0px, 400px));
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
+}
+
+.workshop-grid-bottom-edge {
     width: 25%;
     max-width: 200px;
     display: grid;
@@ -47,6 +67,20 @@ body {
     max-height: 450px;
     background-size: cover;
     aspect-ratio: calc(200 / 450);
+}
+
+.workshop-bottom-center {
+    max-width: 400px;
+    max-height: 250px;
+    background-size: cover;
+    aspect-ratio: calc(400 / 250);
+}
+
+.workshop-bottom-edge {
+    max-width: 200px;
+    max-height: 250px;
+    background-size: cover;
+    aspect-ratio: calc(200 / 250);
 }
 
 .workshop-window-frame {
