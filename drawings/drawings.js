@@ -6,10 +6,9 @@ var lightboxImg = document.getElementById("lightboxImg");
 var lightboxImgContainer = document.getElementById("lightboxImgContainer");
 var lightboxImgContainerInner =  document.getElementById("lightboxImgContainerInner");
 
-var drawingsFolderPath = "drawings/images/";
+var drawingsFolderPath = "/drawings/images/";
 
 function generateDrawings() {
-    console.log("draw");
     for (let i = 0; i < drawings.length; i++) {
         var currentDrawingData = drawings[i]
         
@@ -37,9 +36,7 @@ function generateDrawings() {
 function updateDrawingsSortedAppearance() {
     drawingsSortedAppearance.sort((a, b) => {
         //first, sort by y position
-        console.log(a.getBoundingClientRect().top)
         if (a.getBoundingClientRect().top === b.getBoundingClientRect().top) {
-            console.log("same")
             if (a.getBoundingClientRect().left > b.getBoundingClientRect().left) {
                 return 1;
             }
@@ -63,7 +60,6 @@ function updateDrawingsSortedAppearance() {
 }
 
 function reloadDrawingScales() {
-    console.log("reload");
     var drawingElements = drawingsContainer.children;
     var currentWindowWidth = window.innerWidth;
 
@@ -106,7 +102,7 @@ function fillInGaps() {
             drawingsContainer.appendChild(newDrawing);
 
             var newDrawingImg = document.createElement("img");
-            newDrawingImg.src = "images/blank.png";
+            newDrawingImg.src = "/images/blank.png";
             newDrawing.appendChild(newDrawingImg);
             newDrawingImg.style.display = "none";
         }

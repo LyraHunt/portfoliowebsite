@@ -34,7 +34,7 @@ function generateWorkshopWindow(hasData = true, creationData) {
 
     var newWorkshopWindowThumbnail = document.createElement("img");
     if (hasData) newWorkshopWindowThumbnail.src = currentCreationData.thumbnailUrl;
-    else newWorkshopWindowThumbnail.src = "images/blank.png";
+    else newWorkshopWindowThumbnail.src = "/images/blank.png";
     newWorkshopWindowThumbnail.loading = "lazy";
     newWorkshopWindowThumbnail.classList.add("workshop-window-thumbnail");
     if (hasData) newWorkshopWindowThumbnail.classList.add("clickable");

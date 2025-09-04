@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lyra Hunt</title>
     
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/home.css">
 </head>
 <body>
     <div class="flex-column main-column">
@@ -21,17 +21,17 @@
                     <div class="subject-container">
                         <h2 class="subject-header">Games</h2>
                         <div class="flex-column" style="gap: 20px;">
-                            <a href="workshop.html" style="max-width: 70%;"><img src="images/capstone-game-icon-circle-black.png" style="max-width: 100%;"></a>
-                            <a href="workshop.html" style="max-width: 70%;"><img src="images/alchemikitty.png" style="max-width: 100%;"></a>
-                            <a href="workshop.html" style="max-width: 70%;"><img src="images/awindyday.png" style="max-width: 100%;"></a>
+                            <a class="page-link-workshop" style="max-width: 70%;"><img src="/images/capstone-game-icon-circle-black.png" style="max-width: 100%;"></a>
+                            <a class="page-link-workshop" style="max-width: 70%;"><img src="/images/alchemikitty.png" style="max-width: 100%;"></a>
+                            <a class="page-link-workshop" style="max-width: 70%;"><img src="/images/awindyday.png" style="max-width: 100%;"></a>
                         </div>
                     </div>
                     <div class="subject-container">
                         <h2 class="subject-header">Art</h2>
                         <div class="flex-column" style="gap: 20px;">
-                            <a href="drawings.html" style="max-width: 70%;"><img src="drawings/images/turnip-head-ink-sketch.png" style="max-width: 100%;"></a>
-                            <a href="drawings.html" style="max-width: 70%;"><img src="drawings/images/abstract-architecture.png" style="max-width: 100%;"></a>
-                            <a href="drawings.html" style="max-width: 70%;"><img src="drawings/images/laputa-ink-sketch.png" style="max-width: 100%;"></a>
+                            <a class="page-link-drawings" style="max-width: 70%;"><img src="/drawings/images/turnip-head-ink-sketch.png" style="max-width: 100%;"></a>
+                            <a class="page-link-drawings" style="max-width: 70%;"><img src="/drawings/images/abstract-architecture.png" style="max-width: 100%;"></a>
+                            <a class="page-link-drawings" style="max-width: 70%;"><img src="/drawings/images/laputa-ink-sketch.png" style="max-width: 100%;"></a>
                         </div>
                     </div>
                 </div>
@@ -59,8 +59,6 @@
         <div id="footerContainer"></div>
     </div>
 
-    <script src="general_javascripts/event_bus.js"></script>
-    <script src="general_javascripts/theme.js"></script>
-    <script src="general_javascripts/header_n_footer.js"></script>
+    <script src="/general_javascripts/load_globals.js"></script>
 </body>
 </html>

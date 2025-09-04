@@ -31,5 +31,5 @@ updateVisitCountDisplay();
 
 function runInBrowser() {
     incrementVisitCount();
-    window.location.href = "index.html";
+    window.location.href = "/";
 }

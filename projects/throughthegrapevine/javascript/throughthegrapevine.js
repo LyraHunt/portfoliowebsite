@@ -7,42 +7,42 @@ var tileData = {
     tile0: {
         connectFrom: "START",
         connectTo: "AAA",
-        url: "projects/throughthegrapevine/images/Art-Tiles-1-AAA-Finished.png",
+        url: "images/Art-Tiles-1-AAA-Finished.png",
         amount: 0
     },
 
     tile1: {
         connectFrom: "AAA",
         connectTo: "AAB",
-        url: "projects/throughthegrapevine/images/Art-Tiles-2-AAB-Finished.png",
+        url: "images/Art-Tiles-2-AAB-Finished.png",
         amount: 0
     },
 
     tile2: {
         connectFrom: "AAB",
         connectTo: "AAC",
-        url: "projects/throughthegrapevine/images/Art-Tiles-3-AAC-Finished.png",
+        url: "images/Art-Tiles-3-AAC-Finished.png",
         amount: 0
     },
 
     tile3: {
         connectFrom: "AAC",
         connectTo: "AAA",
-        url: "projects/throughthegrapevine/images/Art-Tiles-4-AAA-Finished.png",
+        url: "images/Art-Tiles-4-AAA-Finished.png",
         amount: 0
     },
 
     tile4: {
         connectFrom: "AAC",
         connectTo: "AAD",
-        url: "projects/throughthegrapevine/images/Art-Tiles-5-AAD-Finished.png",
+        url: "images/Art-Tiles-5-AAD-Finished.png",
         amount: 0
     },
 
     tile5: {
         connectFrom: "AAD",
         connectTo: "AAA",
-        url: "projects/throughthegrapevine/images/Art-Tiles-6-AAA-Finished.png",
+        url: "images/Art-Tiles-6-AAA-Finished.png",
         amount: 0
     }
 }

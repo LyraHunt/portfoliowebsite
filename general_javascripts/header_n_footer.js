@@ -20,7 +20,15 @@ if (footer !== null) {
 */
 
 function checkForCurrentLink(targetElement) {
-    if (targetElement.href === window.location.href) {
+    if (targetElement.href === window.location.href + "/") {
+        targetElement.classList.add("current-page");
+    }
+}
+
+function checkForCurrentPage(targetPage, targetElement) {
+    var targetPageHref = InternalLinks[targetPage].replace(/\/$/, "")
+    console.log(targetPageHref + " is same as " + window.location.pathname.replace(/\/$/, ""))
+    if (targetPageHref === window.location.pathname.replace(/\/$/, "")) {
         targetElement.classList.add("current-page");
     }
 }
@@ -33,7 +41,7 @@ function generateHeader(targetElement) {
 
     var logo = document.createElement("img");
     logo.classList.add("site-logo");
-    logo.src = "images/capstone-game-icon-circle.png";
+    logo.src = "/images/capstone-game-icon-circle.png";
     titleContainer.appendChild(logo);
 
     var siteTitle = document.createElement("h1");
@@ -48,30 +56,30 @@ function generateHeader(targetElement) {
 
     var homeLink = document.createElement("a");
     homeLink.classList.add("page-link");
+    homeLink.classList.add("page-link-home");
     homeLink.innerText = "Home";
-    homeLink.href = "index.html";
-    checkForCurrentLink(homeLink);
+    checkForCurrentPage("home", homeLink);
     linksContainer.appendChild(homeLink);
     
     var workshopLink = document.createElement("a");
     workshopLink.classList.add("page-link");
+    workshopLink.classList.add("page-link-workshop");
     workshopLink.innerText = "Workshop";
-    workshopLink.href = "workshop.html";
-    checkForCurrentLink(workshopLink);
+    checkForCurrentPage("workshop", workshopLink);
     linksContainer.appendChild(workshopLink);
 
     var drawingsLink = document.createElement("a");
     drawingsLink.classList.add("page-link");
+    drawingsLink.classList.add("page-link-drawings");
     drawingsLink.innerText = "Drawings";
-    drawingsLink.href = "drawings.html";
-    checkForCurrentLink(drawingsLink);
+    checkForCurrentPage("drawings", drawingsLink);
     linksContainer.appendChild(drawingsLink);
 
     var aboutLink = document.createElement("a");
     aboutLink.classList.add("page-link");
+    aboutLink.classList.add("page-link-aboutme");
     aboutLink.innerText = "About Me";
-    aboutLink.href = "aboutme.html";
-    checkForCurrentLink(aboutLink);
+    checkForCurrentPage("aboutme", aboutLink);
     linksContainer.appendChild(aboutLink);
 
     newHeader.push(linksContainer);
@@ -89,7 +97,7 @@ function generateFooter(targetElement) {
 
     var logo = document.createElement("img");
     logo.classList.add("site-logo");
-    logo.src = "images/capstone-game-icon-circle.png";
+    logo.src = "/images/capstone-game-icon-circle.png";
     titleContainer.appendChild(logo);
 
     var siteTitle = document.createElement("h1");

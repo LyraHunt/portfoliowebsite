@@ -16,8 +16,8 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "Verlet";
 creations[current_index].year = 2022;
-creations[current_index].url = "verletenginedesc.html";
-creations[current_index].thumbnailUrl = "images/verlettest.png";
+creations[current_index].url = InternalLinks["projects-verletenginedesc"];
+creations[current_index].thumbnailUrl = "/images/verlettest.png";
 creations[current_index].typeTags = {
     mobileFriendly: true
 }
@@ -27,8 +27,8 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "AlchemiKitty";
 creations[current_index].year = 2024;
-creations[current_index].url = "alchemikittydesc.html";
-creations[current_index].thumbnailUrl = "images/alchemikitty.png";
+creations[current_index].url = InternalLinks["projects-alchemikittydesc"];
+creations[current_index].thumbnailUrl = "/images/alchemikitty.png";
 creations[current_index].typeTags = {
     mobileFriendly: false
 }
@@ -38,8 +38,8 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "Senior Capstone";
 creations[current_index].year = 2024;
-creations[current_index].url = "capstonegamedesc.html";
-creations[current_index].thumbnailUrl = "images/capstone-game-icon-circle-black.png";
+creations[current_index].url = InternalLinks["projects-capstonegamedesc"];
+creations[current_index].thumbnailUrl = "/images/capstone-game-icon-circle-black.png";
 creations[current_index].typeTags = {
     mobileFriendly: false
 }
@@ -49,8 +49,8 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "Through The Grapevine";
 creations[current_index].year = 2022;
-creations[current_index].url = "throughthegrapevinedesc.html";
-creations[current_index].thumbnailUrl = "projects/throughthegrapevine/images/Art-Tiles-3-AAC-Finished.png";
+creations[current_index].url = InternalLinks["projects-throughthegrapevinedesc"];
+creations[current_index].thumbnailUrl = "/projects/throughthegrapevine/images/Art-Tiles-3-AAC-Finished.png";
 creations[current_index].typeTags = {
     mobileFriendly: true
 }
@@ -60,8 +60,8 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "This Website";
 creations[current_index].year = 2025;
-creations[current_index].url = "thiswebsitedesc.html";
-creations[current_index].thumbnailUrl = "images/thiswebsite.png";
+creations[current_index].url = InternalLinks["projects-thiswebsitedesc"];
+creations[current_index].thumbnailUrl = "/images/thiswebsite.png";
 creations[current_index].typeTags = {
     mobileFriendly: true
 }
@@ -71,8 +71,8 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "A Windy Day";
 creations[current_index].year = 2023;
-creations[current_index].url = "awindydaydesc.html";
-creations[current_index].thumbnailUrl = "images/awindyday.png";
+creations[current_index].url = InternalLinks["projects-awindydaydesc"];
+creations[current_index].thumbnailUrl = "/images/awindyday.png";
 creations[current_index].typeTags = {
     mobileFriendly: false
 }
@@ -82,8 +82,8 @@ creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "Pen & Ink Simulation";
 creations[current_index].year = 2024;
-creations[current_index].url = "penandinksimulationdesc.html";
-creations[current_index].thumbnailUrl = "images/pensim.png";
+creations[current_index].url = InternalLinks["projects-penandinksimulationdesc"];
+creations[current_index].thumbnailUrl = "/images/pensim.png";
 creations[current_index].typeTags = {
     mobileFriendly: false
 }
