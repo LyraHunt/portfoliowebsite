@@ -11,23 +11,8 @@ if (footer !== null) {
     generateFooter(footer);
 }
 
-/*
-<img id="logo" src="images/capstone-game-icon-circle.png">
-<h1 class="name-title">Wilde Hunt Games</h1>
-<a class="page-title" href="workshop.html">Workshop</a>
-<a class="page-title" href="drawings.html">Drawings</a>
-<h2 class="page-title">About</h2>
-*/
-
-function checkForCurrentLink(targetElement) {
-    if (targetElement.href === window.location.href + "/") {
-        targetElement.classList.add("current-page");
-    }
-}
-
 function checkForCurrentPage(targetPage, targetElement) {
     var targetPageHref = InternalLinks[targetPage].replace(/\/$/, "")
-    console.log(targetPageHref + " is same as " + window.location.pathname.replace(/\/$/, ""))
     if (targetPageHref === window.location.pathname.replace(/\/$/, "")) {
         targetElement.classList.add("current-page");
     }

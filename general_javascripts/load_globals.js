@@ -49,8 +49,6 @@ function loadGlobalScripts() {
                 console.log("Found additional scripts: " + additionalScriptsElement.dataset.scriptList);
                 additionalScripts = additionalScriptsElement.dataset.scriptList.split(", ");
                 loadAdditionalScripts();
-                console.log(additionalScripts[1])
-                console.log(AdditionalScriptsReference[additionalScripts[1]]);
             }
         }
     }
