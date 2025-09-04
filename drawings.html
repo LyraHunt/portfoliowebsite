@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawings</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/drawings.css">
+</head>
+<body>
+    <div class="flex-column  main-column">
+        <div id="headerContainer"></div>
+
+        <div class="main-content">
+            <h1>DRAWINGS</h1>
+            <h2>(Traditional and Digital)</h2>
+            <br>
+
+            <div id="drawingsContainer"></div>
+        </div>
+
+        <div id="footerContainer"></div>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <div id="lightboxImgContainer">
+            <span class="lightboxNav" onclick="changeLightboxImg(-1); event.stopPropagation()">&lt;</span>
+            <div style="width: calc(100% - 20vw); height: 100%; align-items: center; justify-content: center; display: flex;">
+                <div id="lightboxImgContainerInner" style="max-height: 100%; aspect-ratio: 0.7; align-items: center; justify-content: center; display: flex;">
+                    <img src="drawings/images/abstract-architecture.png" id="lightboxImg" onclick="event.stopPropagation()">
+                </div>
+            </div>
+            <span class="lightboxNav" onclick="changeLightboxImg(1); event.stopPropagation()">&gt;</span>
+        </div>
+        <span id="lightboxClose" onclick="closeLightbox(); event.stopPropagation()">&times;</span>
+    </div>
+    
+    <script src="general_javascripts/event_bus.js"></script>
+    <script src="general_javascripts/theme.js"></script>
+    <script src="general_javascripts/header_n_footer.js"></script>
+
+    <script src="general_javascripts/math.js"></script>
+    <script src="general_javascripts/input.js"></script>
+
+    <script src="drawings/drawings_data.js"></script>
+    <script src="drawings/drawings.js"></script>
+</body>
+</html>

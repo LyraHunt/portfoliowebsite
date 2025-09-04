@@ -1,0 +1,120 @@
+html[theme=theme-dark] {
+    --workshop-background: #000;
+    --workshop-text: #CCC;
+}
+
+html[theme=theme-light] {
+    --workshop-background: #FFF;
+    --workshop-text: #000;
+}
+
+body {
+    /*background-color: var(--workshop-background);*/
+    /*color: var(--workshop-text);*/
+}
+
+#workshop-grid {
+    max-width: calc(100% - min(400px, (25% * 2)));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0px, 400px));
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
+}
+
+.workshop-grid-edge {
+    width: 25%;
+    max-width: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
+}
+
+#workshop-grid-bottom {
+    max-width: calc(100% - min(400px, (25% * 2)));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0px, 400px));
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
+}
+
+.workshop-grid-bottom-edge {
+    width: 25%;
+    max-width: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    justify-content: center;
+}
+
+.workshop-window {
+    position: relative;
+    max-width: 400px;
+    max-height: 450px;
+    aspect-ratio: calc(400 / 450);
+}
+
+.workshop-edge {
+    max-width: 200px;
+    max-height: 450px;
+    background-size: cover;
+    aspect-ratio: calc(200 / 450);
+}
+
+.workshop-bottom-center {
+    max-width: 400px;
+    max-height: 250px;
+    background-size: cover;
+    aspect-ratio: calc(400 / 250);
+}
+
+.workshop-bottom-edge {
+    max-width: 200px;
+    max-height: 250px;
+    background-size: cover;
+    aspect-ratio: calc(200 / 250);
+}
+
+.workshop-window-frame {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+    pointer-events: none;
+    background-size: cover;
+}
+
+.workshop-window-thumbnail {
+    position: absolute; 
+    left: calc(100% * (75 / 400)); 
+    top: calc(100% * (75 / 450)); 
+    width: calc(100% * (250 / 400)); 
+    height: calc(100% * (250 / 450));
+}
+
+.workshop-window-title-container {
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(100% * (50 / 400));
+    top: calc(100% * (375 / 450));
+    width: calc(100% * (300 / 400));
+    height: calc(100% * (50 / 450));
+    background-color: #040404;
+}
+
+.workshop-window-title-container h2 {
+    font-size: min(2vw, 20px);
+    text-align: center;
+    color: #CCCCFF
+}

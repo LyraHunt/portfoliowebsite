@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/workshop.css">
+</head>
+<body>
+    <div class="flex-column  main-column">
+        <div id="headerContainer"></div>
+
+        <div class="main-content flex-column">
+            <h1>WORKSHOP</h1>
+            <h2>(Coding Projects)</h2>
+            <br>
+
+            <div class="flex-row">
+                <div class="flex-column" style="width: 160px;">
+                    <label for="mobileFriendlyFilterBox">Mobile-Friendly</label>
+                    <input id="mobileFriendlyFilterBox" type="checkbox" onclick="updateFilter()">
+                </div>
+            </div>
+
+            <div class="flex-row" style="width: max(80%, 100% - 120px);">
+                <div id="workshop-grid-left" class="workshop-grid-edge"></div>
+                <div id="workshop-grid"></div>
+                <div id="workshop-grid-right" class="workshop-grid-edge"></div>
+            </div>
+
+            <div class="flex-row" style="width: max(80%, 100% - 120px);">
+                <div id="workshop-grid-bottom-left" class="workshop-grid-bottom-edge"></div>
+                <div id="workshop-grid-bottom" class="workshop-grid-bottom"></div>
+                <div id="workshop-grid-bottom-right" class="workshop-grid-bottom-edge"></div>
+            </div>
+        </div>
+
+        <div id="footerContainer" style="margin: 0px"></div>
+    </div>
+
+    <script src="general_javascripts/event_bus.js"></script>
+    <script src="general_javascripts/theme.js"></script>
+    <script src="general_javascripts/header_n_footer.js"></script>
+
+    <script src="projects/projects.js"></script>
+    <script src="projects/workshop.js"></script>
+</body>
+</html>

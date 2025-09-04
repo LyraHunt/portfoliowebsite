@@ -1,0 +1,12 @@
+.canvasContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreenCanvas {
+    margin-top: 48px;
+    width: 100%;
+    max-height: calc(100% - 48px);
+}
