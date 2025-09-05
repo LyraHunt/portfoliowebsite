@@ -25,3 +25,17 @@ var InternalLinks = {
     "projects-verletengine": "/projects/verletengine/",
     "projects-verletenginedesc": "/projects/verletenginedesc/"
 }
+
+var SourceCodeLinks = {
+    // projects
+    "throughthegrapevine": "https://github.com/LyraHunt/portfoliowebsite/tree/main/projects/throughthegrapevine"
+}
+
+var LinkSets = [{
+    data: InternalLinks,
+    classKey: "page-link"
+},
+{
+    data: SourceCodeLinks,
+    classKey: "sourcecode-link"
+}];

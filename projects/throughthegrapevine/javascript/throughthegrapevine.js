@@ -1,4 +1,4 @@
-function randArr(arrayLength) {
+function randomArrayIndex(arrayLength) {
     let randNum = Math.floor(Math.random() * arrayLength);
     return randNum;
 }
@@ -93,7 +93,7 @@ function addTile() {
         }
     }
 
-    var tilePick = leastCommonPicks[randArr(leastCommonPicks.length)];
+    var tilePick = leastCommonPicks[randomArrayIndex(leastCommonPicks.length)];
 
     //load tile and adjust values
     tileData["tile" + tilePick].amount += 1;
@@ -114,7 +114,3 @@ function mainLoop () {
 }
 
 setInterval(mainLoop,1000/60);
-
-/*window.addEventListener('mousewheel', function(e){
-    wDelta = e.wheelDelta < 0 ? 'down' : 'up';
-});*/

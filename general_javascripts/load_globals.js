@@ -1,12 +1,12 @@
 var additionalScriptsElement = document.getElementById("additionalScripts");
 
 var GlobalScripts = [
+"/general_javascripts/theme.js", 
 "/general_javascripts/event_bus.js", 
 "/general_javascripts/links_data.js",
 "/general_javascripts/math.js",
 "/general_javascripts/input.js",
 
-"/general_javascripts/theme.js", 
 "/general_javascripts/header_n_footer.js", 
 
 "/general_javascripts/dynamic_links.js" // should go last, after all html is loaded
