@@ -45,6 +45,10 @@ h2 {
     margin: 5px;
 }
 
+i {
+    font-style: italic;
+}
+
 .flex-column {
     display: flex;
     justify-content: center;

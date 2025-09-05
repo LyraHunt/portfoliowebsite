@@ -1,3 +1,6 @@
+//JS library implementation that i never used
+//from stack overflow: https://stackoverflow.com/a/31013931
+
 /*
 var Utilities=Utilities||(function () {
 

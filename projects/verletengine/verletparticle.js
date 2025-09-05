@@ -12,14 +12,14 @@ class VerletParticle {
 
     //run physics based on current position, last position, and the delta time
     updatePos(dt) {
-        let vel = Vector.sub(this.currentPos,this.lastPos);
+        let vel = Vector.sub(this.currentPos,this.lastPos); //set current velocity
         this.lastPos = this.currentPos.copy();
-        this.currentPos.add(vel);
-        this.currentPos.add(Vector.mult(this.acc,(dt**2),(dt**2)));
+        this.currentPos.add(vel); //apply current velocity
+        this.currentPos.add(Vector.mult(this.acc,(dt**2),(dt**2))); //apply gravity
     }
 
     //unused "offset position" function
     offsetPos(offsetVector) {
-        this.currentPos = Vector.add(this.currentPos,offsetVector)
+        this.currentPos = Vector.add(this.currentPos,offsetVector); //this function never got used :(
     }
 }

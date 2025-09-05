@@ -28,7 +28,14 @@ var InternalLinks = {
 
 var SourceCodeLinks = {
     // projects
-    "throughthegrapevine": "https://github.com/LyraHunt/portfoliowebsite/tree/main/projects/throughthegrapevine"
+    "portfoliowebsite": "https://github.com/LyraHunt/portfoliowebsite",
+
+    "throughthegrapevine": "https://github.com/LyraHunt/portfoliowebsite/tree/main/projects/throughthegrapevine",
+
+    // files
+    "verletenginejs": "https://github.com/LyraHunt/portfoliowebsite/blob/main/projects/verletengine/verletengine.js",
+    "verletparticlejs": "https://github.com/LyraHunt/portfoliowebsite/blob/main/projects/verletengine/verletparticle.js",
+    "vectorjs": "https://github.com/LyraHunt/portfoliowebsite/blob/main/general_javascripts/vector.js"
 }
 
 var LinkSets = [{

@@ -13,7 +13,7 @@ var diameter = radius*2;
 var particleDiameter = 20;
 
 //initialize grid array and values
-//amount of cells in grid
+//amount of cells in grid, each cell is the same size as a particle's diameter
 var gridX = diameter/particleDiameter;
 var gridY = diameter/particleDiameter;
 
@@ -27,11 +27,7 @@ for (let i = 0; i < gridArr.length; i++) {
 var particleAmt = 0;
 var particleArr = [];
 particleAmt++;
-//particleArr.push(new VerletParticle(100,0,'white'));
-//particleArr.push(new VerletParticle(250,0,'blue'));
-//particleArr.push(new VerletParticle(280,0,'blue'));
 
-var longestWait = 0;
 var ticks = 0;
 var particleMax = 780;
 
@@ -46,6 +42,7 @@ function mainLoop() {
     engineCtx.strokeStyle = "white";
     CanvasJS.strokeCircle(0,0,radius+6,5,engineCtx);
 
+    //subSteps let us run collision checks multiple times in one frame to make the simulation smoother
     let subSteps = 4;
 
     for (let step = 0; step < subSteps; step++) {
@@ -58,7 +55,7 @@ function mainLoop() {
         }
 
 
-        //run through full list of particles and enter them into a 2d (technically 3d) array for collision management
+        //run through full list of particles and enter them into a 2d array for collision management (it's technically 3d, because multiple particles can exist in the same cell)
         for (let i = 0; i < particleArr.length; i++) {
             //push current particle to collision array
             let currentParticleXPos = Math.floor(particleArr[i].currentPos.x/particleDiameter+radius/particleDiameter);
@@ -76,6 +73,7 @@ function mainLoop() {
             for (let b = 1; b < gridArr[a].length-1; b++) { //check each cell except for the ones at the borders
 
                 let collisionArr = []; //this array will be filled with all possible collidable particles from the 8 surrounding cells
+                
                 for (let c = -1; c < 2; c++) { //loop through the current cell and the 8 surrounding ones in a 3x3 grid
                     for (let d = -1; d < 2; d++) { //loop through the current cell and the 8 surrounding ones in a 3x3 grid
                         var nearbyParticleCount = gridArr[a+c][b+d].length //amount of nearby particles
@@ -124,7 +122,7 @@ function mainLoop() {
 
         let simSpeed = 0.5;
 
-        //run through full list of particles and keep them within the engine boundaries
+        //run through full list of particles, simulate their velocities and keep them within the engine boundaries
         for (let i = 0; i < particleArr.length; i++) {
             particleArr[i].updatePos(simSpeed/subSteps);
             particleArr[i].currentPos.limit(radius-particleDiameter/2);
