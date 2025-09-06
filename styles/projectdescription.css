@@ -41,12 +41,16 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: min(2vw, 10px);
 }
 
 .project-image-small {
     max-width: 250px;
     width: 40%;
+}
+
+.project-border-thin {
+    border: round(up, min(0.5vw, 3px), 1px) solid var(--default-text);
 }
 
 .project-margin-20 {

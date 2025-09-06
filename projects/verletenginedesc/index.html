@@ -22,20 +22,30 @@
 
         <div class="project-column-60 project-margin-20-top">
             <p>
-                This project uses HTML canvas and a custom Javascript vector class to simulate ‘particles’ interacting in a deterministic way. Although the colors of the particles may seem random at first, if you watch the simulation until the end you will notice that it is not as random as it seems.
+                This project uses HTML canvas and a custom Javascript vector class to simulate ‘particles’ interacting in a deterministic way.
+                Although the colors of the particles may seem random at first, if you watch the simulation until the end you will notice that it is not as random as it seems.
             </p>
             
             <h2 class="project-subtitle">Verlet Integration</h2>
             <p>
-                Verlet integration is a way to simulate physics using a fixed time step. This particular implementation doesn’t use any simulated velocity values; it only uses the previous frame’s position and the time passed to calculate the current velocity. This is why this method is called Verlet <i>integration</i>, since the velocity (the derivative of the position) is calculated based on a discrete time step rather than being calculated independently.
+                Verlet integration is a way to simulate physics using a fixed time step.
+                This particular implementation doesn’t use any simulated velocity values; it only uses the previous frame’s position and the time passed to calculate the current velocity.
+                This is why this method is called Verlet <i>integration</i>, since the velocity (the derivative of the position) is calculated based on its integral rather than being calculated independently.
             </p>
             
             <h2 class="project-subtitle">Collision Detection</h2>
             <p>
-                This program simulates over 750 circular particles, so we have to be a little careful with how we detect the collisions. The easiest solution would probably be to check each particle against every other particle, and then calculate if they are colliding based on that distance. This works if you have 50 or even 100 particles, but once you get farther than that the program will really start to slow down. This is because every frame we would be performing as many distance checks as the square of our particle count, or we could say that this algorithm has O(N^2) time complexity.
+                This program simulates over 750 particles, so we have to be a little careful with how we detect the collisions.
+                The easiest solution would probably be to check each particle against every other particle, and then calculate if they are colliding based on that distance.
+                This works if you have 50 or even 100 particles, but once you get farther than that the program will start to really slow down.
+                This is because every frame we would be performing as many distance checks as the square of our particle count, or we could say that that algorithm has O(N^2) time complexity.
             </p>
             <p class="project-margin-20-top">
-                So, how do we simplify the collisions? For this program, I chose to place all of the particles into a two-dimensional grid and then only check the other particles that are neighboring a particular cell in the grid. For example, if we have a particle in position (5, 5) of our grid and another in (5, 6), we can tell that these particles are very close together and we can submit them to a list to be checked more thoroughly. This program performs this process every frame. Every frame the particles are placed into a grid, their proximity is checked, possible collisions are noted, collisions are then resolved, and then the particles are placed back into 2d space for the next simulation step.
+                So, how do we simplify the collisions?
+                For this program, I chose to place all of the particles into a two-dimensional grid and then only check the other particles that are neighboring a particular cell in the grid.
+                For example, if we have a particle in position (5, 5) of our grid and another in (5, 6), we can tell that these particles are very close together and we can submit them to a list to be checked more thoroughly.
+                This program performs this process every frame.
+                Every frame the particles are placed into a grid, their proximity is checked, possible collisions are noted, collisions are then resolved, and then the particles are placed back into 2d space for the next simulation step.
             </p>
 
             <h2 class="project-subtitle">Wrapping It Up</h2>
@@ -75,7 +85,9 @@
         </div>
         <div class="project-column-60">
             <p>
-                That’s a lot to do in just one frame! If you’re interested, you can check the Javascript files below to see how it’s implemented. The verletengine.js file in particular has a lot of code comments to help explain the process.
+                That’s a lot to do in just one frame!
+                If you’re interested, you can check the Javascript files below to see how it’s implemented.
+                The verletengine.js file in particular has a lot of code comments to help explain the process.
             </p>
             <h2 class="project-subtitle">Source Code:</h2>
             <div class="project-uncenter-children">

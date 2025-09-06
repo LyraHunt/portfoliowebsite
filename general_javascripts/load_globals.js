@@ -17,7 +17,7 @@ var AdditionalScriptsReference = {
     "drawings_data": "/drawings/drawings_data.js",
 
     "projects": "/projects/projects.js",
-    "workshop": "/projects/workshop.js"
+    "workshop": "/workshop/workshop.js"
 }
 
 var additionalScripts = [];
