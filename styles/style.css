@@ -117,6 +117,10 @@ a:link.current-page, a:visited.current-page {
     color: var(--current-link);
 }
 
+.color-default-text {
+    color: var(--default-text);
+}
+
 .clickable {
     cursor: pointer;
     transition-duration: 50ms;

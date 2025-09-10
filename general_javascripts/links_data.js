@@ -38,6 +38,10 @@ var SourceCodeLinks = {
     "vectorjs": "https://github.com/LyraHunt/portfoliowebsite/blob/main/general_javascripts/vector.js"
 }
 
+var ExternalLinks = {
+    "my-youtube": "https://www.youtube.com/@wildehuntgame"
+}
+
 var LinkSets = [{
     data: InternalLinks,
     classKey: "page-link"
@@ -45,4 +49,8 @@ var LinkSets = [{
 {
     data: SourceCodeLinks,
     classKey: "sourcecode-link"
+},
+{
+    data: ExternalLinks,
+    classKey: "external-link"
 }];
