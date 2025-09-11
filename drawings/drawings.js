@@ -8,6 +8,30 @@ var lightboxImgContainerInner =  document.getElementById("lightboxImgContainerIn
 
 var drawingsFolderPath = "/drawings/images/";
 
+var gridColumnSize = 150;
+var gridColumnGap = 10;
+
+// take the column width and return the pixel width
+function calculateActualWidth(drawingXSize) {
+    return drawingXSize * gridColumnSize + gridColumnGap * (drawingXSize - 1) - 10;
+}
+
+// get the column width of a drawing by its ID
+function getDrawingFullColumnWidth(drawingID) {
+    var drawingSizes = drawings[drawingID].sizes;
+    var fullWidth = 0;
+    var hasMobileThreshold = false;
+    for (let i = 0; i < drawingSizes.length; i++) {
+        if (drawingSizes[i].minWidth == mobileThreshold) {
+            fullWidth = drawingSizes[i].x;
+            hasMobileThreshold = true;
+        }
+    }
+
+    if (hasMobileThreshold) return fullWidth;
+    else return drawingSizes[0].x;
+}
+
 function generateDrawings() {
     for (let i = 0; i < drawings.length; i++) {
         var currentDrawingData = drawings[i]
@@ -19,10 +43,21 @@ function generateDrawings() {
 
         var newDrawingImg = document.createElement("img");
         newDrawingImg.loading = "lazy";
-        newDrawingImg.src = drawingsFolderPath + drawings[i].filename + ".png";
         newDrawingImg.onclick = function() {
             displayLightbox(drawingsFolderPath + drawings[i].filename + ".png", i);
         }
+        // if drawing has multiple sizes
+        if ("altFilesizes" in drawings[i]) {
+            for (let j = 0; j < drawings[i].altFilesizes.length; j++) {
+                var currentAltFilesize = drawings[i].altFilesizes[j];
+                newDrawingImg.srcset += drawingsFolderPath + "size-" + currentAltFilesize + "/" + drawings[i].filename + "-size-" + currentAltFilesize + ".png " + currentAltFilesize + "w" + ", ";
+                //newDrawingImg.sizes += "(width >= " + currentAltFilesize + "px) " + currentAltFilesize + "px";
+            }
+            newDrawingImg.srcset += drawingsFolderPath + drawings[i].filename + ".png " + drawings[i].defaultSize + "w";
+            //newDrawingImg.sizes = "(width <= 768px) " + calculateActualWidth(drawings[i].sizes[0].x) + "px, " + calculateActualWidth(getDrawingFullColumnWidth(i)) + "px, " + drawings[i].defaultSize + "px";
+            newDrawingImg.sizes = "(width <= 768px) " + calculateActualWidth(drawings[i].sizes[0].x) + "px, " + calculateActualWidth(getDrawingFullColumnWidth(i)) + "px";
+        }
+        newDrawingImg.src = drawingsFolderPath + drawings[i].filename + ".png";
         newDrawing.appendChild(newDrawingImg);
 
         drawingsSortedAppearance.push(newDrawing);
