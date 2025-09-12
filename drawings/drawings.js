@@ -192,6 +192,7 @@ function displayLightbox(imageSrc, imageID) {
     // otherwise, load already-loaded smaller version first while the larger image loads in the background
     else if ("altFilesizes" in drawings[imageID] && !currentImage.complete) {
         lightboxImg.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
+        lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
         lightboxImg.onload = () => {
             lightbox.style.display = "flex";
             lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
