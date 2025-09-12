@@ -178,7 +178,7 @@ function displayLightbox(imageSrc, imageID) {
     var currentImage = new Image();
     currentImage.src = imageSrc;
 
-    // load already-loaded, smaller version first while larger image loads in the background
+    // load already-loaded smaller version first while the larger image loads in the background
     if ("altFilesizes" in drawings[imageID]) {
         lightboxImg.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
         lightbox.style.display = "flex";
@@ -187,8 +187,10 @@ function displayLightbox(imageSrc, imageID) {
 
     // once larger image is done loading, show it instead
     currentImage.onload = () => {
-        lightboxImg.src = imageSrc;
-        lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+        if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
+            lightboxImg.src = imageSrc;
+            lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+        }
     }
 
     scrollIntoViewIfNotVisible(drawingsContainer.children[drawingsSortedAppearance[currentLightboxID].id], { behavior: "smooth", block: "center" });
