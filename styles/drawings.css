@@ -84,6 +84,7 @@ html[theme=theme-light] {
 
 #lightboxImg {
     max-width: 100%;
+    width: 4000px; /* make image wider than necessary to ensure it is shown as large as possible */
 }
 
 #lightboxImgContainer {

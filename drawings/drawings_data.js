@@ -55,7 +55,7 @@ drawings[current_index].sizes = [
     {x: 2, y: 1, minWidth: 0},
     {x: 3, y: 2, minWidth: mobileThreshold}
 ]
-drawings[current_index].altFilesizes = [500, 600];
+drawings[current_index].altFilesizes = [600];
 
 drawings.push(new Drawing);
 current_index = drawings.length - 1;

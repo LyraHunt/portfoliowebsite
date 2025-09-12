@@ -149,9 +149,6 @@ function fillInGaps() {
 }
 
 generateDrawings();
-//generateDrawings();
-//generateDrawings();
-//generateDrawings();
 reloadDrawingScales();
 fillInGaps();
 
@@ -182,7 +179,15 @@ function displayLightbox(imageSrc, imageID) {
     // use aspect ratio math to keep lightbox image contained
     var currentImage = new Image();
     currentImage.src = imageSrc;
+    //lightboxImg.src = 
+    if ("altFilesizes" in drawings[imageID]) {
+        lightboxImg.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
+        lightbox.style.display = "flex";
+        lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
+        console.log("loading");
+    }
     currentImage.onload = () => {
+        console.log("loaded");
         lightbox.style.display = "flex";
         lightboxImg.src = imageSrc;
         lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
