@@ -172,23 +172,21 @@ new ResizeObserver(function() {
 var currentLightboxID = 0;
 
 function displayLightbox(imageSrc, imageID) {
-    //currentLightboxID = Number(drawingsSortedAppearance[imageID].id);
-    //currentLightboxID = drawingsSortedAppearance.findIndex((drawingsIndex) => {Number(drawingsIndex.id) == imageID});
     currentLightboxID = Number(drawingsContainer.children[imageID].getAttribute("appearance"));
 
     // use aspect ratio math to keep lightbox image contained
     var currentImage = new Image();
     currentImage.src = imageSrc;
-    //lightboxImg.src = 
+
+    // load already-loaded, smaller version first while larger image loads in the background
     if ("altFilesizes" in drawings[imageID]) {
         lightboxImg.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
         lightbox.style.display = "flex";
         lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
-        console.log("loading");
     }
+
+    // once larger image is done loading, show it instead
     currentImage.onload = () => {
-        console.log("loaded");
-        lightbox.style.display = "flex";
         lightboxImg.src = imageSrc;
         lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
     }
@@ -214,15 +212,8 @@ function changeLightboxImg(changeAmount) {
     currentLightboxID += changeAmount;
     currentLightboxID = posmod(currentLightboxID, drawings.length);
 
-    // use aspect ratio math to keep lightbox image contained
-    var currentImage = new Image();
-    currentImage.src = drawingsFolderPath + drawings[drawingsSortedAppearance[currentLightboxID].id].filename + ".png";
-    currentImage.onload = () => {
-        lightboxImg.src = drawingsFolderPath + drawings[drawingsSortedAppearance[currentLightboxID].id].filename + ".png";
-        lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
-    }
-
-    scrollIntoViewIfNotVisible(drawingsContainer.children[drawingsSortedAppearance[currentLightboxID].id], { behavior: "smooth", block: "center" });
+    // display new selected lightbox image
+    displayLightbox(drawingsFolderPath + drawings[drawingsSortedAppearance[currentLightboxID].id].filename + ".png", Number(drawingsSortedAppearance[currentLightboxID].id));
 }
 
 lightboxImgContainer.click(function(e) {
