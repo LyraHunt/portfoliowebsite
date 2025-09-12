@@ -1,5 +1,6 @@
 var drawingsContainer = document.getElementById("drawingsContainer");
 var drawingsSortedAppearance = [];
+var drawingsFullSizeImages = [];
 
 var lightbox = document.getElementById("lightbox");
 var lightboxImg = document.getElementById("lightboxImg");
@@ -61,6 +62,8 @@ function generateDrawings() {
         newDrawing.appendChild(newDrawingImg);
 
         drawingsSortedAppearance.push(newDrawing);
+
+        drawingsFullSizeImages.push(new Image());
     }
 
     drawingsContainer.children[drawingsContainer.children.length - 1].children[0].onload = () => {
@@ -175,8 +178,8 @@ function displayLightbox(imageSrc, imageID) {
     currentLightboxID = Number(drawingsContainer.children[imageID].getAttribute("appearance"));
 
     // use aspect ratio math to keep lightbox image contained
-    var currentImage = new Image();
-    currentImage.src = imageSrc;
+    var currentImage = drawingsFullSizeImages[imageID];
+    if (currentImage.src == "") currentImage.src = imageSrc;
 
     // load already-loaded smaller version first while the larger image loads in the background
     if ("altFilesizes" in drawings[imageID]) {
