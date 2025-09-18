@@ -55,7 +55,6 @@ function generateDrawings() {
                 //newDrawingImg.sizes += "(width >= " + currentAltFilesize + "px) " + currentAltFilesize + "px";
             }
             newDrawingImg.srcset += drawingsFolderPath + drawings[i].filename + ".png " + drawings[i].defaultSize + "w";
-            //newDrawingImg.sizes = "(width <= 768px) " + calculateActualWidth(drawings[i].sizes[0].x) + "px, " + calculateActualWidth(getDrawingFullColumnWidth(i)) + "px, " + drawings[i].defaultSize + "px";
             newDrawingImg.sizes = "(width <= 768px) " + calculateActualWidth(drawings[i].sizes[0].x) + "px, " + calculateActualWidth(getDrawingFullColumnWidth(i)) + "px";
         }
         newDrawingImg.src = drawingsFolderPath + drawings[i].filename + ".png";

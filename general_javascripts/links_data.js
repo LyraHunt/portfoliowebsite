@@ -39,7 +39,10 @@ var SourceCodeLinks = {
 }
 
 var ExternalLinks = {
-    "my-youtube": "https://www.youtube.com/@wildehuntgame"
+    "my-youtube": "https://www.youtube.com/@wildehuntgame",
+
+    "itch-capstone-game": "https://lyradesignsgames.itch.io/forest-game",
+    "itch-alchemikitty": "https://lyradesignsgames.itch.io/alchemikitty"
 }
 
 var LinkSets = [{
