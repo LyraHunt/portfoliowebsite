@@ -83,9 +83,9 @@ current_index = creations.length - 1;
 creations[current_index].name = "Pen & Ink Simulation";
 creations[current_index].year = 2024;
 creations[current_index].url = InternalLinks["projects-penandinksimulationdesc"];
-creations[current_index].thumbnailUrl = "/images/penandinksim.png";
+creations[current_index].thumbnailUrl = "/projects/penandinksimulation/penandinksim1.png";
 creations[current_index].typeTags = {
-    mobileFriendly: false
+    mobileFriendly: true
 }
 
 function sortCreations(a, b) {

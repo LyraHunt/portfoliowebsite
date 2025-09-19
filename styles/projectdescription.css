@@ -35,6 +35,11 @@
     width: 80%;
 }
 
+.project-column-100 {
+    max-width: 1000px;
+    width: 80%;
+}
+
 .project-gallery-wrap {
     display: flex;
     justify-content: center;
@@ -47,6 +52,11 @@
 .project-image-small {
     max-width: 250px;
     width: 40%;
+}
+
+.project-image-medium {
+    max-width: 300px;
+    width: 80%;
 }
 
 .project-border-thin {
