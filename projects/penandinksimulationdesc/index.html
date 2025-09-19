@@ -49,6 +49,17 @@
                     </div>
                 </div>
 
+                <div class="project-column-60 project-margin-20-top">
+                    <p>
+                        Click the button below to generate a brand-new design:
+                    </p>
+                </div>
+
+                <div class="project-column-100 project-margin-20 flex-column">
+                    <div class="project-button project-margin-20" onclick="newDesign()">Generate New Design</div>
+                    <canvas id="penCanvas"></canvas>
+                </div>
+
                 <h2 class="project-margin-20-top"><a class="page-link-workshop" href="/">Back to Workshop</a></h2>
             
             </div>
@@ -57,6 +68,8 @@
         <div id="footerContainer"></div>
     </div>
 
+    <span id="additionalScripts" data-script-list="perlin"></span>
     <script src="/general_javascripts/load_globals.js"></script>
+    <script src="penandink.js"></script>
 </body>
 </html>

@@ -111,3 +111,20 @@ ol {
 li {
     margin: 5px;
 }
+
+.project-button {
+    border: 2px solid var(--default-text);
+    font-size: 20px;
+    height: 60px;
+    line-height: 60px;
+    padding: 0px 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.1s;
+    border-radius: 5px;
+}
+
+.project-button:hover {
+    transform: scale(1.1);
+    background-color: var(--dark-background-1);
+}

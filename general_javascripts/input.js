@@ -84,18 +84,5 @@ onmouseup = InputJS.mouseUp;
             event.pageX = event.clientX + (doc && doc.scrollLeft || body && body.scrollLeft || 0) - (doc && doc.clientLeft || body && body.clientLeft || 0);
             event.pageY = event.clientY + (doc && doc.scrollTop || body && body.scrollTop || 0) - (doc && doc.clientTop || body && body.clientTop || 0);
         };
-
-        /*if (bigSide === 'x') {
-            mouseX = (event.pageX / screenScale) / scaleFactor - ((canX / 2)/screenScale) - (sideOffset/screenScale);
-            mouseY = (event.pageY / screenScale) / scaleFactor - ((canY / 2)/screenScale);
-            /*mouseX = (event.pageX * screenScale) / scaleFactor - (canX / 2) - sideOffset;
-            mouseY = (event.pageY * screenScale) / scaleFactor - (canY / 2);
-        }
-        else {
-            mouseX = (event.pageX / screenScale) / scaleFactor - ((canX / 2)/screenScale);
-            mouseY = (event.pageY / screenScale) / scaleFactor - ((canY / 2)/screenScale) - (sideOffset/screenScale);
-            /*mouseX = (event.pageX / screenScale) / scaleFactor - (canX / 2);
-            mouseY = ((event.pageY / screenScale) / scaleFactor - (canY / 2)) - sideOffset;
-        }*/
     };
 })();
