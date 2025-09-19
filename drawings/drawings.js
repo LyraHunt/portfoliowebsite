@@ -185,6 +185,7 @@ function displayLightbox(imageSrc, imageID) {
         if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
             lightboxImg.src = imageSrc;
             lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+            lightbox.style.display = "flex";
         }
     }
     
