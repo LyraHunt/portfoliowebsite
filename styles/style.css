@@ -7,6 +7,8 @@ html[theme=theme-dark] {
 
     --nav-link: #CAD;
     --current-link: #FCC;
+
+    --dark-mode-invert: invert(92.5%);
 }
 
 html[theme=theme-light] {
@@ -18,6 +20,8 @@ html[theme=theme-light] {
 
     --nav-link: #939;
     --current-link: #117;
+
+    --dark-mode-invert: invert(0%);
 }
 
 html, body {

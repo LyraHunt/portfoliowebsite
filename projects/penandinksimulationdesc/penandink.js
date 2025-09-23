@@ -219,7 +219,7 @@ function onePointPerspective() {
 }
 
 function coffeeRings() {
-    let circleAmount = Math.round(Math.random() * 10 + 5);
+    let circleAmount = Math.round(Math.random() * 4 + 6);
     let noiseSeed = Math.random() * 1000;
 
     for (let a = 0; a < circleAmount; a++) {
