@@ -212,6 +212,7 @@ function onePointPerspective() {
         ctx.fillStyle = "beige";
         ctx.globalAlpha = 1;
         ctx.beginPath();
+        //hmmmm
         ctx.fillRect(x - size / 2, y - size / 2, size, size);
         ctx.fillStyle = "black";
         square(x, y, size, 0.5);

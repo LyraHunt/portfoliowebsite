@@ -1,6 +1,6 @@
 html[theme=theme-dark] {
     --body-background: #000;
-    --default-text: #CCC;
+    --default-text: #EEE;
 
     --dark-background-1: #333;
     --dark-background-2: #555;
@@ -70,6 +70,7 @@ i {
 .main-column {
     min-height: 100%;
     justify-content: start;
+    position: relative;
 }
 
 .name-title {
@@ -157,6 +158,20 @@ a:link.current-page, a:visited.current-page {
 }
 
 .main-content {
+    position: relative;
     flex-grow: 1;
     width: 100%;
+}
+
+.background-image-grapevine {
+    background-image: url("/images/backgrounds/through-the-grapevine-background.png");
+    background-size: 100%;
+    background-repeat: repeat-y;
+    width: 100vw;
+    /*height: 100%;*/
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: -1;
+    opacity: 25%;
 }
