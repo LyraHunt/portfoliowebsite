@@ -60,7 +60,7 @@ h2 {
 }
 
 p, ol, ul {
-    font-size: min(3.5vw, 16px);
+    font-size: min(4vw, 16px);
     line-height: min(6vw, 24px);
 }
 
@@ -181,7 +181,7 @@ a:link.current-page, a:visited.current-page {
     background-color: var(--dark-background-1);
     justify-content: space-evenly;
     padding: 0px min(3vw, 20px) 0px 0px;
-    margin-top: min(8vw, 60px);
+    margin-top: min(10vw, 60px);
     align-self: flex-end;
 }
 

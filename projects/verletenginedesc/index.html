@@ -28,19 +28,23 @@
                     <h2 class="project-margin-20-top"><a class="page-link-projects-verletengine" href="/">Run in Browser</a></h2>
                 </div>
 
-                <div class="project-column-60 project-margin-20-top">
+                <div class="project-column-60 project-margin-50-top project-text-box">
                     <p>
                         This project uses HTML canvas and a custom Javascript vector class to simulate ‘particles’ interacting in a deterministic way.
                         Although the colors of the particles may seem random at first, if you watch the simulation until the end you will notice that it is not as random as it seems.
                     </p>
-                    
+                </div>
+
+                <div class="project-column-60 project-margin-70-top project-text-box">
                     <h2 class="project-subtitle">Verlet Integration</h2>
                     <p>
                         Verlet integration is a way to simulate physics using a fixed time step.
                         This particular implementation doesn’t use any simulated velocity values; it only uses the previous frame’s position and the time passed to calculate the current velocity.
                         This is why this method is called Verlet <i>integration</i>, since the velocity (the derivative of the position) is calculated based on its integral rather than being calculated independently.
                     </p>
-                    
+                </div>
+
+                <div class="project-column-60 project-margin-70-top project-text-box">
                     <h2 class="project-subtitle">Collision Detection</h2>
                     <p>
                         This program simulates over 750 particles, so we have to be a little careful with how we detect the collisions.
@@ -55,13 +59,12 @@
                         This program performs this process every frame.
                         Every frame the particles are placed into a grid, their proximity is checked, possible collisions are noted, collisions are then resolved, and then the particles are placed back into 2d space for the next simulation step.
                     </p>
-
+                </div>
+                <div class="project-column-80 project-margin-70-top project-text-box">
                     <h2 class="project-subtitle">Wrapping It Up</h2>
                     <p>
                         Each frame of the simulation follows this process:
                     </p>
-                </div>
-                <div class="project-column-80">
                     <div style="display: flex; justify-content: center;">
                         <ol>
                             <li>
@@ -91,14 +94,14 @@
                         </ol>
                     </div>
                 </div>
-                <div class="project-column-60">
+                <div class="project-column-60 project-margin-70-top project-text-box">
                     <p>
                         That’s a lot to do in just one frame!
                         If you’re interested, you can check the Javascript files below to see how it’s implemented.
                         The verletengine.js file in particular has a lot of code comments to help explain the process.
                     </p>
                 </div>
-                <div class="project-column-60">
+                <div class="project-column-60 project-margin-70-top project-text-box">
                     <h2 class="project-subtitle">Source Code:</h2>
                     <div class="project-uncenter-children">
                         <p><a class="sourcecode-link-verletenginejs" href="/" target="_blank"><strong>verletengine.js</strong></a> - Contains the data, simulation, and rendering.</p>
@@ -106,7 +109,9 @@
                         <p class="project-margin-10-bottom project-margin-10-top"><a class="sourcecode-link-vectorjs" href="/" target="_blank"><strong>vector.js</strong></a> - Contains the (messy) Vector class and helper math functions.</p>
                     </div>
                 </div>
-                <h2 class="project-margin-20-top"><a class="page-link-workshop" href="/">Back to Workshop</a></h2>
+                <div class="project-margin-50-top project-text-box">
+                    <h2><a class="page-link-workshop" href="/">Back to Workshop</a></h2>
+                </div>
             </div>
         </div>
 

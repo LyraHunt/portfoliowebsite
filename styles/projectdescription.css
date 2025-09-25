@@ -6,7 +6,6 @@
 
 .project-subtitle {
     text-decoration: underline;
-    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -134,6 +133,30 @@
     border: round(up, min(0.5vw, 3px), 1px) solid var(--default-text);
 }
 
+.project-margin-70 {
+    margin: 70px;
+}
+
+.project-margin-70-top {
+    margin-top: 70px;
+}
+
+.project-margin-50 {
+    margin: 50px;
+}
+
+.project-margin-50-top {
+    margin-top: 50px;
+}
+
+.project-margin-30 {
+    margin: 30px;
+}
+
+.project-margin-30-top {
+    margin-top: 30px;
+}
+
 .project-margin-20 {
     margin: 20px;
 }
@@ -193,7 +216,7 @@ li {
 
 .project-button:hover {
     transform: scale(1.1);
-    background-color: var(--dark-background-1);
+    background-color: rgba(var(--body-background-num), 0.75);
 }
 
 @media screen and (min-width: 1000px) {
@@ -202,6 +225,15 @@ li {
         /*background-image: linear-gradient(to right, transparent calc(50% - 550px), rgba(0,0,0,0.75) calc(50% - 350px), rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.75) calc(50% + 350px), transparent calc(50% + 550px)), url("/images/backgrounds/through-the-grapevine-background.png");*/
         background-image: linear-gradient(to right, transparent calc(50% - 550px), rgba(var(--body-background-num), 0.75) calc(50% - 350px), rgba(var(--body-background-num), 0.9) 50%, rgba(var(--body-background-num), 0.75) calc(50% + 350px), transparent calc(50% + 550px)), url("/images/backgrounds/through-the-grapevine-background.png");
         opacity: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .project-text-box {
+        background-color: var(--body-background);
+        box-shadow: 0px 0px 10px 10px var(--body-background);
+        padding: 5px 20px;
+        opacity: 90%;
     }
 }
 
