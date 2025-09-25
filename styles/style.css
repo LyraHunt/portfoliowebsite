@@ -171,7 +171,7 @@ a:link.current-page, a:visited.current-page {
     background-color: var(--dark-background-1);
     justify-content: space-evenly;
     padding: 0px min(3vw, 20px) 0px 0px;
-    margin-bottom: min(8vw, 60px);
+    margin-bottom: min(12vw, 60px);
 }
 
 .footer-container {

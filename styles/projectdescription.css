@@ -1,6 +1,7 @@
 .project-title {
     text-decoration: underline;
     font-size: min(7vw, 28px);
+    line-height: min(9vw, 32px);
 }
 
 .project-subtitle {
@@ -158,8 +159,8 @@
 }
 
 h2 {
-    font-size: min(5vw, 20px);
-    line-height: min(7vw, 28px);
+    font-size: min(4.5vw, 20px);
+    line-height: min(6.5vw, 28px);
     text-align: center;
 }
 
