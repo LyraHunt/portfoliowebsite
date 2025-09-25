@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
 html[theme=theme-dark] {
     --body-background: #000;
-    --default-text: #EEE;
+    --body-background-num: 0, 0, 0;
+    --default-text: #FFF;
 
     --dark-background-1: #333;
     --dark-background-2: #555;
@@ -8,11 +11,12 @@ html[theme=theme-dark] {
     --nav-link: #CAD;
     --current-link: #FCC;
 
-    --dark-mode-invert: invert(92.5%);
+    --dark-mode-invert: invert(1.0);
 }
 
 html[theme=theme-light] {
     --body-background: #FFF;
+    --body-background-num: 255, 255, 255;
     --default-text: #000;
 
     --dark-background-1: #CCC;
@@ -29,6 +33,11 @@ html, body {
     padding: 0px;
     width: 100%;
     height: 100%;
+
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-underline-offset: 2px;
 }
 
 body {
@@ -37,20 +46,37 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: min(6vw, 24px);
+    line-height: min(8vw, 28px);
     font-weight: bold;
     text-align: center;
     margin: 10px;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     margin: 5px;
 }
 
+p, ol, ul {
+    font-size: min(3.5vw, 16px);
+    line-height: min(6vw, 24px);
+}
+
+button {
+    font-size: min(3.5vw, 16px);
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
 i {
     font-style: italic;
+}
+
+strong {
+    font-weight: 600;
 }
 
 .flex-column {
@@ -71,6 +97,7 @@ i {
     min-height: 100%;
     justify-content: start;
     position: relative;
+    overflow: hidden;
 }
 
 .name-title {
@@ -84,6 +111,7 @@ i {
 .site-title {
     margin: 0px 0px 0px clamp(0px, 5vw - 28px, 30px);
     font-size: clamp(18px, 3.8vw, 26px);
+    line-height: clamp(18px, 3.8vw, 26px);
     width: clamp(80px, 30vw, 220px);
     font-weight: bold;
     display: block;
@@ -100,7 +128,7 @@ i {
 .page-link {
     width: min(20vw, 90px);
     font-size: min(4vw, 20px);
-    font-size: clamp(12px, 3vw, 20px);
+    font-size: clamp(12px, 3vw, 16px);
     font-weight: bold;
     margin: 4px 10px;
     text-align: center;
@@ -167,11 +195,14 @@ a:link.current-page, a:visited.current-page {
     background-image: url("/images/backgrounds/through-the-grapevine-background.png");
     background-size: 100%;
     background-repeat: repeat-y;
+    background-position: center top;
     width: 100vw;
+    /*min-width: 600px;*/
     /*height: 100%;*/
+    overflow: hidden;
     position: absolute;
     top: 0px;
     bottom: 0px;
     z-index: -1;
-    opacity: 25%;
+    opacity: 20%;
 }
