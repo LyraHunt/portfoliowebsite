@@ -191,18 +191,43 @@ a:link.current-page, a:visited.current-page {
     width: 100%;
 }
 
+@media screen and (max-width: 1000px) {
+    .text-box-shadow {
+        background-color: rgba(var(--body-background-num), 0.6);
+        box-shadow: 0px 0px 10px 5px rgba(var(--body-background-num), 0.6);
+        padding: 5px min(3vw, 20px);
+    }
+}
+
+
+
+/* --- background image sizing and styling nonsense --- */
 .background-image-grapevine {
-    background-image: url("/images/backgrounds/through-the-grapevine-background.png");
+    background-image: url("/images/backgrounds/through-the-grapevine-background-500.png");
     background-size: 100%;
     background-repeat: repeat-y;
     background-position: center top;
     width: 100vw;
-    /*min-width: 600px;*/
-    /*height: 100%;*/
     overflow: hidden;
     position: absolute;
     top: 0px;
     bottom: 0px;
     z-index: -1;
     opacity: 20%;
+}
+
+@media screen and (min-width: 1000px) {
+    .background-image-grapevine {
+        background-image: linear-gradient(to right, transparent calc(50% - 550px), rgba(var(--body-background-num), 0.75) calc(50% - 350px), rgba(var(--body-background-num), 0.9) 50%, rgba(var(--body-background-num), 0.75) calc(50% + 350px), transparent calc(50% + 550px)), url("/images/backgrounds/through-the-grapevine-background.png");
+        opacity: 50%;
+    }
+}
+
+html[theme=theme-light] {
+    @media screen and (min-width: 1000px) {
+        .background-image-grapevine {
+            background-image: linear-gradient(to right, transparent calc(50% - 550px), rgba(var(--body-background-num), 0.85) calc(50% - 350px), rgba(var(--body-background-num), 1.0) 50%, rgba(var(--body-background-num), 0.85) calc(50% + 350px), transparent calc(50% + 550px)), url("/images/backgrounds/through-the-grapevine-background.png");
+            opacity: 50%;
+        }
+    }
 }
