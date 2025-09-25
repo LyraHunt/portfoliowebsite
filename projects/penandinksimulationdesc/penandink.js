@@ -61,7 +61,7 @@ function square(x, y, size, width) {
     line(x - size / 2, y + size / 2, x - size / 2, y - size / 2, width);
 }
 
-function newDesign() {
+function newDesign(drawing = 0) {
     var color = 'beige';
     ctx.globalAlpha = 1.0
     ctx.fillStyle = color;
@@ -70,52 +70,123 @@ function newDesign() {
     ctx.strokeStyle = 'black';
     ctx.fillStyle = 'black';
 
-    let drawing = Math.ceil(Math.random() * drawingsAmount);
-
-    if (drawing === 1) {
-        concentricSquares();
+    if (drawing === 0) {
+        drawing = getRandomFromRange(1,drawingsAmount);
     }
 
-    else if (drawing === 2) {
-        hatchingGradient();
-    }
+    // temp
+    //drawing = 101
 
-    else if (drawing === 3) {
-        onePointPerspective();
-    }
+    switch (drawing) {
+        case 1:
+            concentricSquares();
+            break;
+        
+        case 2:
+            hatchingGradient();
+            break;
+        
+        case 3:
+            onePointPerspective();
+            break;
+        
+        case 4:
+            coffeeRings();
+            break;
 
-    else if (drawing === 4) {
-        coffeeRings();
+        case 101:
+            concentricSquares(1);
+            hatchingGradient(1);
+            onePointPerspective();
+            coffeeRings();
+            break;
+        
+        case 102:
+            //concentricSquares(1);
+            hatchingGradient();
+            coffeeRings();
+            break;
     }
 }
 
-function concentricSquares() {
-    for (let a = -1; a < 2; a++) {
-        for (let b = -1; b < 2; b++) {
-            for (let i = 0; i < (8 + Math.random() * 4); i++) {
-                let size = i * 6.5 + Math.random() * 5;
-                square(width / 2 + a * 90, height / 2 + b * 90, size, 0.5);
+function concentricSquares(variationNum = 0) {
+    if (variationNum === 0) {
+        variationNum = getRandomFromRange(1, 2);
+    }
+
+    switch (variationNum) {
+        case 1:
+            // 3x3 grid of squares
+            for (let a = -1; a < 2; a++) {
+                for (let b = -1; b < 2; b++) {
+                    for (let i = 0; i < (8 + Math.random() * 4); i++) {
+                        let size = i * 6.5 + Math.random() * 5;
+                        square(width / 2 + a * 90, height / 2 + b * 90, size, 0.5);
+                    }
+                }
             }
-        }
+            break;
+        
+        case 2:
+            // 2x2 grid of squares
+            for (let a = -1; a < 2; a += 2) {
+                for (let b = -1; b < 2; b += 2) {
+                    for (let i = 0; i < (12 + Math.random() * 8); i++) {
+                        let size = i * 7.5 + Math.random() * 8;
+                        square(width / 2 + a * 75, height / 2 + b * 75, size, 0.5);
+                    }
+                }
+            }
+            break;
     }
 }
 
-function hatchingGradient() {
-    let lineDist = 0.5;
-    for (let i = 15; i < 285; i += 0) {
-        //line(50,150+lineDist,250,150+lineDist,0.5);
-        line(15, i, i, 15, 0.5);
-        lineDist += 0.05;
-        i += lineDist;
+function hatchingGradient(variationNum = 0) {
+    if (variationNum === 0) {
+        variationNum = getRandomFromRange(1, 3);
     }
-    lineDist = 0.5;
-    for (let i = 15; i < 285; i += 0) {
-        //line(50,150+lineDist,250,150+lineDist,0.5);
-        line(285, 300 - i, 300 - i, 285, 0.5);
-        lineDist += 0.05;
-        i += lineDist;
+
+    let lineDist = 0
+
+    switch (variationNum) {
+        case 1:
+            lineDist = 0.5;
+            for (let i = 15; i < 285; i += 0) {
+                line(15, i, i, 15, 0.5);
+                lineDist += 0.05;
+                i += lineDist;
+            }
+            lineDist = 0.5;
+            for (let i = 15; i < 285; i += 0) {
+                line(285, 300 - i, 300 - i, 285, 0.5);
+                lineDist += 0.05;
+                i += lineDist;
+            }
+            line(285, 15, 15, 285, 0.5);
+            break;
+        
+        case 2:
+            for (let i = 15; i < 285; i += 0) {
+                line(15, 15, 300 - i, 285, 0.5);
+                i += 6;
+            }
+            for (let i = 15; i < 285; i += 0) {
+                line(285, 285, i, 15, 0.5);
+                i += 6;
+            }
+            break;
+        
+        case 3:
+            for (let i = 15; i < 285; i += 0) {
+                line(15, 15, 300 - i, i, 0.5);
+                i += 6;
+            }
+            for (let i = 15; i < 285; i += 0) {
+                line(15, 285, 300 - i, 300 - i, 0.5);
+                i += 6;
+            }
+            break;
     }
-    line(285, 15, 15, 285, 0.5);
 }
 
 function onePointPerspective() {
@@ -226,7 +297,7 @@ function coffeeRings() {
     for (let a = 0; a < circleAmount; a++) {
         let currentCircleX = Math.random() * (width - 40) + 20;
         let currentCircleY = Math.random() * (height - 40) + 20;
-        let currentRadius = Math.random() * 80 + 20;
+        let currentRadius = Math.random() * 60 + 40;
         let currentHatchAmount = currentRadius * Math.PI / 2 / 1.5;
         let currentHatchThickness = Math.random() * 10 + 3;
 
