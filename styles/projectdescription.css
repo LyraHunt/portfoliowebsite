@@ -182,7 +182,7 @@
 }
 
 h2 {
-    font-size: min(4.5vw, 20px);
+    font-size: min(5vw, 20px);
     line-height: min(6.5vw, 28px);
     text-align: center;
 }
@@ -193,7 +193,7 @@ p {
 
 ol {
     list-style-type: decimal;
-    margin: 30px;
+    margin: 30px 0px;
     list-style-position: inside;
     text-align: center;
 }
@@ -230,10 +230,9 @@ li {
 
 @media screen and (max-width: 1000px) {
     .project-text-box {
-        background-color: var(--body-background);
-        box-shadow: 0px 0px 10px 10px var(--body-background);
-        padding: 5px 20px;
-        opacity: 90%;
+        background-color: rgba(var(--body-background-num), 0.6);
+        box-shadow: 0px 0px 10px 5px rgba(var(--body-background-num), 0.6);
+        padding: 5px min(3vw, 20px);
     }
 }
 
