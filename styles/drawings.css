@@ -96,14 +96,25 @@ html[theme=theme-light] {
     flex-direction: row;
 }
 
+#lightboxImgContainerOuter {
+    width: calc(100% - 20vw);
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 #lightboxClose {
     border: 2px solid var(--default-text);
     position: absolute;
     top: 3vw;
     right: 3vw;
-    font-size: clamp(40px, 7vw, 40px);
+    font-size: 40px;
+    width: 50px;
+    line-height: 50px;
+    /*font-size: clamp(40px, 7vw, 40px);
     width: clamp(40px, 7vw, 50px);
-    line-height: clamp(40px, 7vw, 50px);
+    line-height: clamp(40px, 7vw, 50px);*/
     background-color: var(--nav-buttons-background);
     cursor: pointer;
     text-align: center;
@@ -132,4 +143,61 @@ html[theme=theme-light] {
 .lightboxNav:hover {
     transform: scale(1.2);
     background-color: var(--nav-buttons-background-hover);
+}
+
+
+
+/* --- mobile nav stuff --- */
+#lightboxMobileNavBar {
+    position: absolute;
+    bottom: 0px;
+    width: 150px;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lightboxMobileNav {
+    border: 2px solid var(--default-text);
+    position: relative;
+    font-size: 40px;
+    width: 50px;
+    line-height: 50px;
+    background-color: var(--nav-buttons-background);
+    cursor: pointer;
+    text-align: center;
+    transition: 0.1s;
+    border-radius: 5px;
+    display: none;
+}
+
+.lightboxMobileNav:hover {
+    transform: scale(1.2);
+    background-color: var(--nav-buttons-background-hover);
+}
+
+@media screen and (max-width: 768px) and (max-aspect-ratio: 1/1) {
+    .lightboxNav {
+        display: none;
+    }
+
+    .lightboxMobileNav {
+        display: initial;
+    }
+
+    #lightbox {
+        align-items: start;
+    }
+
+    #lightboxImgContainer {
+        justify-content: center;
+        margin-top: calc(54px + 6vw);
+        height: calc(100% - (54px + 6vw) - 15vh);
+    }
+
+    #lightboxImgContainerOuter {
+        width: calc(100% - 5vw);
+    }
 }

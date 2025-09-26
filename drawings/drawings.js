@@ -182,10 +182,15 @@ function displayLightbox(imageSrc, imageID) {
 
     // if larger image is already loaded, show it now
     if (currentImage.complete) {
+        console.log("large version already loaded")
         if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
             lightboxImg.src = imageSrc;
-            lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
-            lightbox.style.display = "flex";
+            lightboxImg.onload = () => {
+                lightbox.style.display = "flex";
+                lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
+            }
+            //lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+            //lightbox.style.display = "flex";
         }
     }
     

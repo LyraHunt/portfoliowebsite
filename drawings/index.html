@@ -27,7 +27,7 @@
     <div id="lightbox" onclick="closeLightbox()">
         <div id="lightboxImgContainer">
             <span class="lightboxNav" onclick="changeLightboxImg(-1); event.stopPropagation()">&lt;</span>
-            <div style="width: calc(100% - 20vw); height: 100%; align-items: center; justify-content: center; display: flex;">
+            <div id="lightboxImgContainerOuter">
                 <div id="lightboxImgContainerInner" style="max-height: 100%; aspect-ratio: 0.7; align-items: center; justify-content: center; display: flex;">
                     <img id="lightboxImg" onclick="event.stopPropagation()">
                 </div>
@@ -35,6 +35,10 @@
             <span class="lightboxNav" onclick="changeLightboxImg(1); event.stopPropagation()">&gt;</span>
         </div>
         <span id="lightboxClose" onclick="closeLightbox(); event.stopPropagation()">&times;</span>
+        <div id="lightboxMobileNavBar">
+            <span id="lightboxMobileNavLeft" class="lightboxMobileNav" onclick="changeLightboxImg(-1); event.stopPropagation()">&lt;</span>
+            <span id="lightboxMobileNavRight" class="lightboxMobileNav" onclick="changeLightboxImg(1); event.stopPropagation()">&gt;</span>
+        </div>
     </div>
     
     <span id="additionalScripts" data-script-list="drawings_data, drawings"></span>
