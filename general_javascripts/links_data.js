@@ -39,12 +39,14 @@ var SourceCodeLinks = {
 }
 
 var ExternalLinks = {
-    "my-youtube": "https://www.youtube.com/@wildehuntgame",
+    "my-youtube": "https://www.youtube.com/@wildehuntgames",
 
     "itch-capstone-game": "https://lyradesignsgames.itch.io/forest-game",
     "itch-alchemikitty": "https://lyradesignsgames.itch.io/alchemikitty",
 
-    "reddit-post-pen-simulation": "https://www.reddit.com/r/generative/comments/sr9zia/working_on_a_function_to_draw_lines_that_look/"
+    "reddit-post-pen-simulation": "https://www.reddit.com/r/generative/comments/sr9zia/working_on_a_function_to_draw_lines_that_look/",
+
+    "celeste-and-towerfall-physics": "https://maddymakesgames.com/articles/celeste_and_towerfall_physics/index.html"
 }
 
 var LinkSets = [{

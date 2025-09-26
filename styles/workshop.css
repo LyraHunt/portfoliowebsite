@@ -8,11 +8,6 @@ html[theme=theme-light] {
     --workshop-text: #000;
 }
 
-body {
-    /*background-color: var(--workshop-background);*/
-    /*color: var(--workshop-text);*/
-}
-
 #workshop-grid {
     max-width: calc(100% - min(400px, (25% * 2)));
     display: grid;
@@ -116,5 +111,5 @@ body {
 .workshop-window-title-container h2 {
     font-size: min(2vw, 18px);
     text-align: center;
-    color: #CCCCFF
+    color: #CCCCFF;
 }

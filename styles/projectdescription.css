@@ -129,6 +129,11 @@
     width: 80%;
 }
 
+.project-image-large {
+    max-width: 750px;
+    width: 90%;
+}
+
 .project-border-thin {
     border: round(up, min(0.5vw, 3px), 1px) solid var(--default-text);
 }
