@@ -168,14 +168,15 @@ html[theme=theme-light] {
     background-color: var(--nav-buttons-background);
     cursor: pointer;
     text-align: center;
-    transition: 0.1s;
+    transition: 0.05s;
     border-radius: 5px;
     display: none;
 }
 
-.lightboxMobileNav:hover {
+.lightboxMobileNav:active {
     transform: scale(1.2);
     background-color: var(--nav-buttons-background-hover);
+    transition: 0s;
 }
 
 @media screen and (max-width: 768px) and (max-aspect-ratio: 1/1) {
