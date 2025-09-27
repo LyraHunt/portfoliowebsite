@@ -168,7 +168,7 @@ html[theme=theme-light] {
     background-color: var(--nav-buttons-background);
     cursor: pointer;
     text-align: center;
-    transition: 0.05s;
+    transition: 0.15s;
     border-radius: 5px;
     display: none;
 }

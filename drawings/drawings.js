@@ -185,12 +185,8 @@ function displayLightbox(imageSrc, imageID) {
         console.log("large version already loaded")
         if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
             lightboxImg.src = imageSrc;
-            lightboxImg.onload = () => {
-                lightbox.style.display = "flex";
-                lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
-            }
-            //lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
-            //lightbox.style.display = "flex";
+            lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+            lightbox.style.display = "flex";
         }
     }
     

@@ -147,6 +147,17 @@ drawings[current_index].altFilesizes = [500];
 
 drawings.push(new Drawing);
 current_index = drawings.length - 1;
+drawings[current_index].year = 2025;
+drawings[current_index].filename = "daffodil-cathedral";
+drawings[current_index].defaultSize = 1633;
+drawings[current_index].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 3, minWidth: mobileThreshold}
+]
+drawings[current_index].altFilesizes = [500];
+
+drawings.push(new Drawing);
+current_index = drawings.length - 1;
 drawings[current_index].year = 2023;
 drawings[current_index].filename = "cube-tunnel-sharpie";
 drawings[current_index].defaultSize = 3294;
