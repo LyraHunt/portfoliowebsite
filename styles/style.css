@@ -11,7 +11,8 @@ html[theme=theme-dark] {
     --nav-link: #CAD;
     --current-link: #FCC;
 
-    --dark-mode-invert: invert(1.0);
+    --dark-mode-invert: invert(100%);
+    --dark-mode-invert-small: invert(10%);
 }
 
 html[theme=theme-light] {
@@ -26,6 +27,7 @@ html[theme=theme-light] {
     --current-link: #117;
 
     --dark-mode-invert: invert(0%);
+    --dark-mode-invert-small: invert(90%);
 }
 
 html, body {
@@ -197,6 +199,278 @@ a:link.current-page, a:visited.current-page {
         box-shadow: 0px 0px 10px 5px rgba(var(--body-background-num), 0.6);
         padding: 5px min(3vw, 20px);
     }
+}
+
+
+
+/* --- borders ---*/
+
+/* project title container */
+.fancy-border-project-title-top-back {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 20px;
+    background-image: url("/images/ui/fancy-border-project-title-back.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
+}
+
+.fancy-border-project-title-bottom-back {
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 20px;
+    background-image: url("/images/ui/fancy-border-project-title-back.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
+}
+
+.fancy-border-project-title-top-center {
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-center.png");
+}
+
+.fancy-border-project-title-top-edge {
+    position: absolute;
+    top: -20px;
+    left: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+}
+
+.fancy-border-project-title-bottom-edge {
+    position: absolute;
+    top: -20px;
+    left: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    transform: scaleY(-1);
+}
+
+.fancy-border-project-title-top-edge-flip {
+    position: absolute;
+    top: -20px;
+    right: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    transform: scaleX(-1);
+}
+
+.fancy-border-project-title-bottom-edge-flip {
+    position: absolute;
+    top: -20px;
+    right: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    transform: scale(-1);
+}
+
+.fancy-border-project-title-left {
+    position: absolute;
+    left: -5px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.fancy-border-project-title-left::before {
+    transform: rotate(90deg);
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: calc(-500% + 5px);
+    width: 1000%;
+    height: 10px;
+    background-image: url("/images/ui/ink-border-thin.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
+}
+
+.fancy-border-project-title-right {
+    position: absolute;
+    right: -5px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.fancy-border-project-title-right::before {
+    transform: rotate(90deg);
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: calc(-500% + 5px);
+    width: 1000%;
+    height: 10px;
+    background-image: url("/images/ui/ink-border-thin.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
+}
+
+.fancy-border-project-title-solid-background {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    background-color: var(--body-background);
+    z-index: -1;
+}
+
+.fancy-border-project-title-hatch-background {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    background-image: url("/images/ui/ink-hatch-background.png");
+    filter: var(--dark-mode-invert-small);
+    z-index: -1;
+}
+
+.fancy-border-project-title-shadow-background {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    box-shadow: var(--body-background) inset 0px 5px 20px 20px;
+    z-index: -1;
+}
+
+/* home page */
+.fancy-border-home-top-back {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    width: calc(100% - 60px);
+    height: 20px;
+    background-image: url("/images/ui/fancy-border-project-title-back.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
+}
+
+.fancy-border-home-bottom-back {
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    width: calc(100% - 60px);
+    height: 20px;
+    background-image: url("/images/ui/fancy-border-project-title-back.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
+}
+
+.fancy-border-home-top-center {
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-center.png");
+}
+
+.fancy-border-home-top-edge {
+    position: absolute;
+    top: -20px;
+    left: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+}
+
+.fancy-border-home-bottom-edge {
+    position: absolute;
+    top: -20px;
+    left: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    transform: scaleY(-1);
+}
+
+.fancy-border-home-top-edge-flip {
+    position: absolute;
+    top: -20px;
+    right: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    transform: scaleX(-1);
+}
+
+.fancy-border-home-bottom-edge-flip {
+    position: absolute;
+    top: -20px;
+    right: -70px;
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    transform: scale(-1);
+}
+
+.fancy-border-home-left {
+    position: absolute;
+    left: -5px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.fancy-border-home-left::before {
+    transform: rotate(90deg);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(-300% + 5px);
+    width: 600%;
+    height: 10px;
+    background-image: url("/images/ui/ink-border-thin.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
+}
+
+.fancy-border-home-right {
+    position: absolute;
+    right: -5px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.fancy-border-home-right::before {
+    transform: rotate(90deg);
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: calc(-300% + 5px);
+    width: 600%;
+    height: 10px;
+    background-image: url("/images/ui/ink-border-thin.png");
+    background-repeat: repeat;
+    filter: var(--dark-mode-invert);
 }
 
 

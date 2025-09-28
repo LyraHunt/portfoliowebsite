@@ -173,7 +173,7 @@ drawings[current_index].year = 2023;
 drawings[current_index].filename = "karkovchanka";
 drawings[current_index].defaultSize = 2787;
 drawings[current_index].sizes = [
-    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 1, minWidth: 0},
     {x: 3, y: 2, minWidth: mobileThreshold}
 ]
 drawings[current_index].altFilesizes = [600]

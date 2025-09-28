@@ -2,23 +2,21 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80vw;
-    justify-content: space-evenly;
-    gap: 40px;
+    width: 75vw;
+    justify-content: center;
+    gap: max(100px, 10vw);
     row-gap: 80px;
     margin-bottom: 40px;
 }
 
 .subject-container {
     position: relative;
-    border: 2px var(--default-text) solid;
-    min-height: 140px;
-    flex-basis: 250px;
+    width: 30%;
+    min-width: 275px;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 450px;
-    padding: 20px;
-    background-color: var(--body-background);
+    padding: min(20px, 3vw);
 }
 
 .subject-header {
@@ -62,74 +60,4 @@
     width: 60px;
     height: 40px;
     cursor: pointer;
-}
-
-.fancy-border-project-title-top-back {
-    position: absolute;
-    top: -15px;
-    left: 50px;
-    width: calc(100% - 100px);
-    height: 20px;
-    background-image: url("/images/ui/fancy-border-project-title-back.png");
-    background-repeat: repeat;
-    filter: var(--dark-mode-invert);
-}
-
-.fancy-border-project-title-bottom-back {
-    position: absolute;
-    bottom: -15px;
-    left: 50px;
-    width: calc(100% - 100px);
-    height: 20px;
-    background-image: url("/images/ui/fancy-border-project-title-back.png");
-    background-repeat: repeat;
-    filter: var(--dark-mode-invert);
-}
-
-.fancy-border-project-title-top-center {
-    position: absolute;
-    top: -20px;
-    left: calc(50% - 50px);
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-center.png");
-}
-
-.fancy-border-project-title-top-edge {
-    position: absolute;
-    top: -20px;
-    left: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-}
-
-.fancy-border-project-title-bottom-edge {
-    position: absolute;
-    top: -20px;
-    left: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-    transform: scaleY(-1);
-}
-
-.fancy-border-project-title-top-edge-flip {
-    position: absolute;
-    top: -20px;
-    right: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-    transform: scaleX(-1);
-}
-
-.fancy-border-project-title-bottom-edge-flip {
-    position: absolute;
-    top: -20px;
-    right: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-    transform: scale(-1);
 }
