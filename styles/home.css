@@ -16,7 +16,13 @@
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 450px;
-    padding: min(20px, 3vw);
+    padding: 25px min(20px, 3vw);
+}
+
+@media screen and (max-width: 400px) {
+    .subject-container {
+        min-width: 0px;
+    }
 }
 
 .subject-header {
