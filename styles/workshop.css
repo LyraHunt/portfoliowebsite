@@ -113,3 +113,39 @@ html[theme=theme-light] {
     text-align: center;
     color: #CCCCFF;
 }
+
+@media screen and (max-width: 768px) {
+    #workshop-grid {
+        max-width: 500px;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+    
+    .workshop-grid-edge {
+        display: none;
+    }
+
+    #workshop-grid-bottom {
+        max-width: 500px;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+
+    .workshop-grid-bottom-edge {
+        display: none;
+    }
+
+    .workshop-window {
+        max-width: none;
+        max-height: none;
+    }
+
+    .workshop-bottom-center {
+        max-width: none;
+        max-height: none;
+    }
+
+    .workshop-window-title-container h2 {
+        font-size: min(4vw, 18px);
+    }
+}

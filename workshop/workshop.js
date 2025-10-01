@@ -219,17 +219,11 @@ function tryMobileFilter() {
     }
 }
 
-//when window is resized, check workshop changes
-//window.onresize = reportWindowSize;
-
-//update window onload (generate workshop)
-//reportWindowSize();
-
 tryMobileFilter();
 
 var lastWorkshopGridHeight = 0;
 
-new ResizeObserver(function() {
+new ResizeObserver(() => {
     removeGaps();
     fillInGaps();
     generateWorkshopSides();
