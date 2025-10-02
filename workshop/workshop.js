@@ -108,12 +108,12 @@ function generateWorkshopSides() {
     for (let i = 0; i < workshopGridRowCount; i++) {
         var newWorkshopLeft = document.createElement("div");
         newWorkshopLeft.classList.add("workshop-edge");
-        newWorkshopLeft.style = "background-image: url('images/workshop-edge-left.png')";
+        newWorkshopLeft.classList.add("left");
         newWorkshopGridLeft.push(newWorkshopLeft);
 
         var newWorkshopRight = document.createElement("div");
         newWorkshopRight.classList.add("workshop-edge");
-        newWorkshopRight.style = "background-image: url('images/workshop-edge-right.png')";
+        newWorkshopRight.classList.add("right");
         newWorkshopGridRight.push(newWorkshopRight);
     }
 
@@ -129,21 +129,20 @@ function generateWorkshopBottom() {
         if (i == 0) {
             var newWorkshopBottomLeft = document.createElement("div");
             newWorkshopBottomLeft.classList.add("workshop-bottom-edge");
-            newWorkshopBottomLeft.style.backgroundImage = "url('images/workshop-bottom-left.png')";
+            newWorkshopBottomLeft.classList.add("left");
             workshopGridBottomLeft.replaceChildren(...[newWorkshopBottomLeft]);
         }
         
         else if (i < workshopGridColumnCount + 1) {
             var newWorkshopBottom = document.createElement("div");
             newWorkshopBottom.classList.add("workshop-bottom-center");
-            newWorkshopBottom.style.backgroundImage = "url('images/workshop-bottom-center.png')";
             newWorkshopGridBottom.push(newWorkshopBottom);
         }
 
         else {
             var newWorkshopBottomRight = document.createElement("div");
             newWorkshopBottomRight.classList.add("workshop-bottom-edge");
-            newWorkshopBottomRight.style.backgroundImage = "url('images/workshop-bottom-right.png')";
+            newWorkshopBottomRight.classList.add("right");
             workshopGridBottomRight.replaceChildren(...[newWorkshopBottomRight]);
         }
     }

@@ -9,7 +9,8 @@ var GlobalScripts = [
 
 "/general_javascripts/header_n_footer.js", 
 
-"/general_javascripts/dynamic_links.js" // should go last, after all html is loaded
+"/general_javascripts/dynamic_links.js", // should go last, after all html is loaded
+"/general_javascripts/ink_style.js" // should go last, after all html is loaded
 ]
 
 var AdditionalScriptsReference = {

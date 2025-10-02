@@ -27,7 +27,7 @@ function generateHeader(targetElement) {
     var logo = document.createElement("img");
     logo.classList.add("site-logo");
     logo.src = "/images/capstone-game-icon-circle.png";
-    titleContainer.appendChild(logo);
+    //titleContainer.appendChild(logo);
 
     var siteTitle = document.createElement("h1");
     siteTitle.classList.add("site-title");
@@ -37,7 +37,7 @@ function generateHeader(targetElement) {
     newHeader.push(titleContainer);
 
     var linksContainer = document.createElement("div");
-    linksContainer.classList.add("flex-row", "links-container");
+    linksContainer.classList.add("links-container");
 
     var homeLink = document.createElement("a");
     homeLink.classList.add("page-link");

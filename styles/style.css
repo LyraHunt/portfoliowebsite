@@ -112,36 +112,46 @@ strong {
 
 .site-title {
     margin: 0px 0px 0px clamp(0px, 5vw - 28px, 30px);
-    font-size: clamp(18px, 3.8vw, 26px);
+    font-size: 26px;
     line-height: clamp(18px, 3.8vw, 26px);
-    width: clamp(80px, 30vw, 220px);
+    width: 100%;
     font-weight: bold;
     display: block;
     text-align: center;
 }
 
 .title-container {
-    width: 38%;
-    max-width: 340px;
+    /*width: 38vw;
+    max-width: 340px;*/
     flex-wrap: wrap;
     row-gap: 6px;
+    flex-grow: 1;
 }
 
 .page-link {
-    padding: 4px 0px;
-    width: min(20vw, 90px);
-    font-size: clamp(12px, 3vw, 16px);
+    width: 90px;
+    font-size: 16px;
     font-weight: bold;
     margin: 4px 10px;
     text-align: center;
 }
 
 .links-container {
-    width: 55%;
+    /*width: 100%;*/
+    position: relative;
     min-height: 60px;
     flex-wrap: wrap;
     row-gap: 2px;
     background-color: var(--dark-background-2);
+    flex-grow: 3;
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25%, 100px));
+    grid-auto-rows: minmax(0px, auto);
+    grid-auto-flow: row;
+    place-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 a:link, a:visited {
@@ -167,13 +177,14 @@ a:link.current-page, a:visited.current-page {
 }
 
 .header-container {
+    position: relative;
     width: 100%;
     box-sizing: border-box;
     height: 120px;
     background-color: var(--dark-background-1);
     justify-content: space-evenly;
-    padding: 0px min(3vw, 20px) 0px 0px;
-    margin-bottom: min(12vw, 60px);
+    padding: 0px 15px;
+    margin-bottom: 60px;
 }
 
 .footer-container {
@@ -494,6 +505,42 @@ a:link.current-page, a:visited.current-page {
     .background-image-grapevine {
         background-image: linear-gradient(to right, transparent calc(50% - 550px), rgba(var(--body-background-num), 0.75) calc(50% - 350px), rgba(var(--body-background-num), 0.9) 50%, rgba(var(--body-background-num), 0.75) calc(50% + 350px), transparent calc(50% + 550px)), url("/images/backgrounds/through-the-grapevine-background.png");
         opacity: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        height: 140px;
+    }
+
+    .links-container {
+        width: 100%;
+        flex-grow: 0;
+        margin-left: 0px;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header-container {
+        height: 155px;
+    }
+
+    .links-container {
+        padding: 8px 0px;
+        grid-template-columns: repeat(2, minmax(45%, 100px));
+        grid-auto-rows: minmax(0px, auto);
+        grid-auto-flow: row;
+        place-items: center;
+        justify-content: center;
+        align-content: center;
+        row-gap: 12px;
     }
 }
 

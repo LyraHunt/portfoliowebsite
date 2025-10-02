@@ -64,11 +64,20 @@ html[theme=theme-light] {
     aspect-ratio: calc(200 / 450);
 }
 
+.workshop-edge.left {
+    background-image: url('/workshop/images/workshop-edge-left.png');
+}
+
+.workshop-edge.right {
+    background-image: url('/workshop/images/workshop-edge-right.png');
+}
+
 .workshop-bottom-center {
     max-width: 400px;
     max-height: 250px;
     background-size: cover;
     aspect-ratio: calc(400 / 250);
+    background-image: url('/workshop/images/workshop-bottom-center.png');
 }
 
 .workshop-bottom-edge {
@@ -76,6 +85,14 @@ html[theme=theme-light] {
     max-height: 250px;
     background-size: cover;
     aspect-ratio: calc(200 / 250);
+}
+
+.workshop-bottom-edge.left {
+    background-image: url('/workshop/images/workshop-bottom-left.png');
+}
+
+.workshop-bottom-edge.right {
+    background-image: url('/workshop/images/workshop-bottom-right.png');
 }
 
 .workshop-window-frame {

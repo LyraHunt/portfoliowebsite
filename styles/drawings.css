@@ -29,7 +29,7 @@ html[theme=theme-light] {
     padding: 15px min(4vw, 40px) 13px min(4vw, 40px);
     border-radius: 5px;
     margin-bottom: 60px;
-    min-width: 250px;
+    min-width: min(60%, 250px);
     min-height: 100px;
     max-width: 60%;
 }
