@@ -137,7 +137,6 @@ strong {
 }
 
 .links-container {
-    /*width: 100%;*/
     position: relative;
     min-height: 60px;
     flex-wrap: wrap;
@@ -146,7 +145,7 @@ strong {
     flex-grow: 3;
     margin-left: 10px;
     display: grid;
-    grid-template-columns: repeat(4, minmax(25%, 100px));
+    grid-template-columns: repeat(4, min(25%, 175px));
     grid-auto-rows: minmax(0px, auto);
     grid-auto-flow: row;
     place-items: center;
@@ -214,80 +213,82 @@ a:link.current-page, a:visited.current-page {
 
 
 
-/* --- borders ---*/
+/* --- ink borders ---*/
 
 /* project title container */
-.fancy-border-project-title-top-back {
+.ink-border-project-title-top-back {
     position: absolute;
     top: -15px;
     left: 20px;
     width: calc(100% - 40px);
     height: 20px;
-    background-image: url("/images/ui/fancy-border-project-title-back.png");
+    background-image: url("/images/ui/ink-border-project-title-back.png");
     background-repeat: repeat;
     filter: var(--dark-mode-invert);
 }
 
-.fancy-border-project-title-bottom-back {
+.ink-border-project-title-bottom-back {
     position: absolute;
     bottom: -15px;
     left: 20px;
     width: calc(100% - 40px);
     height: 20px;
-    background-image: url("/images/ui/fancy-border-project-title-back.png");
+    background-image: url("/images/ui/ink-border-project-title-back.png");
     background-repeat: repeat;
     filter: var(--dark-mode-invert);
 }
 
-.fancy-border-project-title-top-center {
+.ink-border-project-title-top-center {
     position: absolute;
     top: -20px;
     left: calc(50% - 50px);
     width: 100px;
     height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-center.png");
+    background-image: url("/images/ui/ink-border-project-title-center.png");
 }
 
-.fancy-border-project-title-top-edge {
+.ink-border-project-title-top-edge {
     position: absolute;
     top: -20px;
     left: -70px;
     width: 100px;
     height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    background-image: url("/images/ui/ink-border-project-title-top-edge.png");
 }
 
-.fancy-border-project-title-bottom-edge {
+.ink-border-project-title-bottom-edge {
     position: absolute;
     top: -20px;
     left: -70px;
     width: 100px;
     height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    background-image: url("/images/ui/ink-border-project-title-top-edge.png");
     transform: scaleY(-1);
 }
 
-.fancy-border-project-title-top-edge-flip {
+.ink-border-project-title-top-edge-flip {
     position: absolute;
     top: -20px;
     right: -70px;
     width: 100px;
     height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    background-image: url("/images/ui/ink-border-project-title-top-edge.png");
     transform: scaleX(-1);
 }
 
-.fancy-border-project-title-bottom-edge-flip {
+.ink-border-project-title-bottom-edge-flip {
     position: absolute;
     top: -20px;
     right: -70px;
     width: 100px;
     height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
+    background-image: url("/images/ui/ink-border-project-title-top-edge.png");
     transform: scale(-1);
 }
 
-.fancy-border-project-title-left {
+/* general ink border stuff */
+
+.ink-border-thin-left {
     position: absolute;
     left: -5px;
     top: 0px;
@@ -297,7 +298,7 @@ a:link.current-page, a:visited.current-page {
     pointer-events: none;
 }
 
-.fancy-border-project-title-left::before {
+.ink-border-thin-left::before {
     transform: rotate(90deg);
     content: "";
     position: absolute;
@@ -310,7 +311,7 @@ a:link.current-page, a:visited.current-page {
     filter: var(--dark-mode-invert);
 }
 
-.fancy-border-project-title-right {
+.ink-border-thin-right {
     position: absolute;
     right: -5px;
     top: 0px;
@@ -320,7 +321,7 @@ a:link.current-page, a:visited.current-page {
     pointer-events: none;
 }
 
-.fancy-border-project-title-right::before {
+.ink-border-thin-right::before {
     transform: rotate(90deg);
     content: "";
     position: absolute;
@@ -333,7 +334,7 @@ a:link.current-page, a:visited.current-page {
     filter: var(--dark-mode-invert);
 }
 
-.fancy-border-project-title-solid-background {
+.ink-border-solid-background {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -344,7 +345,7 @@ a:link.current-page, a:visited.current-page {
     z-index: -1;
 }
 
-.fancy-border-project-title-hatch-background {
+.ink-border-hatch-background {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -356,7 +357,7 @@ a:link.current-page, a:visited.current-page {
     z-index: -1;
 }
 
-.fancy-border-project-title-shadow-background {
+.ink-border-shadow-background {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -366,125 +367,6 @@ a:link.current-page, a:visited.current-page {
     box-shadow: var(--body-background) inset 0px 5px 20px 20px;
     z-index: -1;
 }
-
-/* home page */
-.fancy-border-home-top-back {
-    position: absolute;
-    top: -15px;
-    left: 30px;
-    width: calc(100% - 60px);
-    height: 20px;
-    background-image: url("/images/ui/fancy-border-project-title-back.png");
-    background-repeat: repeat;
-    filter: var(--dark-mode-invert);
-}
-
-.fancy-border-home-bottom-back {
-    position: absolute;
-    bottom: -15px;
-    left: 30px;
-    width: calc(100% - 60px);
-    height: 20px;
-    background-image: url("/images/ui/fancy-border-project-title-back.png");
-    background-repeat: repeat;
-    filter: var(--dark-mode-invert);
-}
-
-.fancy-border-home-top-center {
-    position: absolute;
-    top: -20px;
-    left: calc(50% - 50px);
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-center.png");
-}
-
-.fancy-border-home-top-edge {
-    position: absolute;
-    top: -20px;
-    left: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-}
-
-.fancy-border-home-bottom-edge {
-    position: absolute;
-    top: -20px;
-    left: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-    transform: scaleY(-1);
-}
-
-.fancy-border-home-top-edge-flip {
-    position: absolute;
-    top: -20px;
-    right: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-    transform: scaleX(-1);
-}
-
-.fancy-border-home-bottom-edge-flip {
-    position: absolute;
-    top: -20px;
-    right: -70px;
-    width: 100px;
-    height: 60px;
-    background-image: url("/images/ui/fancy-border-project-title-top-edge.png");
-    transform: scale(-1);
-}
-
-.fancy-border-home-left {
-    position: absolute;
-    left: -5px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.fancy-border-home-left::before {
-    transform: rotate(90deg);
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: calc(-300% + 5px);
-    width: 600%;
-    height: 10px;
-    background-image: url("/images/ui/ink-border-thin.png");
-    background-repeat: repeat;
-    filter: var(--dark-mode-invert);
-}
-
-.fancy-border-home-right {
-    position: absolute;
-    right: -5px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.fancy-border-home-right::before {
-    transform: rotate(90deg);
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: calc(-300% + 5px);
-    width: 600%;
-    height: 10px;
-    background-image: url("/images/ui/ink-border-thin.png");
-    background-repeat: repeat;
-    filter: var(--dark-mode-invert);
-}
-
-
 
 /* --- background image sizing and styling nonsense --- */
 .background-image-grapevine {
