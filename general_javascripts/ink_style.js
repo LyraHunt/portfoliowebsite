@@ -50,9 +50,9 @@ function applyInkBordersSimple() {
     if (elementsWithClass.length > 0) {
         for (let j = 0; j < elementsWithClass.length; j++) {
             // background
-            //addDivWithClass(elementsWithClass[j], "ink-border-solid-background").style.backgroundColor = "var(--background-1)";
-            addDivWithClass(elementsWithClass[j], "ink-border-hatch-background").style.filter = "var(--dark-mode-invert-small)";
-            addDivWithClass(elementsWithClass[j], "ink-border-shadow-background").style.color = "var(--body-background)";
+            addDivWithClass(elementsWithClass[j], "ink-border-solid-background");
+            addDivWithClass(elementsWithClass[j], "ink-border-hatch-background");
+            addDivWithClass(elementsWithClass[j], "ink-border-shadow-background-slight");
 
             // borders on sides
             addDivWithClass(elementsWithClass[j], "ink-border-thin-top");
