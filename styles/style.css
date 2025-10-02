@@ -511,7 +511,7 @@ a:link.current-page, a:visited.current-page {
 @media screen and (max-width: 768px) {
     .header-container {
         flex-direction: column;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         padding-bottom: 15px;
         height: 140px;
     }
