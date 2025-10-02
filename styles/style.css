@@ -5,14 +5,15 @@ html[theme=theme-dark] {
     --body-background-num: 0, 0, 0;
     --default-text: #FFF;
 
-    --dark-background-1: #333;
-    --dark-background-2: #555;
+    --background-1: #191919;
+    --background-2: #333;
 
     --nav-link: #CAD;
     --current-link: #FCC;
 
     --dark-mode-invert: invert(100%);
     --dark-mode-invert-small: invert(10%);
+    --dark-mode-invert-medium: invert(30%);
 }
 
 html[theme=theme-light] {
@@ -20,14 +21,15 @@ html[theme=theme-light] {
     --body-background-num: 255, 255, 255;
     --default-text: #000;
 
-    --dark-background-1: #CCC;
-    --dark-background-2: #AAA;
+    --background-1: #CCC;
+    --background-2: #AAA;
 
     --nav-link: #939;
     --current-link: #117;
 
     --dark-mode-invert: invert(0%);
     --dark-mode-invert-small: invert(90%);
+    --dark-mode-invert-medium: invert(80%);
 }
 
 html, body {
@@ -121,8 +123,6 @@ strong {
 }
 
 .title-container {
-    /*width: 38vw;
-    max-width: 340px;*/
     flex-wrap: wrap;
     row-gap: 6px;
     flex-grow: 1;
@@ -141,7 +141,6 @@ strong {
     min-height: 60px;
     flex-wrap: wrap;
     row-gap: 2px;
-    background-color: var(--dark-background-2);
     flex-grow: 3;
     margin-left: 10px;
     display: grid;
@@ -151,6 +150,7 @@ strong {
     place-items: center;
     justify-content: center;
     align-content: center;
+    z-index: 2;
 }
 
 a:link, a:visited {
@@ -180,7 +180,6 @@ a:link.current-page, a:visited.current-page {
     width: 100%;
     box-sizing: border-box;
     height: 120px;
-    background-color: var(--dark-background-1);
     justify-content: space-evenly;
     padding: 0px 15px;
     margin-bottom: 60px;
@@ -190,7 +189,7 @@ a:link.current-page, a:visited.current-page {
     width: 100%;
     box-sizing: border-box;
     height: 120px;
-    background-color: var(--dark-background-1);
+    background-color: var(--background-2);
     justify-content: space-evenly;
     padding: 0px min(3vw, 20px) 0px 0px;
     margin-top: min(10vw, 60px);
@@ -288,6 +287,34 @@ a:link.current-page, a:visited.current-page {
 
 /* general ink border stuff */
 
+.ink-border-thin-top {
+    position: absolute;
+    left: 0px;
+    top: -3px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+
+    background-repeat: repeat;
+    background-image: url("/images/ui/ink-border-thin.png");
+    filter: var(--dark-mode-invert);
+}
+
+.ink-border-thin-bottom {
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+
+    background-repeat: repeat;
+    background-image: url("/images/ui/ink-border-thin.png");
+    filter: var(--dark-mode-invert);
+}
+
 .ink-border-thin-left {
     position: absolute;
     left: -5px;
@@ -334,6 +361,19 @@ a:link.current-page, a:visited.current-page {
     filter: var(--dark-mode-invert);
 }
 
+.ink-border-hatch-bottom {
+    position: absolute;
+    left: 0px;
+    bottom: -15px;
+    height: 20px;
+    width: 100%;
+    pointer-events: none;
+
+    background-repeat: repeat;
+    background-image: url("/images/ui/ink-border-project-title-back.png");
+    filter: var(--dark-mode-invert);
+}
+
 .ink-border-solid-background {
     position: absolute;
     right: 0px;
@@ -364,7 +404,8 @@ a:link.current-page, a:visited.current-page {
     height: 100%;
     width: 100%;
     pointer-events: none;
-    box-shadow: var(--body-background) inset 0px 5px 20px 20px;
+    color: var(--body-background);
+    box-shadow: inset 0px 5px 20px 20px;
     z-index: -1;
 }
 
@@ -394,8 +435,12 @@ a:link.current-page, a:visited.current-page {
     .header-container {
         flex-direction: column;
         margin-bottom: 50px;
-        padding-bottom: 15px;
+        padding: 0px;
         height: 140px;
+    }
+
+    .header-container .ink-border-thin-left, .header-container .ink-border-thin-right {
+        display: none;
     }
 
     .links-container {

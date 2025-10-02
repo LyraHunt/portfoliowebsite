@@ -1,53 +1,35 @@
+// helper function to add divs with a specific class
+function addDivWithClass(targetElement, className) {
+    var newElement = document.createElement("div");
+    newElement.classList.add(className);
+
+    targetElement.appendChild(newElement);
+    return newElement;
+}
+
+
+
 // ink UI stuff
-function applyFancyBordersProjectTitle() {
+function applyInkBordersProjectTitle() {
     let elementsWithClass = document.getElementsByClassName("ink-border-project-title");
     if (elementsWithClass.length > 0) {
         for (let j = 0; j < elementsWithClass.length; j++) {
-            // solid background
-            var solidBackground = document.createElement("div");
-            solidBackground.classList.add("ink-border-solid-background");
+            // background
+            addDivWithClass(elementsWithClass[j], "ink-border-solid-background");
+            addDivWithClass(elementsWithClass[j], "ink-border-hatch-background");
+            addDivWithClass(elementsWithClass[j], "ink-border-shadow-background");
 
-            elementsWithClass[j].appendChild(solidBackground);
-
-            // hatch background
-            var hatchBackground = document.createElement("div");
-            hatchBackground.classList.add("ink-border-hatch-background");
-
-            elementsWithClass[j].appendChild(hatchBackground);
-
-            // shadow background
-            var shadowBackground = document.createElement("div");
-            shadowBackground.classList.add("ink-border-shadow-background");
-
-            elementsWithClass[j].appendChild(shadowBackground);
-
-            // left border
-            var leftBorder = document.createElement("div");
-            leftBorder.classList.add("ink-border-thin-left");
-
-            elementsWithClass[j].appendChild(leftBorder);
-
-            // right border
-            var rightBorder = document.createElement("div");
-            rightBorder.classList.add("ink-border-thin-right");
-
-            elementsWithClass[j].appendChild(rightBorder);
+            // borders on sides
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-left");
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-right");
 
             // top border
             var topBorder = document.createElement("div");
             topBorder.classList.add("ink-border-project-title-top-back");
 
-            var topBorderCenter = document.createElement("div");
-            topBorderCenter.classList.add("ink-border-project-title-top-center");
-            topBorder.appendChild(topBorderCenter);
-
-            var topBorderEdgeLeft = document.createElement("div");
-            topBorderEdgeLeft.classList.add("ink-border-project-title-top-edge");
-            topBorder.appendChild(topBorderEdgeLeft);
-
-            var topBorderEdgeRight = document.createElement("div");
-            topBorderEdgeRight.classList.add("ink-border-project-title-top-edge-flip");
-            topBorder.appendChild(topBorderEdgeRight);
+            addDivWithClass(topBorder, "ink-border-project-title-top-center");
+            addDivWithClass(topBorder, "ink-border-project-title-top-edge");
+            addDivWithClass(topBorder, "ink-border-project-title-top-edge-flip");
 
             elementsWithClass[j].appendChild(topBorder);
 
@@ -55,21 +37,53 @@ function applyFancyBordersProjectTitle() {
             var bottomBorder = document.createElement("div");
             bottomBorder.classList.add("ink-border-project-title-bottom-back");
 
-            var bottomBorderEdgeLeft = document.createElement("div");
-            bottomBorderEdgeLeft.classList.add("ink-border-project-title-bottom-edge");
-            bottomBorder.appendChild(bottomBorderEdgeLeft);
-
-            var bottomBorderEdgeRight = document.createElement("div");
-            bottomBorderEdgeRight.classList.add("ink-border-project-title-bottom-edge-flip");
-            bottomBorder.appendChild(bottomBorderEdgeRight);
+            addDivWithClass(bottomBorder, "ink-border-project-title-bottom-edge");
+            addDivWithClass(bottomBorder, "ink-border-project-title-bottom-edge-flip");
 
             elementsWithClass[j].appendChild(bottomBorder);
         }
     }
 }
 
-function applyFancyBorders() {
-    applyFancyBordersProjectTitle();
+function applyInkBordersSimple() {
+    let elementsWithClass = document.getElementsByClassName("ink-border-simple");
+    if (elementsWithClass.length > 0) {
+        for (let j = 0; j < elementsWithClass.length; j++) {
+            // background
+            //addDivWithClass(elementsWithClass[j], "ink-border-solid-background").style.backgroundColor = "var(--background-1)";
+            addDivWithClass(elementsWithClass[j], "ink-border-hatch-background").style.filter = "var(--dark-mode-invert-small)";
+            addDivWithClass(elementsWithClass[j], "ink-border-shadow-background").style.color = "var(--body-background)";
+
+            // borders on sides
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-top");
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-bottom");
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-left");
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-right");
+        }
+    }
 }
 
-applyFancyBorders();
+function applyInkBordersHeader() {
+    let elementsWithClass = document.getElementsByClassName("ink-border-header");
+    if (elementsWithClass.length > 0) {
+        for (let j = 0; j < elementsWithClass.length; j++) {
+            // background
+            addDivWithClass(elementsWithClass[j], "ink-border-solid-background");
+            //addDivWithClass(elementsWithClass[j], "ink-border-hatch-background");
+            //addDivWithClass(elementsWithClass[j], "ink-border-shadow-background");
+
+            // bottom border
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-bottom");
+            //addDivWithClass(elementsWithClass[j], "ink-border-hatch-bottom")
+            //addDivWithClass(addDivWithClass(elementsWithClass[j], "ink-border-hatch-bottom"), "ink-border-project-title-top-center");
+        }
+    }
+}
+
+function applyInkBorders() {
+    applyInkBordersProjectTitle();
+    applyInkBordersSimple();
+    applyInkBordersHeader();
+}
+
+applyInkBorders();

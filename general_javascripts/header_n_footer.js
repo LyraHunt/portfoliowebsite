@@ -2,7 +2,7 @@ var header = document.getElementById("headerContainer");
 var footer = document.getElementById("footerContainer");
 
 if (header !== null) {
-    header.classList.add("flex-row", "header-container");
+    header.classList.add("flex-row", "header-container", "ink-border-header");
     generateHeader(header);
 }
 
@@ -37,7 +37,7 @@ function generateHeader(targetElement) {
     newHeader.push(titleContainer);
 
     var linksContainer = document.createElement("div");
-    linksContainer.classList.add("links-container");
+    linksContainer.classList.add("links-container", "ink-border-simple");
 
     var homeLink = document.createElement("a");
     homeLink.classList.add("page-link");
@@ -83,7 +83,7 @@ function generateFooter(targetElement) {
     var logo = document.createElement("img");
     logo.classList.add("site-logo");
     logo.src = "/images/capstone-game-icon-circle.png";
-    titleContainer.appendChild(logo);
+    //titleContainer.appendChild(logo);
 
     var siteTitle = document.createElement("h1");
     siteTitle.classList.add("site-title");
