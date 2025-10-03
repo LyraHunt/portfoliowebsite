@@ -11,7 +11,6 @@ html, body {
     align-items: center;
     flex-direction: row;
 
-    color: white;
     padding: 0px 5px;
     box-sizing: border-box;
 
@@ -29,6 +28,7 @@ html, body {
     font-size: 20px;
     width: 100%;
     text-align: center;
+    color: var(--default-text);
 }
 
 @media only screen and (max-width: 900px) {
