@@ -12,8 +12,6 @@ html, body {
     flex-direction: row;
 
     color: white;
-    background-color: #222222;
-    border-bottom: #333333 solid 5px;
     padding: 0px 5px;
     box-sizing: border-box;
 
@@ -23,10 +21,20 @@ html, body {
     flex-wrap: nowrap;
 }
 
+#projectHeader .ink-border-thin-top {
+    display: none;
+}
+
 #projectHeader, p {
     font-size: 20px;
     width: 100%;
     text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    #projectHeader .ink-border-thin-left, #projectHeader .ink-border-thin-right {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 750px) {
@@ -37,21 +45,11 @@ html, body {
 
 @media only screen and (max-width: 500px) {
     #projectHeader {
-        padding-top: 5px;
+        padding-top: 0px;
     }
     
     #projectHeader, p {
         font-size: 14px;
-    }
-}
-
-@media only screen and (max-width: 280px) {
-    #projectHeader {
-        padding-top: 5px;
-    }
-    
-    #projectHeader, p {
-        font-size: 12px;
     }
 }
 
