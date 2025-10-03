@@ -184,7 +184,7 @@ function displayLightbox(imageSrc, imageID) {
     if (currentImage.complete) {
         console.log("large version already loaded")
         if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
-            lightboxImg.src = imageSrc;
+            lightboxImg.src = currentImage.src;
             lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
             lightbox.style.display = "flex";
         }
