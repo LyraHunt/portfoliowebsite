@@ -133,7 +133,7 @@ html[theme=theme-light] {
 
 @media screen and (max-width: 768px) {
     #workshop-grid {
-        max-width: 500px;
+        max-width: 450px;
         width: 100%;
         grid-template-columns: repeat(auto-fill, 100%);
     }
