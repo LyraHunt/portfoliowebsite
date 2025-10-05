@@ -82,6 +82,7 @@ function updateDrawingsSortedAppearance() {
                 return -1;
             }
         }
+
         else if (a.getBoundingClientRect().top > b.getBoundingClientRect().top) {
             return 1;
         }
@@ -182,29 +183,70 @@ function displayLightbox(imageSrc, imageID) {
 
     // if larger image is already loaded, show it now
     if (currentImage.complete) {
-        console.log("large version already loaded")
-        if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
-            lightboxImg.src = currentImage.src;
-            lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+        console.log("large version already loaded");
+
+        let newImage = new Image();
+        newImage.src = currentImage.src;
+        newImage.onload = () => {
+            lightboxImg.src = newImage.src;
+            lightboxImgContainerInner.style.aspectRatio = newImage.width / newImage.height;
+        }
+        
+        if (lightbox.style.display == "none") {
+            // lightbox is just being opened
+            console.log("open");
             lightbox.style.display = "flex";
         }
+
+        else {
+            // lightbox is being changed
+            console.log("change")
+        }
+        
+        /*lightboxImg.onload = () => {
+            lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
+            lightbox.style.display = "flex";
+        }*/
+
+        //if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
+
+        //}
     }
     
     // otherwise, load already-loaded smaller version first while the larger image loads in the background
     else if ("altFilesizes" in drawings[imageID] && !currentImage.complete) {
-        lightboxImg.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
-        lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
-        lightboxImg.onload = () => {
+        console.log("loading smaller image first");
+        let newImage = new Image();
+        newImage.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
+        newImage.onload = () => {
+            lightboxImg.src = newImage.src;
             lightbox.style.display = "flex";
-            lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
+            lightboxImgContainerInner.style.aspectRatio = newImage.width / newImage.height;
         }
+        
+        
+        /*lightboxImg.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
+        lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
+        lightbox.style.display = "flex";
+        lightboxImg.onload = () => {
+            //lightbox.style.display = "flex";
+            //lightboxImgContainerInner.style.aspectRatio = lightboxImg.width / lightboxImg.height;
+        }*/
     }
 
     // once larger image is done loading, show it instead
     currentImage.onload = () => {
+        console.log("larger image just loaded");
         if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
-            lightboxImg.src = imageSrc;
-            lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;
+            let newImage = new Image();
+            newImage.src = currentImage.src;
+            newImage.onload = () => {
+                lightboxImg.src = newImage.src;
+                lightboxImgContainerInner.style.aspectRatio = newImage.width / newImage.height;
+            }
+            
+            /*lightboxImg.src = currentImage.src;
+            lightboxImgContainerInner.style.aspectRatio = currentImage.width / currentImage.height;*/
         }
     }
 
