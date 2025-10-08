@@ -190,17 +190,11 @@ function displayLightbox(imageSrc, imageID) {
         newImage.onload = () => {
             lightboxImg.src = newImage.src;
             lightboxImgContainerInner.style.aspectRatio = newImage.width / newImage.height;
-        }
-        
-        if (lightbox.style.display == "none") {
-            // lightbox is just being opened
-            console.log("open");
-            lightbox.style.display = "flex";
-        }
 
-        else {
-            // lightbox is being changed
-            console.log("change")
+            if (lightbox.style.display == "none") {
+                // lightbox is just being opened
+                lightbox.style.display = "flex";
+            }
         }
         
         /*lightboxImg.onload = () => {
