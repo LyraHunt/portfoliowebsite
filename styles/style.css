@@ -114,7 +114,7 @@ strong {
 }
 
 .site-title {
-    margin: 0px 0px 0px clamp(0px, 5vw - 28px, 30px);
+    margin: 0px;
     font-size: 26px;
     line-height: clamp(18px, 3.8vw, 26px);
     width: 100%;
@@ -124,6 +124,7 @@ strong {
 }
 
 .title-container {
+    margin: 0px 0px 0px clamp(0px, 5vw - 28px, 30px);
     flex-wrap: wrap;
     row-gap: 6px;
     flex-grow: 1;
@@ -160,6 +161,11 @@ a:link, a:visited {
 
 a:link.current-page, a:visited.current-page {
     color: var(--current-link);
+}
+
+a.undo-anchor {
+    color: inherit;
+    text-decoration: none;
 }
 
 .color-default-text {

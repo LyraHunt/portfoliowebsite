@@ -29,10 +29,15 @@ function generateHeader(targetElement) {
     logo.src = "/images/capstone-game-icon-circle.png";
     //titleContainer.appendChild(logo);
 
+    var siteTitleLink = document.createElement("a");
+    siteTitleLink.classList.add("page-link-home", "undo-anchor");
+
     var siteTitle = document.createElement("h1");
     siteTitle.classList.add("site-title");
     siteTitle.innerText = "Wilde Hunt Games";
-    titleContainer.appendChild(siteTitle);
+    siteTitleLink.appendChild(siteTitle);
+    
+    titleContainer.appendChild(siteTitleLink);
 
     newHeader.push(titleContainer);
 
@@ -85,10 +90,15 @@ function generateFooter(targetElement) {
     logo.src = "/images/capstone-game-icon-circle.png";
     //titleContainer.appendChild(logo);
 
+    var siteTitleLink = document.createElement("a");
+    siteTitleLink.classList.add("page-link-home", "undo-anchor");
+
     var siteTitle = document.createElement("h1");
     siteTitle.classList.add("site-title");
     siteTitle.innerText = "Wilde Hunt Games";
-    titleContainer.appendChild(siteTitle);
+    siteTitleLink.appendChild(siteTitle);
+    
+    titleContainer.appendChild(siteTitleLink);
 
     newHeader.push(titleContainer);
 
