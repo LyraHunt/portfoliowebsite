@@ -68,7 +68,7 @@ function applyInkBordersHeader() {
     if (elementsWithClass.length > 0) {
         for (let j = 0; j < elementsWithClass.length; j++) {
             // background
-            addDivWithClass(elementsWithClass[j], "ink-border-solid-background");
+            //addDivWithClass(elementsWithClass[j], "ink-border-solid-background");
             //addDivWithClass(elementsWithClass[j], "ink-border-hatch-background");
             //addDivWithClass(elementsWithClass[j], "ink-border-shadow-background");
 
@@ -80,10 +80,28 @@ function applyInkBordersHeader() {
     }
 }
 
+function applyInkBordersFooter() {
+    let elementsWithClass = document.getElementsByClassName("ink-border-footer");
+    if (elementsWithClass.length > 0) {
+        for (let j = 0; j < elementsWithClass.length; j++) {
+            // background
+            //addDivWithClass(elementsWithClass[j], "ink-border-solid-background");
+            //addDivWithClass(elementsWithClass[j], "ink-border-hatch-background");
+            //addDivWithClass(elementsWithClass[j], "ink-border-shadow-background");
+
+            // bottom border
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-top");
+            //addDivWithClass(elementsWithClass[j], "ink-border-hatch-bottom")
+            //addDivWithClass(addDivWithClass(elementsWithClass[j], "ink-border-hatch-bottom"), "ink-border-project-title-top-center");
+        }
+    }
+}
+
 function applyInkBorders() {
     applyInkBordersProjectTitle();
     applyInkBordersSimple();
     applyInkBordersHeader();
+    applyInkBordersFooter();
 }
 
 applyInkBorders();

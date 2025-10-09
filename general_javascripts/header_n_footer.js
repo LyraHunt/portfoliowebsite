@@ -7,7 +7,7 @@ if (header !== null) {
 }
 
 if (footer !== null) {
-    footer.classList.add("flex-row", "footer-container");
+    footer.classList.add("flex-row", "footer-container", "ink-border-footer");
     generateFooter(footer);
 }
 
@@ -78,9 +78,7 @@ function generateHeader(targetElement) {
 }
 
 function generateFooter(targetElement) {
-    //generateHeader(targetElement);
-
-    var newHeader = [];
+    var newFooter = [];
 
     var titleContainer = document.createElement("div");
     titleContainer.classList.add("flex-row", "title-container");
@@ -100,26 +98,43 @@ function generateFooter(targetElement) {
     
     titleContainer.appendChild(siteTitleLink);
 
-    newHeader.push(titleContainer);
+    newFooter.push(titleContainer);
 
-    var linksContainer = document.createElement("div");
-    linksContainer.classList.add("flex-row", "links-container");
+    // options container
+    var optionsContainer = document.createElement("div");
+    optionsContainer.classList.add("flex-row", "options-container");
 
-    var linksContainerMessage = document.createElement("p");
-    linksContainerMessage.innerText = "this is the footer";
-    linksContainerMessage.style = "margin: 0px 20px"
-    linksContainer.appendChild(linksContainerMessage);
+    /*var optionsContainerMessage = document.createElement("p");
+    optionsContainerMessage.innerText = "this is the footer";
+    optionsContainerMessage.style = "margin: 0px 20px"
+    optionsContainer.appendChild(optionsContainerMessage);*/
 
     var themeToggle = document.createElement("button");
     themeToggle.onclick = () => toggleThemeButton(themeToggle);
     toggleThemeButtonUpdate(themeToggle);
     // subscribe to the themeChanged global event and then update text
     if ("GlobalEventBus" in window) GlobalEventBus.subscribe("themeChanged", () => {toggleThemeButtonUpdate(themeToggle)});
-    linksContainer.appendChild(themeToggle);
+    optionsContainer.appendChild(themeToggle);
 
-    newHeader.push(linksContainer);
+    newFooter.push(optionsContainer);
 
-    targetElement.replaceChildren(...newHeader);
+    // socials container
+    var socialsContainer = document.createElement("div");
+    socialsContainer.classList.add("flex-row", "socials-container");
+
+    // <a class="external-link-my-youtube a-no-style" target="_blank"><span class="mdi--youtube social-icon color-default-text"></span></a>
+    var youtubeIconAnchor = document.createElement("a");
+    youtubeIconAnchor.classList.add("external-link-my-youtube", "undo-anchor");
+    youtubeIconAnchor.target = "_blank";
+    var youtubeIcon = document.createElement("span");
+    youtubeIcon.classList.add("mdi--youtube", "social-icon", "color-default-text");
+    youtubeIconAnchor.appendChild(youtubeIcon);
+
+    socialsContainer.appendChild(youtubeIconAnchor);
+
+    newFooter.push(socialsContainer);
+
+    targetElement.replaceChildren(...newFooter);
 }
 
 function toggleThemeButton(targetElement) {

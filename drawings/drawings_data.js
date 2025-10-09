@@ -1,5 +1,5 @@
 class Drawing {
-    name = "";
+    filename = "";
     desc = "";
     year = "";
     filename = "";
