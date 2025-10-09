@@ -70,7 +70,8 @@ p, ol, ul {
 }
 
 button {
-    font-size: min(3.5vw, 16px);
+    font-size: min(4vw, 16px);
+    color: black;
     border: 2px solid black;
     border-radius: 3px;
     padding: 5px 10px;
