@@ -213,7 +213,7 @@ drawings[currentIndex].altFilesizes = [600]
 
 
 
-//minis
+// minis
 drawings.push(new Drawing);
 currentIndex = drawings.length - 1;
 drawings[currentIndex].year = 2025;

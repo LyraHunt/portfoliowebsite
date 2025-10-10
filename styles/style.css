@@ -214,7 +214,7 @@ a.undo-anchor {
     width: 100%;
     box-sizing: border-box;
     height: 100px;
-    background-color: var(--background-2);
+    background-color: var(--background-1);
     justify-content: space-evenly;
     padding: 5px min(3vw, 20px) 0px 0px;
     margin-top: min(10vw, 60px);

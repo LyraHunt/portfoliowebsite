@@ -35,7 +35,7 @@ function getDrawingFullColumnWidth(drawingID) {
 
 function generateDrawings() {
     for (let i = 0; i < drawings.length; i++) {
-        var currentDrawingData = drawings[i]
+        let currentDrawingData = drawings[i];
         
         var newDrawing = document.createElement("div");
         newDrawing.classList.add("drawing");
@@ -45,19 +45,19 @@ function generateDrawings() {
         var newDrawingImg = document.createElement("img");
         newDrawingImg.loading = "lazy";
         newDrawingImg.onclick = function() {
-            displayLightbox(drawingsFolderPath + drawings[i].filename + ".png", i);
+            displayLightbox(drawingsFolderPath + currentDrawingData.filename + ".png", i);
         }
         // if drawing has multiple sizes
-        if ("altFilesizes" in drawings[i]) {
-            for (let j = 0; j < drawings[i].altFilesizes.length; j++) {
-                var currentAltFilesize = drawings[i].altFilesizes[j];
-                newDrawingImg.srcset += drawingsFolderPath + "size-" + currentAltFilesize + "/" + drawings[i].filename + "-size-" + currentAltFilesize + ".png " + currentAltFilesize + "w" + ", ";
+        if ("altFilesizes" in currentDrawingData) {
+            for (let j = 0; j < currentDrawingData.altFilesizes.length; j++) {
+                var currentAltFilesize = currentDrawingData.altFilesizes[j];
+                newDrawingImg.srcset += drawingsFolderPath + "size-" + currentAltFilesize + "/" + currentDrawingData.filename + "-size-" + currentAltFilesize + ".png " + currentAltFilesize + "w" + ", ";
                 //newDrawingImg.sizes += "(width >= " + currentAltFilesize + "px) " + currentAltFilesize + "px";
             }
-            newDrawingImg.srcset += drawingsFolderPath + drawings[i].filename + ".png " + drawings[i].defaultSize + "w";
-            newDrawingImg.sizes = "(width <= 768px) " + calculateActualWidth(drawings[i].sizes[0].x) + "px, " + calculateActualWidth(getDrawingFullColumnWidth(i)) + "px";
+            newDrawingImg.srcset += drawingsFolderPath + currentDrawingData.filename + ".png " + currentDrawingData.defaultSize + "w";
+            newDrawingImg.sizes = "(width <= 768px) " + calculateActualWidth(currentDrawingData.sizes[0].x) + "px, " + calculateActualWidth(getDrawingFullColumnWidth(i)) + "px";
         }
-        newDrawingImg.src = drawingsFolderPath + drawings[i].filename + ".png";
+        newDrawingImg.src = drawingsFolderPath + currentDrawingData.filename + ".png";
         newDrawing.appendChild(newDrawingImg);
 
         drawingsSortedAppearance.push(newDrawing);
@@ -104,16 +104,16 @@ function reloadDrawingScales() {
     removeGaps();
 
     for (let i = 0; i < drawingElements.length; i++) {
-        var currentDrawingElement = drawingElements[i];
-        var currentDrawingData = drawings[Number(currentDrawingElement.id)];
-        var currentDrawingSize = {x: 1, y: 1, minWidth: -1};
+        let currentDrawingElement = drawingElements[i];
+        let currentDrawingData = drawings[Number(currentDrawingElement.id)];
+        let currentDrawingSize = {x: 1, y: 1, minWidth: -1};
         for (let j = 0; j < currentDrawingData.sizes.length; j++) {
             if (currentWindowWidth > currentDrawingData.sizes[j].minWidth && currentDrawingData.sizes[j].minWidth > currentDrawingSize.minWidth) {
                 currentDrawingSize = currentDrawingData.sizes[j];
             }
         }
-        currentDrawingElement.style.gridColumnEnd = "span " + currentDrawingSize.x
-        currentDrawingElement.style.gridRowEnd = "span " + currentDrawingSize.y
+        currentDrawingElement.style.gridColumnEnd = "span " + currentDrawingSize.x;
+        currentDrawingElement.style.gridRowEnd = "span " + currentDrawingSize.y;
     }
 
     fillInGaps();
