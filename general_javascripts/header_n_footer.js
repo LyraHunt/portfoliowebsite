@@ -111,6 +111,7 @@ function generateFooter(targetElement) {
 
     var themeToggle = document.createElement("button");
     themeToggle.onclick = () => toggleThemeButton(themeToggle);
+    themeToggle.style = "z-index: 1;";
     toggleThemeButtonUpdate(themeToggle);
     // subscribe to the themeChanged global event and then update text
     if ("GlobalEventBus" in window) GlobalEventBus.subscribe("themeChanged", () => {toggleThemeButtonUpdate(themeToggle)});
