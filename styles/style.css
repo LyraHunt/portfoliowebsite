@@ -222,7 +222,8 @@ a.undo-anchor {
     margin-top: min(10vw, 60px);
     align-self: flex-end;
     background-image: url("/images/ui/footer-background.png");
-    background-size: auto 100%;
+    background-size: auto 120px;
+    background-position: bottom;
 }
 
 .main-content {
