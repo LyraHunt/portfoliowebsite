@@ -97,11 +97,25 @@ function applyInkBordersFooter() {
     }
 }
 
+function applyInkBordersImageThin() {
+    let elementsWithClass = document.getElementsByClassName("ink-border-image-thin");
+    if (elementsWithClass.length > 0) {
+        for (let j = 0; j < elementsWithClass.length; j++) {
+            // borders on sides
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-top");
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-bottom");
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-left");
+            addDivWithClass(elementsWithClass[j], "ink-border-thin-right");
+        }
+    }
+}
+
 function applyInkBorders() {
     applyInkBordersProjectTitle();
     applyInkBordersSimple();
     applyInkBordersHeader();
     applyInkBordersFooter();
+    applyInkBordersImageThin();
 }
 
 applyInkBorders();
