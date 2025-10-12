@@ -502,6 +502,7 @@ a.undo-anchor {
         margin-bottom: 50px;
         padding: 0px;
         height: 140px;
+        background-size: auto 70%;
     }
 
     .header-container .ink-border-thin-left, .header-container .ink-border-thin-right {
