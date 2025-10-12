@@ -207,6 +207,8 @@ a.undo-anchor {
     padding: 0px 15px;
     margin-bottom: 60px;
     background-color: var(--background-1);
+    background-image: url("/images/ui/header-background.png");
+    background-size: auto 100%;
 }
 
 .footer-container {
@@ -219,6 +221,8 @@ a.undo-anchor {
     padding: 5px min(3vw, 20px) 0px 0px;
     margin-top: min(10vw, 60px);
     align-self: flex-end;
+    background-image: url("/images/ui/footer-background.png");
+    background-size: auto 100%;
 }
 
 .main-content {
