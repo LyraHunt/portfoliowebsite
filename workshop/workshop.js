@@ -8,10 +8,6 @@ var workshopGridBottomLeft = document.getElementById("workshop-grid-bottom-left"
 var workshopGridBottom = document.getElementById("workshop-grid-bottom");
 var workshopGridBottomRight = document.getElementById("workshop-grid-bottom-right");
 
-var allFilterTags = ["mobileFriendly"];
-
-var creationFilters = {};
-
 var workshopWindowWidth = 400;
 var workshopEdgeWidth = 205;
 var minWorkshopMargin = 50;
@@ -33,7 +29,7 @@ function generateWorkshopWindow(hasData = true, creationData) {
     newWorkshopWindow.appendChild(newWorkshopWindowThumbnailLink);
 
     var newWorkshopWindowThumbnail = document.createElement("img");
-    if (hasData) newWorkshopWindowThumbnail.src = currentCreationData.thumbnailUrl;
+    if (hasData) newWorkshopWindowThumbnail.src = creationData.thumbnailUrl;
     else newWorkshopWindowThumbnail.src = "/images/blank.png";
     newWorkshopWindowThumbnail.loading = "lazy";
     newWorkshopWindowThumbnail.classList.add("workshop-window-thumbnail");
@@ -41,7 +37,7 @@ function generateWorkshopWindow(hasData = true, creationData) {
     newWorkshopWindowThumbnailLink.appendChild(newWorkshopWindowThumbnail);
 
     var newWorkshopWindowTitleLink = document.createElement("a");
-    if (hasData) newWorkshopWindowTitleLink.href = currentCreationData.url;
+    if (hasData) newWorkshopWindowTitleLink.href = creationData.url;
     newWorkshopWindow.appendChild(newWorkshopWindowTitleLink);
 
     var newWorkshopWindowTitleDiv = document.createElement("div");
@@ -52,42 +48,24 @@ function generateWorkshopWindow(hasData = true, creationData) {
 
     var newWorkshopWindowTitle = document.createElement("h2");
 
-    if (hasData) newWorkshopWindowTitle.innerText = currentCreationData.name + " (" + currentCreationData.year + ")";
+    if (hasData) newWorkshopWindowTitle.innerText = creationData.name + " (" + creationData.year + ")";
     newWorkshopWindowTitleDiv.appendChild(newWorkshopWindowTitle);
 
     return newWorkshopWindow;
 }
 
 function generateWorkshop() {
-    var filteredCreations = [];
     workshopGridLeft.replaceChildren([]);
     workshopGridRight.replaceChildren([]);
-
-    for (let i = 0; i < creations.length; i++) {
-        var creationPassesFilters = true;
-        
-        for (let j = 0; j < allFilterTags.length; j++) {
-            var currentFilter = allFilterTags[j];
-            if (currentFilter in creationFilters) {
-                if (creationFilters[currentFilter] !== creations[i].typeTags[currentFilter]) {
-                    creationPassesFilters = false;
-                }
-            }
-        }
-
-        if (creationPassesFilters || Object.keys(creationFilters).length === 0) {
-            filteredCreations.push(creations[i]);
-        }
-    }
 
     var newWorkshopGrid = []
 
     //generate specific item
-    for (let i = 0; i < filteredCreations.length; i++) {
-        currentCreationData = filteredCreations[i];
+    for (let i = 0; i < creations.length; i++) {
+        let currentCreationData = creations[i];
 
         //actual window container
-        var newWorkshopWindow = generateWorkshopWindow(true, currentCreationData);
+        let newWorkshopWindow = generateWorkshopWindow(true, currentCreationData);
 
         newWorkshopGrid.push(newWorkshopWindow);
     }
@@ -177,48 +155,6 @@ function removeGaps() {
     }
 }
 
-
-//filters have been updated; load new filters and then reload visible creation tiles
-function updateFilter() {
-    //all filter category boxes
-    var filterBoxArr = [];
-    for (let i = 0; i < allFilterTags.length; i++) {
-        filterBoxArr.push(document.getElementById(allFilterTags[i] + "FilterBox"));
-    }
-
-    //if no filters checked, load all
-    //var anyFiltersApplied = false;
-
-    for (let i = 0; i < allFilterTags.length; i++) {
-        if (filterBoxArr[i].checked) {
-            anyFiltersApplied = true;
-        }
-    }
-
-    for (let i = 0; i < allFilterTags.length; i++) {
-        if (filterBoxArr[i].checked) {
-            creationFilters[allFilterTags[i]] = filterBoxArr[i].checked;
-        }
-
-        else {
-            delete creationFilters[allFilterTags[i]];
-        }
-    }
-
-    //reload visible creation tiles
-    generateWorkshop();
-}
-
-function tryMobileFilter() {
-    if (document.getElementById("mobileFriendlyFilterBox")) {
-        if (window.innerWidth < 768) {
-            document.getElementById("mobileFriendlyFilterBox").checked = true;
-            updateFilter();
-        }
-    }
-}
-
-tryMobileFilter();
 
 var lastWorkshopGridHeight = 0;
 

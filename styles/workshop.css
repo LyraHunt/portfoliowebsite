@@ -8,6 +8,16 @@ html[theme=theme-light] {
     --workshop-text: #000;
 }
 
+.workshop-title-container {
+    position: relative;
+    padding: 15px min(4vw, 40px) 13px min(4vw, 40px);
+    border-radius: 5px;
+    margin-bottom: 60px;
+    min-width: min(60%, 250px);
+    min-height: 100px;
+    max-width: 60%;
+}
+
 #workshop-grid {
     max-width: calc(100% - min(400px, (25% * 2)));
     display: grid;
