@@ -4,10 +4,11 @@ html[theme=theme-dark] {
     --body-background: #000;
     --body-background-num: 0, 0, 0;
 
-    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.35));
+    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
     --header-background-color: #080808;
     --header-text-gradient: linear-gradient(105deg, rgb(177, 141, 255), rgb(246, 119, 218));
     --ink-border-shadow-background: rgba(0, 0, 0, 1.0);
+    --ink-border-hatch-filter: invert(10%) sepia(50%) saturate(275%) hue-rotate(180deg);
 
     --background-1: #252525;
     --background-2: #333;
@@ -33,6 +34,7 @@ html[theme=theme-light] {
     --header-background-color: #FFF;
     --header-text-gradient: linear-gradient(105deg, rgba(64, 0, 200, 1.0), rgba(164, 0, 128, 1.0));
     --ink-border-shadow-background: rgba(23, 2, 62, 0.5);
+    --ink-border-hatch-filter: invert(90%) brightness(108%);
 
     --background-1: #CCC;
     --background-2: #AAA;
@@ -456,19 +458,6 @@ html[theme=theme-light] {
     filter: var(--dark-mode-invert);
 }
 
-.ink-border-hatch-bottom {
-    position: absolute;
-    left: 0px;
-    bottom: -15px;
-    height: 20px;
-    width: 100%;
-    pointer-events: none;
-
-    background-repeat: repeat;
-    background-image: url("/images/ui/ink-border-project-title-back.png");
-    filter: var(--dark-mode-invert);
-}
-
 .ink-border-solid-background {
     position: absolute;
     right: 0px;
@@ -488,7 +477,7 @@ html[theme=theme-light] {
     width: 100%;
     pointer-events: none;
     background-image: url("/images/ui/ink-hatch-background.png");
-    filter: var(--dark-mode-invert-small);
+    filter: var(--ink-border-hatch-filter);
     z-index: -1;
 }
 
@@ -577,7 +566,7 @@ html[theme=theme-light] {
     }
 
     .header-container::before {
-        background-size: auto 70%;
+        background-size: auto 90px;
     }
 
     .header-container .ink-border-thin-left, .header-container .ink-border-thin-right {
