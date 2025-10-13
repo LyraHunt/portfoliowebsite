@@ -3,13 +3,19 @@
 html[theme=theme-dark] {
     --body-background: #000;
     --body-background-num: 0, 0, 0;
-    --default-text: #FFF;
+
+    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.35));
+    --header-background-color: #080808;
+    --header-text-gradient: linear-gradient(105deg, rgb(177, 141, 255), rgb(246, 119, 218));
+    --ink-border-shadow-background: rgba(0, 0, 0, 1.0);
 
     --background-1: #252525;
     --background-2: #333;
 
+    --default-text: #FFF;
     --nav-link: #CAD;
-    --current-link: #FCC;
+    --page-link-gradient: linear-gradient(90deg, rgba(255, 99, 128, 0.95) 20%, rgba(11, 232, 240, 0.95) 80%);
+    --page-link-underline: #69b9c5;
 
     --dark-mode-invert: invert(100%);
     --dark-mode-invert-small: invert(10%);
@@ -23,11 +29,17 @@ html[theme=theme-light] {
     --body-background-num: 255, 255, 255;
     --default-text: #000;
 
+    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
+    --header-background-color: #FFF;
+    --header-text-gradient: linear-gradient(105deg, rgba(64, 0, 200, 1.0), rgba(164, 0, 128, 1.0));
+    --ink-border-shadow-background: rgba(23, 2, 62, 0.7);
+
     --background-1: #CCC;
     --background-2: #AAA;
 
     --nav-link: #939;
-    --current-link: #117;
+    --page-link-gradient: linear-gradient(90deg, rgba(169, 1, 31, 0.95) 20%, rgba(0, 42, 101, 0.95) 80%);
+    --page-link-underline: #6202b0;
 
     --dark-mode-invert: invert(0%);
     --dark-mode-invert-small: invert(90%);
@@ -141,6 +153,7 @@ strong {
 .page-link {
     width: 90px;
     font-size: 16px;
+    line-height: 20px;
     font-weight: bold;
     margin: 4px 10px;
     text-align: center;
@@ -185,6 +198,21 @@ a:link.current-page, a:visited.current-page {
     color: var(--current-link);
 }
 
+.links-container > a:link, .links-container > a:visited {
+    text-decoration: underline;
+    text-decoration-color: var(--default-text);
+}
+
+.links-container > a:link.current-page, .links-container > a:visited.current-page {
+    background-image: var(--header-text-gradient);
+    background-attachment: fixed;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: underline;
+    text-decoration-color: var(--page-link-underline);
+}
+
 a.undo-anchor {
     color: inherit;
     text-decoration: none;
@@ -212,7 +240,8 @@ a.undo-anchor {
     justify-content: space-evenly;
     padding: 0px 15px;
     margin-bottom: 60px;
-    background-color: var(--background-1);
+    background-image: var(--header-background-gradient);
+    background-color: var(--header-background-color);
 }
 
 .header-container::before {
@@ -232,11 +261,13 @@ a.undo-anchor {
     width: 100%;
     box-sizing: border-box;
     height: 100px;
-    background-color: var(--background-1);
+    background-image: var(--header-background-gradient);
+    background-color: var(--header-background-color);
     justify-content: space-evenly;
     padding: 5px min(3vw, 20px) 0px 0px;
     margin-top: min(10vw, 60px);
     align-self: flex-end;
+    /*box-shadow: inset rgb(51, 0, 46) 0px 15px 15px -5px;*/
 }
 
 .footer-container::before {
@@ -468,7 +499,7 @@ html[theme=theme-light] {
     height: 100%;
     width: 100%;
     pointer-events: none;
-    color: var(--body-background);
+    color: var(--ink-border-shadow-background);
     box-shadow: inset 0px 5px 20px 20px;
     z-index: -1;
 }
@@ -480,9 +511,15 @@ html[theme=theme-light] {
     height: 100%;
     width: 100%;
     pointer-events: none;
-    color: var(--body-background);
-    box-shadow: inset 0px 0px 10px 10px;
+    color: var(--ink-border-shadow-background);
+    box-shadow: inset 0px 2.5px 10px 7.5px;
     z-index: -1;
+}
+
+html[theme=theme-light] {
+    .ink-border-shadow-background {
+        box-shadow: inset 0px 5px 12.5px 10px;
+    }
 }
 
 /* --- background image sizing and styling nonsense --- */

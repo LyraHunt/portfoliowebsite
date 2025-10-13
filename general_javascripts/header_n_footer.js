@@ -45,28 +45,28 @@ function generateHeader(targetElement) {
     linksContainer.classList.add("links-container", "ink-border-simple");
 
     var homeLink = document.createElement("a");
-    homeLink.classList.add("page-link");
+    homeLink.classList.add("page-link", "undo-anchor");
     homeLink.classList.add("page-link-home");
     homeLink.innerText = "Home";
     checkForCurrentPage("home", homeLink);
     linksContainer.appendChild(homeLink);
     
     var workshopLink = document.createElement("a");
-    workshopLink.classList.add("page-link");
+    workshopLink.classList.add("page-link", "undo-anchor");
     workshopLink.classList.add("page-link-workshop");
     workshopLink.innerText = "Workshop";
     checkForCurrentPage("workshop", workshopLink);
     linksContainer.appendChild(workshopLink);
 
     var drawingsLink = document.createElement("a");
-    drawingsLink.classList.add("page-link");
+    drawingsLink.classList.add("page-link", "undo-anchor");
     drawingsLink.classList.add("page-link-drawings");
     drawingsLink.innerText = "Drawings";
     checkForCurrentPage("drawings", drawingsLink);
     linksContainer.appendChild(drawingsLink);
 
     var aboutLink = document.createElement("a");
-    aboutLink.classList.add("page-link");
+    aboutLink.classList.add("page-link", "undo-anchor");
     aboutLink.classList.add("page-link-aboutme");
     aboutLink.innerText = "About Me";
     checkForCurrentPage("aboutme", aboutLink);
