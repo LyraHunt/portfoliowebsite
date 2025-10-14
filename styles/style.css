@@ -6,7 +6,7 @@ html[theme=theme-dark] {
 
     --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
     --header-background-color: #080808;
-    --header-text-gradient: linear-gradient(105deg, rgb(177, 141, 255), rgb(246, 119, 218));
+    --header-text-gradient: linear-gradient(105deg, rgb(177, 141, 255) 10%, rgb(246, 119, 218) 90%);
     --ink-border-shadow-background: rgba(0, 0, 0, 1.0);
     --ink-border-hatch-filter: invert(10%) sepia(50%) saturate(275%) hue-rotate(180deg);
 
@@ -32,7 +32,7 @@ html[theme=theme-light] {
 
     --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
     --header-background-color: #FFF;
-    --header-text-gradient: linear-gradient(105deg, rgba(64, 0, 200, 1.0), rgba(164, 0, 128, 1.0));
+    --header-text-gradient: linear-gradient(105deg, rgb(64, 0, 200) 10%, rgb(164, 0, 128) 90%);
     --ink-border-shadow-background: rgba(23, 2, 62, 0.5);
     --ink-border-hatch-filter: invert(90%) brightness(108%);
 
@@ -208,6 +208,7 @@ a:link.current-page, a:visited.current-page {
 .links-container > a:link.current-page, .links-container > a:visited.current-page {
     background-image: var(--header-text-gradient);
     background-attachment: fixed;
+    background-size: max(500px, 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -244,6 +245,7 @@ a.undo-anchor {
     margin-bottom: 60px;
     background-image: var(--header-background-gradient);
     background-color: var(--header-background-color);
+    background-size: max(600px, 100%);
 }
 
 .header-container::before {
@@ -263,13 +265,13 @@ a.undo-anchor {
     width: 100%;
     box-sizing: border-box;
     height: 100px;
-    background-image: var(--header-background-gradient);
-    background-color: var(--header-background-color);
     justify-content: space-evenly;
     padding: 5px min(3vw, 20px) 0px 0px;
     margin-top: min(10vw, 60px);
     align-self: flex-end;
-    /*box-shadow: inset rgb(51, 0, 46) 0px 15px 15px -5px;*/
+    background-image: var(--header-background-gradient);
+    background-color: var(--header-background-color);
+    background-size: max(600px, 100%);
 }
 
 .footer-container::before {
