@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 html[theme=theme-dark] {
+    /*--body-background: #180b19;*/
     --body-background: #000;
     --body-background-num: 0, 0, 0;
 
-    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
-    --header-background-color: #080808;
+    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.325), rgba(164, 0, 128, 0.45));
+    --header-background-color: #101010;
     --header-text-gradient: linear-gradient(105deg, rgb(177, 141, 255) 10%, rgb(246, 119, 218) 90%);
     --ink-border-shadow-background: rgba(0, 0, 0, 1.0);
     --ink-border-hatch-filter: invert(10%) sepia(50%) saturate(275%) hue-rotate(180deg);
