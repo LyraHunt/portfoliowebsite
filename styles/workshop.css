@@ -1,13 +1,3 @@
-html[theme=theme-dark] {
-    --workshop-background: #000;
-    --workshop-text: #CCC;
-}
-
-html[theme=theme-light] {
-    --workshop-background: #FFF;
-    --workshop-text: #000;
-}
-
 .workshop-title-container {
     position: relative;
     padding: 15px min(4vw, 40px) 13px min(4vw, 40px);

@@ -123,9 +123,6 @@ html[theme=theme-light] {
     font-size: 40px;
     width: 50px;
     line-height: 50px;
-    /*font-size: clamp(40px, 7vw, 40px);
-    width: clamp(40px, 7vw, 50px);
-    line-height: clamp(40px, 7vw, 50px);*/
     background-color: var(--nav-buttons-background);
     cursor: pointer;
     text-align: center;
