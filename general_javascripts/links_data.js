@@ -46,6 +46,8 @@ var ExternalLinks = {
 
     "itch-soupythecat": "https://soupythecat.itch.io/",
 
+    "google-docs-alchemikitty": "https://docs.google.com/document/d/1BeoISpmIP65pndyssnD4Iuk6fon6xtfBkdZbKkcuK0I/edit?usp=sharing",
+
     "reddit-post-pen-simulation": "https://www.reddit.com/r/generative/comments/sr9zia/working_on_a_function_to_draw_lines_that_look/",
 
     "celeste-and-towerfall-physics": "https://maddymakesgames.com/articles/celeste_and_towerfall_physics/index.html"
