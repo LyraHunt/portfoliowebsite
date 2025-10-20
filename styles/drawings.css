@@ -1,5 +1,6 @@
 html[theme=theme-dark] {
-    --drawing-background: #333;
+    --blank-drawing-background: #201b25;
+    --drawing-background: #312933;
     --drawing-frame: #ACF;
 
     --nav-buttons-background: #555;
@@ -7,6 +8,7 @@ html[theme=theme-dark] {
 }
 
 html[theme=theme-light] {
+    --blank-drawing-background: #E8E8E8;
     --drawing-background: #CCC;
     --drawing-frame: #333;
 
@@ -65,7 +67,7 @@ html[theme=theme-light] {
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    background-color: var(--drawing-background);
+    background-color: var(--blank-drawing-background);
     border-radius: 10px;
     display: flex;
     justify-content: center;

@@ -41,8 +41,10 @@ var SourceCodeLinks = {
 var ExternalLinks = {
     "my-youtube": "https://www.youtube.com/@wildehuntgames",
 
-    "itch-capstone-game": "https://lyradesignsgames.itch.io/forest-game",
-    "itch-alchemikitty": "https://lyradesignsgames.itch.io/alchemikitty",
+    "itch-capstone-game": "https://wildehuntgames.itch.io/forest-game",
+    "itch-alchemikitty": "https://wildehuntgames.itch.io/alchemikitty",
+
+    "itch-soupythecat": "https://soupythecat.itch.io/",
 
     "reddit-post-pen-simulation": "https://www.reddit.com/r/generative/comments/sr9zia/working_on_a_function_to_draw_lines_that_look/",
 

@@ -2,10 +2,10 @@
 
 html[theme=theme-dark] {
     /*--body-background: #180b19;*/
-    --body-background: #000;
-    --body-background-num: 0, 0, 0;
+    --body-background: #0d0d13;
+    --body-background-num: 10, 10, 16;
 
-    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.325) 0%, rgba(194, 8, 154, 0.5) calc(100% - 150px), rgba(240, 71, 122, 0.75) 100%);
+    --header-background-gradient: linear-gradient(120deg, rgba(64, 0, 200, 0.325) 10%, rgba(194, 8, 154, 0.5) calc(100% - 150px), rgba(240, 71, 122, 0.75) 100%);
     --header-background-color: #101010;
     --header-text-gradient: linear-gradient(105deg, rgb(177, 141, 255) 10%, rgb(246, 119, 218) 90%);
     --ink-border-shadow-background: rgba(0, 0, 0, 1.0);
@@ -14,7 +14,7 @@ html[theme=theme-dark] {
     --background-1: #252525;
     --background-2: #333;
 
-    --default-text: #FFF;
+    --default-text: #f4f0f4;
     --nav-link: #CAD;
     --page-link-gradient: linear-gradient(90deg, rgba(255, 99, 128, 0.95) 20%, rgba(11, 232, 240, 0.95) 80%);
     --page-link-underline: #69b9c5;
@@ -27,15 +27,15 @@ html[theme=theme-dark] {
 }
 
 html[theme=theme-light] {
-    --body-background: #FFF;
-    --body-background-num: 255, 255, 255;
-    --default-text: #000;
+    --body-background: #f4f0f4;
+    --body-background-num: 244, 240, 244;
+    --default-text: #0d0d13;
 
     --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
     --header-background-color: #FFF;
     --header-text-gradient: linear-gradient(105deg, rgb(64, 0, 200) 10%, rgb(164, 0, 128) 90%);
     --ink-border-shadow-background: rgba(23, 2, 62, 0.5);
-    --ink-border-hatch-filter: invert(90%) brightness(108%);
+    --ink-border-hatch-filter: invert(90%) brightness(103%);
 
     --background-1: #CCC;
     --background-2: #AAA;

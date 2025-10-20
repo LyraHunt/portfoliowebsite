@@ -183,7 +183,6 @@ function displayLightbox(imageSrc, imageID) {
 
     // if larger image is already loaded, show it now
     if (currentImage.complete) {
-        console.log("large version already loaded");
 
         let newImage = new Image();
         newImage.src = currentImage.src;
@@ -200,7 +199,6 @@ function displayLightbox(imageSrc, imageID) {
     
     // otherwise, load already-loaded smaller version first while the larger image loads in the background
     else if ("altFilesizes" in drawings[imageID] && !currentImage.complete) {
-        console.log("loading smaller image first");
         let newImage = new Image();
         newImage.src = drawingsFolderPath + "size-" + drawings[imageID].altFilesizes[0] + "/" + drawings[imageID].filename + "-size-" + drawings[imageID].altFilesizes[0] + ".png";
         newImage.onload = () => {
@@ -212,7 +210,6 @@ function displayLightbox(imageSrc, imageID) {
 
     // once larger image is done loading, show it instead
     currentImage.onload = () => {
-        console.log("larger image just loaded");
         if (currentLightboxID == Number(drawingsContainer.children[imageID].getAttribute("appearance"))) {
             let newImage = new Image();
             newImage.src = currentImage.src;

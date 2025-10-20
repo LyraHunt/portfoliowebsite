@@ -162,6 +162,7 @@ li {
     text-align: center;
     transition: 0.1s;
     border-radius: 5px;
+    background-color: rgba(var(--body-background-num), 0.5);
 }
 
 .project-button:hover {

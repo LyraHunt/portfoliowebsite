@@ -96,7 +96,7 @@ drawings[currentIndex].year = 2025;
 drawings[currentIndex].filename = "nausicaa-ink-sketch-cropped";
 drawings[currentIndex].defaultSize = 2088;
 drawings[currentIndex].sizes = [
-    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 2, minWidth: 0},
     {x: 2, y: 2, minWidth: mobileThreshold}
 ]
 drawings[currentIndex].altFilesizes = [500];
@@ -210,6 +210,17 @@ drawings[currentIndex].sizes = [
     {x: 3, y: 2, minWidth: mobileThreshold}
 ]
 drawings[currentIndex].altFilesizes = [600]
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2025;
+drawings[currentIndex].filename = "coral-crescent";
+drawings[currentIndex].defaultSize = 2201;
+drawings[currentIndex].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 2, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [500]
 
 
 
