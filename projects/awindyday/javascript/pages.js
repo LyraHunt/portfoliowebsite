@@ -55,7 +55,7 @@ hideElement('mobileNote2');
 //hideElement('effects');
 
 function togglePlayerNum() {
-    let maxPlayers = 4;
+    let maxPlayers = 3;
     if (platform === 'mobile') {
         maxPlayers = 2;
     }
@@ -69,8 +69,8 @@ function togglePlayerNum() {
 
     //show game mode toggle
     if (playerNum > 1) {
-        document.getElementById("gameModeDisplay").style.display = "";
-        hideElement("mainMenuSpacer");
+        //document.getElementById("gameModeDisplay").style.display = "";
+        //hideElement("mainMenuSpacer");
     }
     else {
         hideElement("gameModeDisplay");
