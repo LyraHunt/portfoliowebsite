@@ -18,6 +18,7 @@ html[theme=theme-dark] {
     --nav-link: #CAD;
     --page-link-gradient: linear-gradient(90deg, rgba(255, 99, 128, 0.95) 20%, rgba(11, 232, 240, 0.95) 80%);
     --page-link-underline: #69b9c5;
+    --text-warning: #fbf861;
 
     --dark-mode-invert: invert(100%);
     --dark-mode-invert-small: invert(10%);
@@ -29,7 +30,6 @@ html[theme=theme-dark] {
 html[theme=theme-light] {
     --body-background: #f4f0f4;
     --body-background-num: 244, 240, 244;
-    --default-text: #0d0d13;
 
     --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
     --header-background-color: #FFF;
@@ -40,9 +40,11 @@ html[theme=theme-light] {
     --background-1: #CCC;
     --background-2: #AAA;
 
+    --default-text: #0d0d13;
     --nav-link: #939;
     --page-link-gradient: linear-gradient(90deg, rgba(169, 1, 31, 0.95) 20%, rgba(0, 42, 101, 0.95) 80%);
     --page-link-underline: #6202b0;
+    --text-warning: #660d48;
 
     --dark-mode-invert: invert(0%);
     --dark-mode-invert-small: invert(90%);
@@ -204,6 +206,11 @@ a:link.current-page, a:visited.current-page {
 .links-container > a:link, .links-container > a:visited {
     text-decoration: underline;
     text-decoration-color: var(--default-text);
+}
+
+.warning-message {
+    color: var(--text-warning);
+    font-weight: bold;
 }
 
 .links-container > a:link.current-page, .links-container > a:visited.current-page {
@@ -557,6 +564,12 @@ html[theme=theme-light] {
     .background-image-grapevine {
         background-image: linear-gradient(to right, transparent calc(50% - 550px), rgba(var(--body-background-num), 0.75) calc(50% - 350px), rgba(var(--body-background-num), 0.9) 50%, rgba(var(--body-background-num), 0.75) calc(50% + 350px), transparent calc(50% + 550px)), url("/images/backgrounds/through-the-grapevine-background.png");
         opacity: 50%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .only-display-on-mobile {
+        display: none;
     }
 }
 
