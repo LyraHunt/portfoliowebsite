@@ -114,6 +114,28 @@ drawings[currentIndex].altFilesizes = [500];
 
 drawings.push(new Drawing);
 currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2025;
+drawings[currentIndex].filename = "orbital-vine";
+drawings[currentIndex].defaultSize = 1650;
+drawings[currentIndex].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 3, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [500];
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2025;
+drawings[currentIndex].filename = "liminal-scape-1";
+drawings[currentIndex].defaultSize = 1650;
+drawings[currentIndex].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 3, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [500];
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
 drawings[currentIndex].year = 2024;
 drawings[currentIndex].filename = "ufo-doodle";
 drawings[currentIndex].defaultSize = 1100;
@@ -153,6 +175,17 @@ drawings[currentIndex].defaultSize = 2787;
 drawings[currentIndex].sizes = [
     {x: 2, y: 1, minWidth: 0},
     {x: 3, y: 2, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [600]
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2025;
+drawings[currentIndex].filename = "last-judge";
+drawings[currentIndex].defaultSize = 2360;
+drawings[currentIndex].sizes = [
+    {x: 2, y: 1, minWidth: 0},
+    {x: 3, y: 3, minWidth: mobileThreshold}
 ]
 drawings[currentIndex].altFilesizes = [600]
 

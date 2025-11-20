@@ -50,7 +50,9 @@ var ExternalLinks = {
 
     "reddit-post-pen-simulation": "https://www.reddit.com/r/generative/comments/sr9zia/working_on_a_function_to_draw_lines_that_look/",
 
-    "celeste-and-towerfall-physics": "https://maddymakesgames.com/articles/celeste_and_towerfall_physics/index.html"
+    "celeste-and-towerfall-physics": "https://maddymakesgames.com/articles/celeste_and_towerfall_physics/index.html",
+
+    "static-gdscript-tutorial": "https://allenwp.com/blog/2023/10/03/how-to-enforce-static-typing-in-gdscript/"
 }
 
 var LinkSets = [{
