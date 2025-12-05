@@ -30,19 +30,3 @@
     font-weight: bold;
     margin-bottom: calc(2.5vw + 8px);
 }
-
-.social-tag {
-    font-size: 20px;
-    line-height: 24px;
-    /*width: clamp(50px, 35vw, 300px);*/
-    width: 200px;
-    text-align: center;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.social-row {
-    width: min(60vw, 300px);
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
