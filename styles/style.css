@@ -29,9 +29,10 @@ html[theme=theme-dark] {
 
 html[theme=theme-light] {
     --body-background: #f2f6fe;
-    --body-background-num: 244, 240, 244;
+    --body-background-num: 242, 246, 254;
 
-    --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
+    /*--header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));*/
+    --header-background-gradient: linear-gradient(120deg, rgba(48, 0, 200, 0.2) 10%, rgba(234, 8, 154, 0.35) calc(100% - 150px), rgba(240, 71, 122, 0.5) 100%);
     --header-background-color: #FFF;
     --header-text-gradient: linear-gradient(105deg, rgb(64, 0, 200) 10%, rgb(164, 0, 128) 90%);
     --ink-border-shadow-background: rgba(23, 2, 62, 0.5);
