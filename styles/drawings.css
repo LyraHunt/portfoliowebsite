@@ -8,8 +8,8 @@ html[theme=theme-dark] {
 }
 
 html[theme=theme-light] {
-    --blank-drawing-background: #E8E8E8;
-    --drawing-background: #CCC;
+    --blank-drawing-background: #e2ebf4;
+    --drawing-background: #c4d0e7;
     --drawing-frame: #333;
 
     --nav-buttons-background: #CCC;

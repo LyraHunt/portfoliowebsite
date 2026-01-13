@@ -28,7 +28,7 @@ html[theme=theme-dark] {
 }
 
 html[theme=theme-light] {
-    --body-background: #f4f0f4;
+    --body-background: #f2f6fe;
     --body-background-num: 244, 240, 244;
 
     --header-background-gradient: linear-gradient(105deg, rgba(64, 0, 200, 0.25), rgba(164, 0, 128, 0.45));
@@ -50,7 +50,7 @@ html[theme=theme-light] {
     --dark-mode-invert-small: invert(90%);
     --dark-mode-invert-medium: invert(80%);
 
-    --light-mode-invert: invert(90%);
+    --light-mode-invert: invert(100%);
 }
 
 html, body {
