@@ -124,6 +124,7 @@ function generateFooter(targetElement) {
     socialsContainer.classList.add("flex-row", "socials-container");
 
     // <a class="external-link-my-youtube a-no-style" target="_blank"><span class="mdi--youtube social-icon color-default-text"></span></a>
+    // youtube icon link
     var youtubeIconAnchor = document.createElement("a");
     youtubeIconAnchor.classList.add("external-link-my-youtube", "undo-anchor");
     youtubeIconAnchor.target = "_blank";
@@ -132,6 +133,16 @@ function generateFooter(targetElement) {
     youtubeIconAnchor.appendChild(youtubeIcon);
 
     socialsContainer.appendChild(youtubeIconAnchor);
+
+    // instagram icon link
+    var instagramIconAnchor = document.createElement("a");
+    instagramIconAnchor.classList.add("external-link-my-instagram", "undo-anchor");
+    instagramIconAnchor.target = "_blank";
+    var instagramIcon = document.createElement("span");
+    instagramIcon.classList.add("mdi--instagram", "social-icon", "color-default-text");
+    instagramIconAnchor.appendChild(instagramIcon);
+
+    socialsContainer.appendChild(instagramIconAnchor);
 
     newFooter.push(socialsContainer);
 

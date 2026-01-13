@@ -192,7 +192,9 @@ strong {
     margin: 0px 0px 0px clamp(0px, 5vw - 28px, 30px);
     flex-wrap: wrap;
     row-gap: 6px;
-    flex-grow: 0.5;
+    column-gap: clamp(10px, 4vw, 60px);
+    flex-grow: 0.75;
+    
 }
 
 a:link, a:visited {
@@ -274,7 +276,7 @@ a.undo-anchor {
     box-sizing: border-box;
     height: 100px;
     justify-content: space-evenly;
-    padding: 5px min(3vw, 20px) 0px 0px;
+    padding: 5px min(3vw, 80px) 0px 0px;
     margin-top: min(10vw, 60px);
     align-self: flex-end;
     background-image: var(--header-background-gradient);
