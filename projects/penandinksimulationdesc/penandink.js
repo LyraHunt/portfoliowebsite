@@ -44,7 +44,7 @@ function line(x1, y1, x2, y2, width) {
         circle(lerp(x1, x2, (endNum - 2) / dist) + Math.random() * Math.random() * roughness, lerp(y1, y2, (endNum - 2) / dist) + Math.random() * Math.random() * roughness, width * (blot - 0.5));
     }
     for (let i = 0; i < dist; i += scale) {
-        circle(lerp(x1, x2, i / dist) + Math.random() * Math.random() * roughness, lerp(y1, y2, i / dist) + Math.random() * Math.random() * roughness, width * (Math.random() / 4 + 1));
+        circle(lerp(x1, x2, i / dist) + Math.random() * Math.random() * roughness, lerp(y1, y2, i / dist) + Math.random() * Math.random() * roughness, width * (Math.random() / 4 + 1.25));
         ctx.globalAlpha = Math.random() * 0.2 + 0.6;
     }
 }
