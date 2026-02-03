@@ -224,6 +224,17 @@ drawings[currentIndex].altFilesizes = [600]
 
 drawings.push(new Drawing);
 currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2026;
+drawings[currentIndex].filename = "kuu-lost-in-the-woods";
+drawings[currentIndex].defaultSize = 2300;
+drawings[currentIndex].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 2, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [500]
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
 drawings[currentIndex].year = 2025;
 drawings[currentIndex].filename = "abstract-monument-ink-sketch";
 drawings[currentIndex].defaultSize = 1704;
