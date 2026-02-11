@@ -16,6 +16,7 @@ var GlobalScripts = [
 var AdditionalScriptsReference = {
     "drawings": "/drawings/drawings.js",
     "drawings_data": "/drawings/drawings_data.js",
+    "lightbox": "/general_javascripts/lightbox.js",
 
     "projects": "/projects/projects.js",
     "workshop": "/workshop/workshop.js",

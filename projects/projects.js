@@ -59,7 +59,7 @@ creations[current_index].typeTags = {
 creations.push(new Creation);
 current_index = creations.length - 1;
 creations[current_index].name = "This Website";
-creations[current_index].year = 2025;
+creations[current_index].year = "Present";
 creations[current_index].url = InternalLinks["projects-thiswebsitedesc"];
 creations[current_index].thumbnailUrl = "/images/thiswebsite.png";
 creations[current_index].typeTags = {
@@ -93,7 +93,7 @@ function sortCreations(a, b) {
     if (a.year < b.year){
         return 1;
     }
-    if (a.year > b.year){
+    if (a.year > b.year || a.year == "Present"){
         return -1;
     }
 

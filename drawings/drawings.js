@@ -2,11 +2,6 @@ var drawingsContainer = document.getElementById("drawingsContainer");
 var drawingsSortedAppearance = [];
 var drawingsFullSizeImages = [];
 
-var lightbox = document.getElementById("lightbox");
-var lightboxImg = document.getElementById("lightboxImg");
-var lightboxImgContainer = document.getElementById("lightboxImgContainer");
-var lightboxImgContainerInner =  document.getElementById("lightboxImgContainerInner");
-
 var drawingsFolderPath = "/drawings/images/";
 
 var gridColumnSize = 150;
@@ -172,12 +167,19 @@ new ResizeObserver(function() {
     lastDrawingContainerHeight = drawingsContainer.offsetHeight;
 }).observe(drawingsContainer);
 
+
+
+// lightbox stuff
+var lightbox = document.getElementById("lightbox");
+var lightboxImg = document.getElementById("lightboxImg");
+var lightboxImgContainer = document.getElementById("lightboxImgContainer");
+var lightboxImgContainerInner =  document.getElementById("lightboxImgContainerInner");
+
 var currentLightboxID = 0;
 
 function displayLightbox(imageSrc, imageID) {
     currentLightboxID = Number(drawingsContainer.children[imageID].getAttribute("appearance"));
 
-    // use aspect ratio math to keep lightbox image contained
     var currentImage = drawingsFullSizeImages[imageID];
     if (currentImage.src == "") currentImage.src = imageSrc;
 
@@ -225,16 +227,6 @@ function displayLightbox(imageSrc, imageID) {
 
 function closeLightbox() {
     lightbox.style.display = "none";
-}
-
-function scrollIntoViewIfNotVisible(target, options) { 
-    if (target.getBoundingClientRect().bottom > window.innerHeight) {
-        target.scrollIntoView(options);
-    }
-    
-    if (target.getBoundingClientRect().top < 0) {
-        target.scrollIntoView(options);
-    } 
 }
 
 function changeLightboxImg(changeAmount) {

@@ -59,4 +59,14 @@ function toggleTheme() {
     }
 }
 
+function scrollIntoViewIfNotVisible(target, options) { 
+    if (target.getBoundingClientRect().bottom > window.innerHeight) {
+        target.scrollIntoView(options);
+    }
+    
+    if (target.getBoundingClientRect().top < 0) {
+        target.scrollIntoView(options);
+    } 
+}
+
 onLoad();

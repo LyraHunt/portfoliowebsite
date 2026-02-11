@@ -27,6 +27,14 @@ html[theme=theme-dark] {
     --dark-mode-invert-medium: invert(30%);
 
     --light-mode-invert: invert(0%);
+
+    /* drawings page and lightbox stuff */
+    --blank-drawing-background: #201b25;
+    --drawing-background: #312933;
+    --drawing-frame: #ACF;
+
+    --nav-buttons-background: #555;
+    --nav-buttons-background-hover: #888;
 }
 
 html[theme=theme-light] {
@@ -55,6 +63,14 @@ html[theme=theme-light] {
     --dark-mode-invert-medium: invert(80%);
 
     --light-mode-invert: invert(100%);
+
+    /* drawings page and lightbox stuff */
+    --blank-drawing-background: #e2ebf4;
+    --drawing-background: #c4d0e7;
+    --drawing-frame: #333;
+
+    --nav-buttons-background: #CCC;
+    --nav-buttons-background-hover: #EEE;
 }
 
 html, body {

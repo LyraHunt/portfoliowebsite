@@ -23,7 +23,10 @@ var InternalLinks = {
     "projects-throughthegrapevinedesc": "/projects/throughthegrapevinedesc/",
 
     "projects-verletengine": "/projects/verletengine/",
-    "projects-verletenginedesc": "/projects/verletenginedesc/"
+    "projects-verletenginedesc": "/projects/verletenginedesc/",
+
+    // other
+    "offroute-art-fellowship-2025": "/drawings/offroute-art-fellowship-2025/"
 }
 
 var SourceCodeLinks = {
