@@ -57,7 +57,9 @@ var ExternalLinks = {
 
     "celeste-and-towerfall-physics": "https://maddymakesgames.com/articles/celeste_and_towerfall_physics/index.html",
 
-    "static-gdscript-tutorial": "https://allenwp.com/blog/2023/10/03/how-to-enforce-static-typing-in-gdscript/"
+    "static-gdscript-tutorial": "https://allenwp.com/blog/2023/10/03/how-to-enforce-static-typing-in-gdscript/",
+
+    "offroute-art": "https://www.offrouteart.com/"
 }
 
 var LinkSets = [{
