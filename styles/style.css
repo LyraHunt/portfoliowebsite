@@ -128,6 +128,11 @@ strong {
     font-weight: 600;
 }
 
+.underline {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
 .flex-column {
     display: flex;
     justify-content: center;
