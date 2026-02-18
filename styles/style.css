@@ -133,6 +133,11 @@ strong {
     text-decoration-thickness: 1.5px;
 }
 
+.underline-small {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
 .flex-column {
     display: flex;
     justify-content: center;
