@@ -169,6 +169,17 @@ drawings[currentIndex].altFilesizes = [500];
 
 drawings.push(new Drawing);
 currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2026;
+drawings[currentIndex].filename = "clockwork";
+drawings[currentIndex].defaultSize = 1508;
+drawings[currentIndex].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 3, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [500];
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
 drawings[currentIndex].year = 2025;
 drawings[currentIndex].filename = "karkovchanka";
 drawings[currentIndex].defaultSize = 2787;
@@ -184,10 +195,21 @@ drawings[currentIndex].year = 2025;
 drawings[currentIndex].filename = "last-judge";
 drawings[currentIndex].defaultSize = 2360;
 drawings[currentIndex].sizes = [
-    {x: 2, y: 1, minWidth: 0},
+    {x: 1, y: 1, minWidth: 0},
     {x: 3, y: 3, minWidth: mobileThreshold}
 ]
 drawings[currentIndex].altFilesizes = [600]
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2026;
+drawings[currentIndex].filename = "crows-nest";
+drawings[currentIndex].defaultSize = 1733;
+drawings[currentIndex].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 2, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [500]
 
 drawings.push(new Drawing);
 currentIndex = drawings.length - 1;
@@ -221,6 +243,17 @@ drawings[currentIndex].sizes = [
     {x: 3, y: 2, minWidth: mobileThreshold}
 ]
 drawings[currentIndex].altFilesizes = [600]
+
+drawings.push(new Drawing);
+currentIndex = drawings.length - 1;
+drawings[currentIndex].year = 2026;
+drawings[currentIndex].filename = "rubber-ducky";
+drawings[currentIndex].defaultSize = 1800;
+drawings[currentIndex].sizes = [
+    {x: 1, y: 1, minWidth: 0},
+    {x: 2, y: 2, minWidth: mobileThreshold}
+]
+drawings[currentIndex].altFilesizes = [500]
 
 drawings.push(new Drawing);
 currentIndex = drawings.length - 1;
