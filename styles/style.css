@@ -622,7 +622,7 @@ html[theme=theme-light] {
     line-height: 24px;
     /*width: clamp(50px, 35vw, 300px);*/
     min-width: 200px;
-    text-align: center;
+    text-align: left;
     text-decoration: underline;
     cursor: pointer;
 }

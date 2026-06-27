@@ -44,6 +44,7 @@ var SourceCodeLinks = {
 var ExternalLinks = {
     "my-youtube": "https://www.youtube.com/@wildehuntgames",
     "my-instagram": "https://www.instagram.com/wildehuntgames",
+    "my-art-fight": "https://artfight.net/~LyraH2000",
     "my-email": "mailto:wildehuntgames@gmail.com",
 
     "itch-capstone-game": "https://wildehuntgames.itch.io/forest-game",
