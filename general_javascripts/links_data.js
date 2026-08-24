@@ -22,6 +22,8 @@ var InternalLinks = {
     "projects-throughthegrapevine": "/projects/throughthegrapevine/",
     "projects-throughthegrapevinedesc": "/projects/throughthegrapevinedesc/",
 
+    "projects-twig": "/projects/twig/",
+
     "projects-verletengine": "/projects/verletengine/",
     "projects-verletenginedesc": "/projects/verletenginedesc/",
 
@@ -49,6 +51,7 @@ var ExternalLinks = {
 
     "itch-capstone-game": "https://wildehuntgames.itch.io/forest-game",
     "itch-alchemikitty": "https://wildehuntgames.itch.io/alchemikitty",
+    "itch-twig": "https://wildehuntgames.itch.io/twig",
 
     "itch-soupythecat": "https://soupythecat.itch.io/",
 

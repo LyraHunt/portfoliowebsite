@@ -88,6 +88,17 @@ creations[current_index].typeTags = {
     mobileFriendly: true
 }
 
+//twig (creation)
+creations.push(new Creation);
+current_index = creations.length - 1;
+creations[current_index].name = "Twig";
+creations[current_index].year = 2026;
+creations[current_index].url = InternalLinks["projects-twig"];
+creations[current_index].thumbnailUrl = "/images/twig.png";
+creations[current_index].typeTags = {
+    mobileFriendly: false
+}
+
 function sortCreations(a, b) {
   //first, sort by year
     if (a.year < b.year){
