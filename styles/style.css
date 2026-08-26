@@ -3,7 +3,7 @@
 html[theme=theme-dark] {
     /*--body-background: #180b19;*/
     --body-background: #0d0d13;
-    --body-background-num: 10, 10, 16;
+    --body-background-num: 13, 13, 19;
 
     --header-background-gradient: linear-gradient(120deg, rgba(64, 0, 200, 0.325) 10%, rgba(194, 8, 154, 0.5) calc(100% - 150px), rgba(240, 71, 122, 0.75) 100%);
     --header-background-color: #101010;
@@ -35,11 +35,13 @@ html[theme=theme-dark] {
 
     --nav-buttons-background: #555;
     --nav-buttons-background-hover: #888;
+
+    --critter-marquee-background: #281f2b;
 }
 
 html[theme=theme-light] {
     --body-background: #f0f4fe;
-    --body-background-num: 242, 246, 254;
+    --body-background-num: 240, 244, 254;
 
     --header-background-gradient: linear-gradient(120deg, rgba(48, 0, 200, 0.2) 10%, rgba(234, 8, 154, 0.35) calc(100% - 150px), rgba(240, 71, 122, 0.5) 100%);
     --header-background-color: #FFF;
@@ -71,6 +73,8 @@ html[theme=theme-light] {
 
     --nav-buttons-background: #CCC;
     --nav-buttons-background-hover: #EEE;
+
+    --critter-marquee-background: #d0c0e3;
 }
 
 html, body {
