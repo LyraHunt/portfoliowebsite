@@ -1,8 +1,9 @@
 .marquee-container {
   overflow: hidden;
-  aspect-ratio: 5;
+  aspect-ratio: 7;
   position: relative;
   background-color: var(--critter-marquee-background);
+  height: 160px;
 
   .marquee {
     height: 100%;
@@ -47,16 +48,33 @@
   }
 }
 
+@media screen and (max-width: 1250px) {
+    .marquee-container {
+        aspect-ratio: calc(7 * 0.75);
+        height: 130px;
+
+        .marquee {
+            width: 150%;
+        }
+    }
+
+    @keyframes marquee {
+    0% {
+        left: 150%;
+    }
+    100% {
+        left: -150%
+    }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .marquee-container {
-        aspect-ratio: 2.5;
+        aspect-ratio: 3.5;
+        height: 120px;
 
         .marquee {
             width: 200%;
-        }
-
-        .marquee2 {
-            
         }
     }
 
@@ -67,5 +85,11 @@
     100% {
         left: -200%
     }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .marquee-container {
+        height: 80px;
     }
 }
