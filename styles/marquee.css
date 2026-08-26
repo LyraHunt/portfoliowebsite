@@ -11,9 +11,9 @@
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    animation: marquee 12s linear infinite;
+    animation: marquee 16s linear infinite;
     /*animation-play-state: paused;*/
-    animation-delay: -6s;
+    animation-delay: -8s;
     display: flex;
     justify-content: space-around;
   }
@@ -44,7 +44,7 @@
     left: 100%;
   }
   100% {
-    left: -100%
+    left: -100%;
   }
 }
 
@@ -54,16 +54,16 @@
         height: 130px;
 
         .marquee {
-            width: 150%;
+            width: 133.333%;
         }
     }
 
     @keyframes marquee {
     0% {
-        left: 150%;
+        left: 133.333%;
     }
     100% {
-        left: -150%
+        left: -133.333%;
     }
     }
 }
@@ -83,13 +83,27 @@
         left: 200%;
     }
     100% {
-        left: -200%
+        left: -200%;
     }
     }
 }
 
 @media screen and (max-width: 500px) {
     .marquee-container {
-        height: 80px;
+        aspect-ratio: calc(7 * 0.35);
+        height: 110px;
+
+        .marquee {
+            width: 285.7%;
+        }
+    }
+
+    @keyframes marquee {
+    0% {
+        left: 285.7%;
+    }
+    100% {
+        left: -285.7%;
+    }
     }
 }
